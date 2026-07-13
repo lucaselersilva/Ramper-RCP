@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Ramper Pipeline</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page:           #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-1:       #2a78d6;   /* blue — volume/nominal bars, timeline */
+    --good:           #0ca30c;
+    --warning:        #fab219;
+    --serious:        #ec835a;
+    --critical:       #d03b3b;
+    --neutral:        #898781;   /* "aberta / em andamento", not good or bad */
+    --card-radius: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #1a1a19;
+      --page:           #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-1:       #3987e5;
+      --good:           #0ca30c;
+      --warning:        #fab219;
+      --serious:        #ec835a;
+      --critical:       #d03b3b;
+      --neutral:        #898781;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--page);
+    color: var(--text-primary);
+  }
+  header {
+    padding: 18px 28px;
+    background: var(--surface-1);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: sticky; top: 0; z-index: 20;
+  }
+  header h1 { margin: 0; font-size: 19px; font-weight: 650; }
+  header .subhead { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+  .header-left { display: flex; align-items: center; gap: 14px; }
+  .header-logo {
+    height: 42px; width: 42px; object-fit: contain; border-radius: 9px;
+    background: #ffffff; padding: 4px; flex: none;
+    border: 1px solid var(--border);
+  }
+  .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  #sync-info { font-size: 12.5px; color: var(--text-secondary); text-align: right; }
+  #sync-info.stale { color: var(--critical); font-weight: 600; }
+  #refresh-help-btn { font-size: 11.5px; }
+  .refresh-help {
+    max-width: 1440px; margin: 0 auto; padding: 12px 28px;
+    background: var(--surface-1); border-bottom: 1px solid var(--border);
+    font-size: 12.5px; color: var(--text-secondary);
+  }
+  .refresh-help.hidden { display: none; }
+  .refresh-help b { color: var(--text-primary); }
+  .refresh-help ol { margin: 6px 0 0; padding-left: 18px; }
+  .refresh-help code {
+    background: var(--page); border: 1px solid var(--border); border-radius: 4px;
+    padding: 1px 5px; font-size: 12px;
+  }
+  main { padding: 22px 28px 60px; max-width: 1440px; margin: 0 auto; }
+
+  section.block { margin-bottom: 30px; }
+  .block-header { margin-bottom: 12px; }
+  .block-header h2 { font-size: 15px; margin: 0 0 2px; font-weight: 650; }
+  .block-header .desc { font-size: 12.5px; color: var(--text-secondary); }
+
+  /* ---- filter row ---- */
+  .filters {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 14px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+  .filter-field { display: flex; flex-direction: column; gap: 4px; }
+  .filter-field label { font-size: 11.5px; color: var(--text-secondary); font-weight: 600; }
+  .filter-field input, .filter-field select {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+    min-width: 148px;
+    background: var(--surface-1);
+    color: var(--text-primary);
+  }
+  .filter-field input[type=text] { min-width: 200px; }
+  .filter-field.hidden { display: none; }
+  #clear-filters {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface-1);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+  #clear-filters:hover { background: var(--page); }
+
+  /* ---- KPI row ---- */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+  }
+  .kpi {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 16px 18px;
+  }
+  .kpi .label { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 6px; }
+  .kpi .value { font-size: 28px; font-weight: 650; line-height: 1.1; }
+  .kpi .value .unit { font-size: 15px; font-weight: 600; color: var(--text-secondary); margin-left: 2px; }
+  .kpi .caption { font-size: 11.5px; color: var(--text-muted); margin-top: 6px; }
+  .kpi.tone-critical .value { color: var(--critical); }
+  .kpi.tone-good .value { color: var(--good); }
+  .kpi.tone-warning .caption { color: var(--warning); font-weight: 600; }
+
+  /* ---- chart cards ---- */
+  .chart-grid { display: grid; gap: 16px; }
+  .chart-grid.cols-2 { grid-template-columns: 1.15fr 1fr; }
+  .chart-grid.cols-2b { grid-template-columns: 1fr 1fr; }
+  .chart-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1050px) {
+    .chart-grid.cols-2, .chart-grid.cols-2b, .chart-grid.cols-4 { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 700px) {
+    .chart-grid.cols-2, .chart-grid.cols-2b, .chart-grid.cols-4 { grid-template-columns: 1fr; }
+  }
+  .chart-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 16px 18px 12px;
+    display: flex; flex-direction: column;
+  }
+  .chart-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  .chart-card-head h3 { font-size: 14px; margin: 0; font-weight: 650; }
+  .chart-card-head .desc { font-size: 11.5px; color: var(--text-secondary); margin-top: 2px; }
+  .table-toggle {
+    flex: none;
+    font-size: 11.5px;
+    color: var(--series-1);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 9px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .table-toggle:hover { background: var(--page); }
+  .chart-wrap { position: relative; height: 270px; }
+  .chart-wrap.tall { height: 320px; }
+  .chart-mini-table { display: none; max-height: 300px; overflow: auto; }
+  .chart-mini-table table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .chart-mini-table th, .chart-mini-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--gridline); }
+  .chart-mini-table th { color: var(--text-secondary); font-weight: 600; font-size: 11px; text-transform: uppercase; }
+  .chart-mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .legend-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; font-size: 12px; color: var(--text-secondary); }
+  .legend-row .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+
+  /* ---- tasks table ---- */
+  .table-box {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 18px 20px;
+  }
+  .table-box h3 { margin: 0 0 4px; font-size: 15px; font-weight: 650; }
+  .table-box .subtitle { font-size: 12px; color: var(--text-secondary); margin-bottom: 12px; }
+  table.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.data-table th, table.data-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--gridline);
+    vertical-align: top;
+  }
+  table.data-table th { color: var(--text-secondary); font-weight: 600; font-size: 11.5px; text-transform: uppercase; position: sticky; top: 0; background: var(--surface-1); }
+  table.data-table tr:hover td { background: var(--page); }
+  .table-scroll { max-height: 480px; overflow-y: auto; border-top: 1px solid var(--border); }
+  .badge { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+  .badge .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .badge-done { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+  .badge-pending { background: color-mix(in srgb, var(--neutral) 18%, transparent); color: var(--text-secondary); }
+  .badge-overdue { background: color-mix(in srgb, var(--critical) 16%, transparent); color: var(--critical); }
+  .desc-cell { max-width: 380px; white-space: pre-wrap; }
+  .empty-state { padding: 30px; text-align: center; color: var(--text-muted); font-size: 13px; }
+  .pagination { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 13px; color: var(--text-secondary); }
+  .pagination button {
+    padding: 5px 12px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); border-radius: 6px; cursor: pointer; font-size: 13px;
+  }
+  .pagination button:disabled { opacity: 0.4; cursor: default; }
+
+  /* ---- recommendations ---- */
+  .rec-list { display: flex; flex-direction: column; gap: 10px; }
+  .rec-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--card-radius);
+    padding: 13px 18px;
+  }
+  .rec-item .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex: none; }
+  .rec-item .text { font-size: 13px; color: var(--text-primary); }
+  .rec-item .text b { font-weight: 650; display: block; }
+  .rec-item .text .sub { display: block; font-size: 12.5px; color: var(--text-secondary); margin-top: 3px; }
+  .rec-critical .dot { background: var(--critical); }
+  .rec-warning .dot { background: var(--warning); }
+  .rec-good .dot { background: var(--good); }
+  .rec-info .dot { background: var(--series-1); }
+
+  /* ---- notes ---- */
+  .note-cell { max-width: 460px; }
+  .note-preview { white-space: pre-wrap; }
+  .note-full { white-space: pre-wrap; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--gridline); display: none; }
+  .note-toggle {
+    display: inline-block; margin-top: 4px; font-size: 11.5px; color: var(--series-1);
+    background: none; border: none; padding: 0; cursor: pointer; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="assets/logo-rcp.jpg" alt="RCP Advogados" class="header-logo">
+    <div>
+      <h1>Dashboard Ramper Pipeline</h1>
+      <div class="subhead">Visão executiva do funil comercial · RCP Advogados</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div id="sync-info">Carregando...</div>
+    <button id="refresh-help-btn" class="table-toggle" type="button">Como atualizar os dados agora</button>
+  </div>
+</header>
+<div class="refresh-help hidden" id="refresh-help">
+  <b>Para atualizar os dados agora (sem esperar o agendamento diário):</b>
+  <ol>
+    <li>Na pasta do projeto, dê duplo clique em <code>Atualizar Dados.command</code>.</li>
+    <li>Uma janela de Terminal vai rodar a extração e, ao final, abrir o dashboard sozinha.</li>
+    <li>Se esta aba já estiver aberta em outro lugar, dê F5 para recarregar e ver os dados novos.</li>
+  </ol>
+</div>
+
+<main>
+  <div class="filters">
+    <div class="filter-field">
+      <label for="f-period">Período</label>
+      <select id="f-period">
+        <option value="all" selected>Todo o período</option>
+        <option value="7">Últimos 7 dias</option>
+        <option value="30">Últimos 30 dias</option>
+        <option value="90">Últimos 90 dias</option>
+        <option value="180">Últimos 6 meses</option>
+        <option value="365">Últimos 12 meses</option>
+        <option value="custom">Personalizado…</option>
+      </select>
+    </div>
+    <div class="filter-field hidden" id="f-start-wrap">
+      <label for="f-start">Data inicial</label>
+      <input type="date" id="f-start">
+    </div>
+    <div class="filter-field hidden" id="f-end-wrap">
+      <label for="f-end">Data final</label>
+      <input type="date" id="f-end">
+    </div>
+    <div class="filter-field">
+      <label for="f-user">Responsável</label>
+      <select id="f-user"><option value="">Todos</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-stage">Etapa do funil</label>
+      <select id="f-stage"><option value="">Todas</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-area">Área do direito</label>
+      <select id="f-area"><option value="">Todas</option></select>
+    </div>
+    <div class="filter-field">
+      <label for="f-search">Buscar em tarefas e notas</label>
+      <input type="text" id="f-search" placeholder="título, descrição, texto da nota...">
+    </div>
+    <button id="clear-filters">Limpar filtros</button>
+  </div>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Visão geral</h2>
+      <div class="desc">Indicadores-chave para tomada de decisão. Os marcados "no período" respeitam os filtros de período/responsável; os demais são uma fotografia do estado atual do pipeline.</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Novos leads</div><div class="value" id="kpi-leads">–</div><div class="caption">no período selecionado</div></div>
+      <div class="kpi"><div class="label">Taxa de conversão</div><div class="value" id="kpi-winrate">–</div><div class="caption" id="kpi-winrate-cap"></div></div>
+      <div class="kpi"><div class="label">Oportunidades abertas</div><div class="value" id="kpi-open">–</div><div class="caption">estado atual do pipeline</div></div>
+      <div class="kpi tone-warning"><div class="label">Pipeline parado (&gt;90 dias sem mudança)</div><div class="value" id="kpi-stale">–</div><div class="caption" id="kpi-stale-cap"></div></div>
+      <div class="kpi tone-critical"><div class="label">Tarefas atrasadas</div><div class="value" id="kpi-overdue">–</div><div class="caption">no período selecionado</div></div>
+      <div class="kpi"><div class="label">Tarefas pendentes (total)</div><div class="value" id="kpi-pending">–</div><div class="caption">no período selecionado</div></div>
+      <div class="kpi"><div class="label">Oportunidades com notas</div><div class="value" id="kpi-notes">–</div><div class="caption" id="kpi-notes-cap">no período selecionado</div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Recomendações</h2>
+      <div class="desc">Geradas automaticamente a partir dos dados filtrados acima — cada uma traz o número que a embasa, não é uma opinião solta.</div>
+    </div>
+    <div class="rec-list" id="recommendations-list"></div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Pipeline: leads → reuniões → fechamentos</h2>
+      <div class="desc" id="pipeline-desc">Visão macro do funil comercial no período selecionado.</div>
+    </div>
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Novos leads, reuniões marcadas e fechamentos</h3></div>
+          <button class="table-toggle" data-target="pipeline">Ver tabela</button>
+        </div>
+        <div class="chart-wrap" id="pipeline-chart-wrap"><canvas id="chart-pipeline"></canvas></div>
+        <div class="chart-mini-table" id="pipeline-table"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Reuniões por responsável</h3><div class="desc">Reuniões com cliente/prospect marcadas no período</div></div>
+          <button class="table-toggle" data-target="meetingreps">Ver tabela</button>
+        </div>
+        <div class="chart-wrap" id="meetingreps-chart-wrap"><canvas id="chart-meetingreps"></canvas></div>
+        <div class="chart-mini-table" id="meetingreps-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Funil de vendas</h2>
+      <div class="desc">Distribuição das oportunidades por etapa (filtra por período e responsável). Ganhas e perdidas aparecem em destaque por serem o resultado final.</div>
+    </div>
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Oportunidades por etapa</h3></div>
+          <button class="table-toggle" data-target="funnel">Ver tabela</button>
+        </div>
+        <div class="chart-wrap tall" id="funnel-chart-wrap"><canvas id="chart-funnel"></canvas></div>
+        <div class="chart-mini-table" id="funnel-table"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Novas oportunidades ao longo do tempo</h3><div class="desc" id="timeline-desc"></div></div>
+          <button class="table-toggle" data-target="timeline">Ver tabela</button>
+        </div>
+        <div class="chart-wrap tall" id="timeline-chart-wrap"><canvas id="chart-timeline"></canvas></div>
+        <div class="chart-mini-table" id="timeline-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Performance da equipe</h2>
+      <div class="desc">Volume de oportunidades e produtividade em tarefas, por responsável — a visão que mais importa para gestão de equipe comercial.</div>
+    </div>
+    <div class="chart-grid cols-2b">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Oportunidades por responsável</h3><div class="desc">Abertas / ganhas / perdidas, no período selecionado</div></div>
+          <button class="table-toggle" data-target="reps">Ver tabela</button>
+        </div>
+        <div class="chart-wrap tall" id="reps-chart-wrap"><canvas id="chart-reps"></canvas></div>
+        <div class="chart-mini-table" id="reps-table"></div>
+        <div class="legend-row">
+          <span><span class="dot" style="background:var(--neutral)"></span>Aberta</span>
+          <span><span class="dot" style="background:var(--good)"></span>Ganha</span>
+          <span><span class="dot" style="background:var(--critical)"></span>Perdida</span>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Tarefas por responsável</h3><div class="desc">Concluídas / pendentes / atrasadas, no período selecionado</div></div>
+          <button class="table-toggle" data-target="taskreps">Ver tabela</button>
+        </div>
+        <div class="chart-wrap tall" id="taskreps-chart-wrap"><canvas id="chart-taskreps"></canvas></div>
+        <div class="chart-mini-table" id="taskreps-table"></div>
+        <div class="legend-row">
+          <span><span class="dot" style="background:var(--good)"></span>Concluída</span>
+          <span><span class="dot" style="background:var(--neutral)"></span>Pendente</span>
+          <span><span class="dot" style="background:var(--critical)"></span>Atrasada</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
+      <h2>Perfil dos leads</h2>
+      <div class="desc" id="profile-desc">Origem, área do direito, estado e segmento — apenas oportunidades do período selecionado com o campo preenchido.</div>
+    </div>
+    <div class="chart-grid cols-4">
+      <div class="chart-card">
+        <div class="chart-card-head"><div><h3>Origem</h3></div><button class="table-toggle" data-target="origem">Ver tabela</button></div>
+        <div class="chart-wrap" id="origem-chart-wrap"><canvas id="chart-origem"></canvas></div>
+        <div class="chart-mini-table" id="origem-table"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head"><div><h3>Área do direito</h3></div><button class="table-toggle" data-target="area">Ver tabela</button></div>
+        <div class="chart-wrap" id="area-chart-wrap"><canvas id="chart-area"></canvas></div>
+        <div class="chart-mini-table" id="area-table"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head"><div><h3>Estado (UF)</h3></div><button class="table-toggle" data-target="uf">Ver tabela</button></div>
+        <div class="chart-wrap" id="uf-chart-wrap"><canvas id="chart-uf"></canvas></div>
+        <div class="chart-mini-table" id="uf-table"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head"><div><h3>Segmento do cliente</h3></div><button class="table-toggle" data-target="segmento">Ver tabela</button></div>
+        <div class="chart-wrap" id="segmento-chart-wrap"><canvas id="chart-segmento"></canvas></div>
+        <div class="chart-mini-table" id="segmento-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="table-box">
+      <h3>Tarefas</h3>
+      <div class="subtitle" id="tasks-subtitle">Filtradas por período (data do evento), responsável e busca de texto.</div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Descrição</th>
+              <th>Responsável</th>
+              <th>Relacionado a</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tasks-tbody"></tbody>
+        </table>
+        <div class="empty-state" id="tasks-empty" style="display:none;">Nenhuma tarefa encontrada com os filtros atuais.</div>
+      </div>
+      <div class="pagination">
+        <span id="tasks-count"></span>
+        <div>
+          <button id="tasks-prev">&laquo; Anterior</button>
+          <button id="tasks-next">Próxima &raquo;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="table-box">
+      <h3>Notas das oportunidades</h3>
+      <div class="subtitle">Histórico de interações registrado manualmente na oportunidade (fora do fluxo de tarefas agendadas) — filtrado por período, responsável, etapa, área e busca de texto.</div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Atualizado em</th>
+              <th>Oportunidade</th>
+              <th>Organização</th>
+              <th>Responsável</th>
+              <th>Nota</th>
+            </tr>
+          </thead>
+          <tbody id="notes-tbody"></tbody>
+        </table>
+        <div class="empty-state" id="notes-empty" style="display:none;">Nenhuma nota encontrada com os filtros atuais.</div>
+      </div>
+      <div class="pagination">
+        <span id="notes-count"></span>
+        <div>
+          <button id="notes-prev">&laquo; Anterior</button>
+          <button id="notes-next">Próxima &raquo;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="data/dashboard_data.js"></script>
+<script>
+(function () {
+  const DATA = window.RAMPER_DATA || null;
+  const syncInfoEl = document.getElementById('sync-info');
+
+  if (!DATA) {
+    syncInfoEl.textContent = 'Nenhum dado encontrado. Rode "python3 extract.py" para gerar data/dashboard_data.js.';
+    syncInfoEl.classList.add('stale');
+    return;
+  }
+
+  const opportunities = DATA.opportunities || [];
+  const tasks = DATA.tasks || [];
+  const persons = DATA.persons || [];
+  const users = DATA.users || [];
+  const stages = (DATA.stages || []).slice().sort((a, b) => Number(a.order) - Number(b.order));
+  const orgsById = {};
+  (DATA.organizations || []).forEach(o => { orgsById[o.id] = o; });
+  const usersById = {};
+  users.forEach(u => { usersById[u.id] = u; });
+  const oppsById = {};
+  opportunities.forEach(o => { oppsById[o.id] = o; });
+
+  const MEETING_TYPE = 'Reunião Com';
+  function isMeetingTask(t) { return t.type_title === MEETING_TYPE; }
+
+  const INATIVA_STAGE_ID = (stages.find(s => s.name_short === 'Inativa') || {}).id;
+  const NOW = new Date();
+
+  // ================= util =================
+  function parseDate(str) {
+    if (!str || str.startsWith('0000-00-00')) return null;
+    const d = new Date(str.replace(' ', 'T'));
+    return isNaN(d.getTime()) ? null : d;
+  }
+  function toDateInputValue(d) { return d.toISOString().slice(0, 10); }
+  function fmtDateTime(str) {
+    const d = parseDate(str);
+    if (!d) return '–';
+    return d.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  }
+  function fmtInt(n) { return (n || 0).toLocaleString('pt-BR'); }
+  function daysBetween(a, b) { return Math.floor((a - b) / 86400000); }
+  function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function isDarkMode() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  function hexToRgb(hex) {
+    hex = hex.replace('#', '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    const num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+  }
+  function lerpHex(hexA, hexB, t) {
+    const a = hexToRgb(hexA), b = hexToRgb(hexB);
+    const c = a.map((v, i) => Math.round(v + (b[i] - v) * t));
+    return '#' + c.map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+
+  // ================= colors =================
+  // Ordinal ramp for funnel "open" progression stages (light: documented steps; dark: interpolated
+  // toward the dark categorical blue anchor, since the reference palette doesn't enumerate dark
+  // sequential steps for this hue).
+  const ORDINAL_LIGHT = ['#86b6ef', '#6da7ec', '#5598e7', '#3987e5', '#2a78d6', '#256abf', '#1c5cab', '#184f95', '#104281', '#0d366b'];
+  function ordinalRamp(n) {
+    if (!isDarkMode()) {
+      // stretch/sample the 10 documented steps to n entries (n<=11 here)
+      return Array.from({ length: n }, (_, i) => ORDINAL_LIGHT[Math.min(i, ORDINAL_LIGHT.length - 1)]);
+    }
+    const darkAnchorLow = lerpHex('#1a1a19', '#3987e5', 0.35);
+    const darkAnchorHigh = '#3987e5';
+    return Array.from({ length: n }, (_, i) => lerpHex(darkAnchorLow, darkAnchorHigh, n <= 1 ? 1 : i / (n - 1)));
+  }
+  function colors() {
+    return {
+      series1: cssVar('--series-1'),
+      good: cssVar('--good'),
+      critical: cssVar('--critical'),
+      neutral: cssVar('--neutral'),
+      warning: cssVar('--warning'),
+      textSecondary: cssVar('--text-secondary'),
+      textMuted: cssVar('--text-muted'),
+      grid: cssVar('--gridline'),
+      surface: cssVar('--surface-1')
+    };
+  }
+
+  // ================= sync info =================
+  (function renderSyncInfo() {
+    const last = DATA.last_sync ? new Date(DATA.last_sync) : null;
+    if (!last) { syncInfoEl.textContent = 'Data de sincronização desconhecida.'; return; }
+    const hoursAgo = (Date.now() - last.getTime()) / 3600000;
+    const label = 'Última atualização: ' + last.toLocaleString('pt-BR');
+    syncInfoEl.textContent = label + (hoursAgo > 30 ? '  (dados desatualizados — veja "Como atualizar os dados agora")' : '');
+    if (hoursAgo > 30) syncInfoEl.classList.add('stale');
+  })();
+
+  document.getElementById('refresh-help-btn').addEventListener('click', () => {
+    document.getElementById('refresh-help').classList.toggle('hidden');
+  });
+
+  // ================= filter controls =================
+  const periodSelect = document.getElementById('f-period');
+  const startInput = document.getElementById('f-start');
+  const endInput = document.getElementById('f-end');
+  const startWrap = document.getElementById('f-start-wrap');
+  const endWrap = document.getElementById('f-end-wrap');
+  const userSelect = document.getElementById('f-user');
+  const stageSelect = document.getElementById('f-stage');
+  const areaSelect = document.getElementById('f-area');
+  const searchInput = document.getElementById('f-search');
+
+  users.slice().sort((a, b) => a.name.localeCompare(b.name)).forEach(u => {
+    const opt = document.createElement('option');
+    opt.value = u.id; opt.textContent = u.name;
+    userSelect.appendChild(opt);
+  });
+  stages.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s.id;
+    opt.textContent = s.name_short + (s.type === 'win' ? ' (ganha)' : s.type === 'loss' ? ' (perdida)' : '');
+    stageSelect.appendChild(opt);
+  });
+  (function populateAreaFilter() {
+    const counts = {};
+    opportunities.forEach(o => {
+      const v = (o.additional_values && o.additional_values.opportunities && o.additional_values.opportunities.area_do_direito_principal || '').trim();
+      if (v) counts[v] = (counts[v] || 0) + 1;
+    });
+    Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(v => {
+      const opt = document.createElement('option');
+      opt.value = v; opt.textContent = `${v} (${counts[v]})`;
+      areaSelect.appendChild(opt);
+    });
+  })();
+
+  periodSelect.addEventListener('change', () => {
+    const isCustom = periodSelect.value === 'custom';
+    startWrap.classList.toggle('hidden', !isCustom);
+    endWrap.classList.toggle('hidden', !isCustom);
+    if (isCustom && !startInput.value) {
+      const oppDates = opportunities.map(o => parseDate(o.added_in)).filter(Boolean);
+      if (oppDates.length) {
+        startInput.value = toDateInputValue(new Date(Math.min(...oppDates)));
+        endInput.value = toDateInputValue(new Date(Math.max(...oppDates)));
+      }
+    }
+    tasksPage = 0; notesPage = 0; render();
+  });
+
+  document.getElementById('clear-filters').addEventListener('click', () => {
+    periodSelect.value = 'all';
+    startWrap.classList.add('hidden'); endWrap.classList.add('hidden');
+    userSelect.value = ''; stageSelect.value = ''; areaSelect.value = ''; searchInput.value = '';
+    tasksPage = 0; notesPage = 0; render();
+  });
+
+  [startInput, endInput, userSelect, stageSelect, areaSelect].forEach(el =>
+    el.addEventListener('change', () => { tasksPage = 0; notesPage = 0; render(); }));
+  searchInput.addEventListener('input', () => { tasksPage = 0; notesPage = 0; render(); });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+
+  function getFilters() {
+    let start = null, end = null;
+    const p = periodSelect.value;
+    if (p === 'custom') {
+      start = startInput.value ? new Date(startInput.value + 'T00:00:00') : null;
+      end = endInput.value ? new Date(endInput.value + 'T23:59:59') : null;
+    } else if (p !== 'all') {
+      const days = parseInt(p, 10);
+      start = new Date(NOW.getTime() - days * 86400000);
+      end = NOW;
+    }
+    return {
+      start, end,
+      userId: userSelect.value,
+      stageId: stageSelect.value,
+      area: areaSelect.value,
+      search: searchInput.value.trim().toLowerCase(),
+      periodLabel: periodSelect.options[periodSelect.selectedIndex].textContent
+    };
+  }
+
+  function inPeriod(dateStr, start, end) {
+    const d = parseDate(dateStr);
+    if (!d) return false;
+    if (start && d < start) return false;
+    if (end && d > end) return false;
+    return true;
+  }
+
+  function oppArea(o) {
+    return (o.additional_values && o.additional_values.opportunities && o.additional_values.opportunities.area_do_direito_principal || '').trim();
+  }
+  function oppOrigin(o) {
+    return (o.additional_values && o.additional_values.opportunities && o.additional_values.opportunities.origem_da_oportunidade || '').trim();
+  }
+  function oppOrg(o) { return orgsById[o.organization_id]; }
+  function oppUF(o) { const org = oppOrg(o); return org && org.additional_values && org.additional_values.uf ? org.additional_values.uf.trim() : ''; }
+  function oppSegmento(o) { const org = oppOrg(o); return org && org.additional_values && org.additional_values.segmento ? org.additional_values.segmento.trim() : ''; }
+  function oppHistory(o) { return (o.history || '').trim(); }
+
+  // opts: { skipStage, skipArea, skipPeriod }
+  function matchesCommon(o, f, opts) {
+    opts = opts || {};
+    if (!opts.skipPeriod && !inPeriod(o.added_in, f.start, f.end)) return false;
+    if (f.userId && String(o.user_id) !== String(f.userId)) return false;
+    if (!opts.skipStage && f.stageId && String(o.stage_id) !== String(f.stageId)) return false;
+    if (!opts.skipArea && f.area && oppArea(o) !== f.area) return false;
+    return true;
+  }
+
+  function filteredOpportunities(f) { return opportunities.filter(o => matchesCommon(o, f)); }
+
+  function filteredTasks(f) {
+    return tasks.filter(t => {
+      if (!inPeriod(t.event_time || t.added_in, f.start, f.end)) return false;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return false;
+      if (f.search) {
+        const hay = ((t.description || '') + ' ' + (t.type_title || '') + ' ' +
+          (t.opportunities && t.opportunities.title || '') + ' ' +
+          (t.organizations && t.organizations.name || '') + ' ' +
+          (t.persons && t.persons.name || '')).toLowerCase();
+        if (!hay.includes(f.search)) return false;
+      }
+      return true;
+    });
+  }
+
+  function filteredNotes(f) {
+    return opportunities.filter(o => {
+      const hist = oppHistory(o);
+      if (!hist) return false;
+      if (!matchesCommon(o, f)) return false;
+      if (f.search) {
+        const hay = (o.title + ' ' + (o.organizations && o.organizations.name || '') + ' ' + hist).toLowerCase();
+        if (!hay.includes(f.search)) return false;
+      }
+      return true;
+    });
+  }
+
+  // ================= table-view toggle =================
+  document.querySelectorAll('.table-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.target;
+      const chartWrap = document.getElementById(key + '-chart-wrap');
+      const tableWrap = document.getElementById(key + '-table');
+      const showingTable = tableWrap.style.display === 'block';
+      tableWrap.style.display = showingTable ? 'none' : 'block';
+      chartWrap.style.display = showingTable ? 'block' : 'none';
+      btn.textContent = showingTable ? 'Ver tabela' : 'Ver gráfico';
+    });
+  });
+  function buildMiniTable(container, headers, rows) {
+    let html = '<table><thead><tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
+    rows.forEach(r => {
+      html += '<tr>' + r.map((c, i) => `<td class="${i === 0 ? '' : 'num'}">${c}</td>`).join('') + '</tr>';
+    });
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
+
+  // ================= chart instances =================
+  const chartInstances = {};
+  function destroyChart(id) { if (chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; } }
+
+  // Generic end-of-bar value label plugin (horizontal bars, single dataset, non-stacked).
+  const endLabelPlugin = {
+    id: 'endLabelPlugin',
+    afterDatasetsDraw(chart) {
+      if (!chart.config.__showEndLabels) return;
+      const { ctx } = chart;
+      const meta = chart.getDatasetMeta(0);
+      const ds = chart.data.datasets[0];
+      ctx.save();
+      ctx.font = '11.5px system-ui, -apple-system, sans-serif';
+      ctx.fillStyle = cssVar('--text-secondary') || '#666';
+      ctx.textBaseline = 'middle';
+      meta.data.forEach((bar, i) => {
+        const val = ds.data[i];
+        const label = fmtInt(val);
+        const w = ctx.measureText(label).width;
+        const x = bar.x + 6;
+        if (x + w < chart.chartArea.right - 2) {
+          ctx.textAlign = 'left';
+          ctx.fillText(label, x, bar.y);
+        } else {
+          ctx.textAlign = 'right';
+          ctx.fillStyle = '#fff';
+          ctx.fillText(label, bar.x - 6, bar.y);
+        }
+      });
+      ctx.restore();
+    }
+  };
+
+  function baseTooltip(c) {
+    return {
+      backgroundColor: c.surface,
+      titleColor: c.textSecondary,
+      bodyColor: c.textSecondary,
+      borderColor: c.grid,
+      borderWidth: 1,
+      padding: 10,
+      titleFont: { weight: '600', size: 12 },
+      bodyFont: { size: 12 },
+      boxPadding: 4
+    };
+  }
+
+  function horizontalBarChart(canvasId, labels, data, barColors, showEndLabels) {
+    const c = colors();
+    destroyChart(canvasId);
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    const cfg = {
+      type: 'bar',
+      data: { labels, datasets: [{ data, backgroundColor: barColors, borderRadius: 4, maxBarThickness: 20, categoryPercentage: 0.7 }] },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        layout: { padding: { right: 34 } },
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(baseTooltip(c), {
+            callbacks: { label: (ctx2) => ' ' + fmtInt(ctx2.parsed.x) }
+          })
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { precision: 0, color: c.textMuted }, grid: { color: c.grid, drawTicks: false } },
+          y: { grid: { display: false }, ticks: { color: c.textSecondary } }
+        }
+      },
+      plugins: [endLabelPlugin]
+    };
+    cfg.__showEndLabels = !!showEndLabels;
+    const chart = new Chart(ctx, cfg);
+    chart.config.__showEndLabels = !!showEndLabels;
+    chartInstances[canvasId] = chart;
+    return chart;
+  }
+
+  // ================= KPIs =================
+  function renderKPIs(f, oppsPeriod) {
+    document.getElementById('kpi-leads').textContent = fmtInt(oppsPeriod.length);
+
+    // conversion: opps whose stage is win/loss AND stage_last_change within period (closed in period)
+    const closed = opportunities.filter(o => {
+      const type = o.stages && o.stages.type;
+      if (type !== 'win' && type !== 'loss') return false;
+      if (!matchesCommon(o, f, { skipPeriod: true })) return false;
+      return inPeriod(o.stage_last_change, f.start, f.end);
+    });
+    const won = closed.filter(o => o.stages.type === 'win').length;
+    const lost = closed.length - won;
+    const winrateEl = document.getElementById('kpi-winrate');
+    const winrateCapEl = document.getElementById('kpi-winrate-cap');
+    if (closed.length === 0) {
+      winrateEl.textContent = '—';
+      winrateCapEl.textContent = 'sem fechamentos no período';
+    } else {
+      winrateEl.textContent = Math.round((won / closed.length) * 100) + '%';
+      winrateCapEl.textContent = `${won} ganhas / ${lost} perdidas`;
+    }
+
+    // open opportunities (snapshot, excludes Inativa), respects user/stage/area but not period
+    const openOpps = opportunities.filter(o =>
+      o.stages && o.stages.type === 'open' && String(o.stage_id) !== String(INATIVA_STAGE_ID) &&
+      matchesCommon(o, f, { skipPeriod: true }));
+    document.getElementById('kpi-open').textContent = fmtInt(openOpps.length);
+
+    // stale pipeline (snapshot, >90 days since stage_last_change)
+    const staleOpps = openOpps.filter(o => {
+      const d = parseDate(o.stage_last_change);
+      return d && daysBetween(NOW, d) > 90;
+    });
+    document.getElementById('kpi-stale').textContent = fmtInt(staleOpps.length);
+    document.getElementById('kpi-stale-cap').textContent = openOpps.length
+      ? `${Math.round(staleOpps.length / openOpps.length * 100)}% do pipeline aberto` : '';
+
+    // task KPIs (respect period on event_time + responsible)
+    const periodTasks = tasks.filter(t => {
+      if (!inPeriod(t.event_time || t.added_in, f.start, f.end)) return false;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return false;
+      return true;
+    });
+    const overdue = periodTasks.filter(t => t.concluded === 'N' && parseDate(t.event_time) && parseDate(t.event_time) < NOW);
+    const pending = periodTasks.filter(t => t.concluded === 'N');
+    document.getElementById('kpi-overdue').textContent = fmtInt(overdue.length);
+    document.getElementById('kpi-pending').textContent = fmtInt(pending.length);
+
+    // notes KPI (opportunities with a non-empty history/notes field, within the current filter)
+    const notesOpps = opportunities.filter(o => oppHistory(o) && matchesCommon(o, f));
+    document.getElementById('kpi-notes').textContent = fmtInt(notesOpps.length);
+    document.getElementById('kpi-notes-cap').textContent = oppsPeriod.length
+      ? `${Math.round(notesOpps.length / oppsPeriod.length * 100)}% das oportunidades no período` : 'no período selecionado';
+  }
+
+  // ================= recommendations =================
+  function computeRecommendations(f) {
+    const recs = [];
+
+    // 1. stale pipeline hygiene
+    const openOpps = opportunities.filter(o =>
+      o.stages && o.stages.type === 'open' && String(o.stage_id) !== String(INATIVA_STAGE_ID) &&
+      matchesCommon(o, f, { skipPeriod: true }));
+    const staleOpps = openOpps.filter(o => {
+      const d = parseDate(o.stage_last_change);
+      return d && daysBetween(NOW, d) > 90;
+    });
+    if (openOpps.length && staleOpps.length / openOpps.length >= 0.3) {
+      const pct = Math.round(staleOpps.length / openOpps.length * 100);
+      recs.push({
+        level: 'critical',
+        title: `Fazer uma triagem nas ${fmtInt(staleOpps.length)} oportunidades paradas há mais de 90 dias`,
+        detail: `Isso é ${pct}% do pipeline aberto (${fmtInt(openOpps.length)} no total) — boa parte veio de uma importação em massa e nunca foi trabalhada. Arquive (mova para "Inativa") as que não têm mais potencial e reengaje as prioritárias; sem essa limpeza, a taxa de conversão e o tamanho do pipeline aberto ficam distorcidos.`
+      });
+    }
+
+    // 2. overdue tasks — overall load and concentration by rep
+    const periodTasksAll = tasks.filter(t => {
+      if (!inPeriod(t.event_time || t.added_in, f.start, f.end)) return false;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return false;
+      return true;
+    });
+    const overdueAll = periodTasksAll.filter(t => t.concluded === 'N' && parseDate(t.event_time) && parseDate(t.event_time) < NOW);
+    const pendingAll = periodTasksAll.filter(t => t.concluded === 'N');
+    if (overdueAll.length && pendingAll.length && overdueAll.length / pendingAll.length >= 0.5) {
+      recs.push({
+        level: 'critical',
+        title: `Reduzir as ${fmtInt(overdueAll.length)} tarefas atrasadas antes de agendar mais`,
+        detail: `${Math.round(overdueAll.length / pendingAll.length * 100)}% das tarefas pendentes no período já estão atrasadas — sinal de sobrecarga ou falta de rotina de follow-up.`
+      });
+    }
+    if (!f.userId) {
+      const repOverdueCount = {};
+      overdueAll.forEach(t => {
+        const name = (usersById[t.user_id] || {}).name;
+        if (name) repOverdueCount[name] = (repOverdueCount[name] || 0) + 1;
+      });
+      const repEntries = Object.entries(repOverdueCount).sort((a, b) => b[1] - a[1]);
+      if (repEntries.length && overdueAll.length >= 10) {
+        const [topName, topCount] = repEntries[0];
+        const share = topCount / overdueAll.length;
+        if (share >= 0.35) {
+          recs.push({
+            level: 'warning',
+            title: `${topName} concentra ${Math.round(share * 100)}% das tarefas atrasadas da equipe`,
+            detail: `${fmtInt(topCount)} de ${fmtInt(overdueAll.length)} tarefas atrasadas no período são de ${topName} — vale revisar prioridades ou redistribuir parte da carteira.`
+          });
+        }
+      }
+    }
+
+    // 3. data completeness
+    const oppsForCompleteness = opportunities.filter(o => matchesCommon(o, f));
+    if (oppsForCompleteness.length >= 10) {
+      const fields = [
+        ['origem da oportunidade', oppOrigin],
+        ['área do direito', oppArea],
+        ['estado (UF)', oppUF],
+        ['segmento do cliente', oppSegmento]
+      ];
+      fields.forEach(([label, getter]) => {
+        const filled = oppsForCompleteness.filter(o => getter(o)).length;
+        const rate = filled / oppsForCompleteness.length;
+        if (rate < 0.5) {
+          recs.push({
+            level: 'info',
+            title: `Padronizar o preenchimento de "${label}"`,
+            detail: `Só ${Math.round(rate * 100)}% das oportunidades do filtro atual têm esse campo preenchido — cobrar isso na criação da oportunidade melhora a qualidade das análises de canal, prática e região.`
+          });
+        }
+      });
+    }
+
+    // 4. win rate gap by practice area (only areas with enough closed volume)
+    const closedForArea = opportunities.filter(o => {
+      const t = o.stages && o.stages.type;
+      return (t === 'win' || t === 'loss') && matchesCommon(o, f, { skipArea: true, skipPeriod: true });
+    });
+    const byArea = {};
+    closedForArea.forEach(o => {
+      const a = oppArea(o);
+      if (!a) return;
+      byArea[a] = byArea[a] || { won: 0, total: 0 };
+      byArea[a].total++;
+      if (o.stages.type === 'win') byArea[a].won++;
+    });
+    const areaRates = Object.entries(byArea).filter(([, v]) => v.total >= 5)
+      .map(([k, v]) => ({ name: k, rate: v.won / v.total, total: v.total, won: v.won }));
+    if (areaRates.length >= 2) {
+      areaRates.sort((a, b) => a.rate - b.rate);
+      const worst = areaRates[0], best = areaRates[areaRates.length - 1];
+      if (best.rate - worst.rate >= 0.3) {
+        recs.push({
+          level: 'info',
+          title: `"${best.name}" converte bem mais que "${worst.name}"`,
+          detail: `${Math.round(best.rate * 100)}% (${best.won}/${best.total} fechadas) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) — vale entender o que funciona em ${best.name} e testar em ${worst.name}.`
+        });
+      }
+    }
+
+    // 5. win rate gap by rep (only reps with enough closed volume)
+    if (!f.userId) {
+      const closedForRep = opportunities.filter(o => {
+        const t = o.stages && o.stages.type;
+        return (t === 'win' || t === 'loss') && matchesCommon(o, f, { skipPeriod: true });
+      });
+      const byRep = {};
+      closedForRep.forEach(o => {
+        const name = (usersById[o.user_id] || {}).name;
+        if (!name) return;
+        byRep[name] = byRep[name] || { won: 0, total: 0 };
+        byRep[name].total++;
+        if (o.stages.type === 'win') byRep[name].won++;
+      });
+      const repRates = Object.entries(byRep).filter(([, v]) => v.total >= 5)
+        .map(([k, v]) => ({ name: k, rate: v.won / v.total, total: v.total, won: v.won }));
+      if (repRates.length >= 2) {
+        repRates.sort((a, b) => a.rate - b.rate);
+        const worst = repRates[0], best = repRates[repRates.length - 1];
+        if (best.rate - worst.rate >= 0.3) {
+          recs.push({
+            level: 'info',
+            title: `Gap de conversão entre ${best.name} e ${worst.name}`,
+            detail: `${best.name} converte ${Math.round(best.rate * 100)}% (${best.won}/${best.total}) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) de ${worst.name} — pode valer compartilhar a abordagem que está funcionando melhor.`
+          });
+        }
+      }
+    }
+
+    // 6. lead velocity trend (last 30 days vs prior 30 days) — only meaningful with no custom period narrower than that
+    const last30 = opportunities.filter(o => { const d = parseDate(o.added_in); if (!d) return false; const days = daysBetween(NOW, d); return days >= 0 && days <= 30; });
+    const prev30 = opportunities.filter(o => { const d = parseDate(o.added_in); if (!d) return false; const days = daysBetween(NOW, d); return days > 30 && days <= 60; });
+    if (prev30.length >= 5) {
+      const drop = (prev30.length - last30.length) / prev30.length;
+      if (drop >= 0.3) {
+        recs.push({
+          level: 'warning',
+          title: 'Geração de novos leads caiu nas últimas semanas',
+          detail: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores (queda de ${Math.round(drop * 100)}%) — vale reforçar prospecção.`
+        });
+      } else if (last30.length > prev30.length * 1.3) {
+        recs.push({
+          level: 'good',
+          title: 'Geração de novos leads acelerou',
+          detail: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores.`
+        });
+      }
+    }
+
+    // 7. meeting-logging gap (leads flowing in but almost no meetings logged)
+    const oppsForPipelineRec = opportunities.filter(o => matchesCommon(o, f));
+    const meetingCountForRec = meetingTasksFor(f).length;
+    if (oppsForPipelineRec.length >= 20 && meetingCountForRec / oppsForPipelineRec.length < 0.03) {
+      recs.push({
+        level: 'warning',
+        title: 'Poucas reuniões registradas via tarefa perto do volume de leads',
+        detail: `Só ${fmtInt(meetingCountForRec)} tarefas do tipo "Reunião Com" no período, contra ${fmtInt(oppsForPipelineRec.length)} leads — se reuniões estão acontecendo mas não sendo logadas como tarefa, o funil leads → reuniões → fechamentos fica invisível. Vale padronizar esse registro para medir a eficácia comercial de verdade.`
+      });
+    }
+
+    return recs;
+  }
+
+  function renderRecommendations(f) {
+    const recs = computeRecommendations(f);
+    const container = document.getElementById('recommendations-list');
+    container.innerHTML = '';
+    if (!recs.length) {
+      const div = document.createElement('div');
+      div.className = 'empty-state';
+      div.textContent = 'Nenhuma recomendação no momento — os indicadores estão dentro do esperado para o filtro atual.';
+      container.appendChild(div);
+      return;
+    }
+    const order = { critical: 0, warning: 1, good: 2, info: 3 };
+    recs.sort((a, b) => order[a.level] - order[b.level]);
+    recs.forEach(r => {
+      const item = document.createElement('div');
+      item.className = 'rec-item rec-' + r.level;
+      const dot = document.createElement('div'); dot.className = 'dot';
+      const text = document.createElement('div'); text.className = 'text';
+      const b = document.createElement('b'); b.textContent = r.title;
+      const sub = document.createElement('span'); sub.className = 'sub'; sub.textContent = r.detail;
+      text.append(b, sub);
+      item.append(dot, text);
+      container.appendChild(item);
+    });
+  }
+
+  // ================= leads -> meetings -> closings pipeline =================
+  function meetingTasksFor(f) {
+    return tasks.filter(t => {
+      if (!isMeetingTask(t)) return false;
+      if (!inPeriod(t.event_time || t.added_in, f.start, f.end)) return false;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return false;
+      return true;
+    });
+  }
+
+  function computePipelineFunnel(f, oppsPeriod) {
+    const meetingTasksInPeriod = meetingTasksFor(f);
+    const meetingOppIds = new Set();
+    let unlinkedCount = 0;
+    meetingTasksInPeriod.forEach(t => {
+      const opp = t.opportunity_id && String(t.opportunity_id) !== '0' ? oppsById[t.opportunity_id] : null;
+      if (!opp) { unlinkedCount++; return; }
+      if (f.stageId && String(opp.stage_id) !== String(f.stageId)) return;
+      if (f.area && oppArea(opp) !== f.area) return;
+      meetingOppIds.add(t.opportunity_id);
+    });
+
+    const closedWon = opportunities.filter(o => {
+      if (!(o.stages && o.stages.type === 'win')) return false;
+      if (!matchesCommon(o, f, { skipPeriod: true })) return false;
+      return inPeriod(o.stage_last_change, f.start, f.end);
+    });
+
+    // all-time cohort (ignores the period filter): of every opportunity that ever had a
+    // logged meeting, what share is won today? A period-scoped ratio of the two bars above
+    // would be misleading here (closings aren't necessarily a subset of this period's meetings).
+    const allTimeMeetingOppIds = new Set();
+    tasks.forEach(t => {
+      if (!isMeetingTask(t)) return;
+      if (!t.opportunity_id || String(t.opportunity_id) === '0') return;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return;
+      const opp = oppsById[t.opportunity_id];
+      if (!opp) return;
+      if (f.area && oppArea(opp) !== f.area) return;
+      allTimeMeetingOppIds.add(t.opportunity_id);
+    });
+    const allTimeMeetingWon = [...allTimeMeetingOppIds].filter(id => oppsById[id].stages && oppsById[id].stages.type === 'win').length;
+
+    return {
+      leads: oppsPeriod.length,
+      meetings: meetingOppIds.size,
+      closings: closedWon.length,
+      meetingTasksTotal: meetingTasksInPeriod.length,
+      meetingTasksUnlinked: unlinkedCount,
+      allTimeMeetingTotal: allTimeMeetingOppIds.size,
+      allTimeMeetingWon
+    };
+  }
+
+  function renderPipelineFunnel(f, oppsPeriod) {
+    const pipe = computePipelineFunnel(f, oppsPeriod);
+    const ramp = ordinalRamp(3);
+    const rows = [
+      { label: 'Novos leads', count: pipe.leads, color: ramp[0] },
+      { label: 'Reuniões marcadas', count: pipe.meetings, color: ramp[1] },
+      { label: 'Fechamentos (ganhas)', count: pipe.closings, color: ramp[2] }
+    ];
+    horizontalBarChart('chart-pipeline', rows.map(r => r.label), rows.map(r => r.count), rows.map(r => r.color), true);
+
+    const meetingShareOfLeads = rows[0].count ? Math.round(rows[1].count / rows[0].count * 100) + '% dos leads' : '—';
+    buildMiniTable(document.getElementById('pipeline-table'), ['Etapa', 'Quantidade', 'Taxa sobre leads'], [
+      [rows[0].label, fmtInt(rows[0].count), '—'],
+      [rows[1].label, fmtInt(rows[1].count), meetingShareOfLeads],
+      [rows[2].label, fmtInt(rows[2].count), rows[0].count ? Math.round(rows[2].count / rows[0].count * 100) + '% dos leads' : '—']
+    ]);
+
+    const cohortRate = pipe.allTimeMeetingTotal ? Math.round(pipe.allTimeMeetingWon / pipe.allTimeMeetingTotal * 100) : null;
+    let desc = `"Reuniões marcadas" conta oportunidades com ao menos uma tarefa do tipo "Reunião Com" agendada no período e vinculada a uma oportunidade (reuniões internas não entram). ${fmtInt(pipe.meetingTasksTotal)} tarefas de reunião no total do período`;
+    desc += pipe.meetingTasksUnlinked > 0 ? `, sendo ${fmtInt(pipe.meetingTasksUnlinked)} sem oportunidade vinculada (não contam no funil). ` : '. ';
+    if (cohortRate !== null) {
+      desc += `Olhando todo o histórico (não só o período): ${fmtInt(pipe.allTimeMeetingWon)} de ${fmtInt(pipe.allTimeMeetingTotal)} oportunidades que já tiveram reunião registrada (${cohortRate}%) estão ganhas hoje.`;
+    }
+    document.getElementById('pipeline-desc').textContent = desc;
+  }
+
+  function renderMeetingReps(f) {
+    const c = colors();
+    const meetingTasksInPeriod = meetingTasksFor(f);
+    const repIds = Object.keys(usersById);
+    const rows = repIds.map(id => ({
+      name: usersById[id].name,
+      count: meetingTasksInPeriod.filter(t => String(t.user_id) === String(id)).length
+    })).filter(r => r.count > 0).sort((a, b) => b.count - a.count);
+
+    horizontalBarChart('chart-meetingreps', rows.map(r => r.name), rows.map(r => r.count), rows.map(() => c.series1), true);
+    buildMiniTable(document.getElementById('meetingreps-table'), ['Responsável', 'Reuniões'], rows.map(r => [r.name, fmtInt(r.count)]));
+  }
+
+  // ================= funnel =================
+  function renderFunnel(f) {
+    const oppsForFunnel = opportunities.filter(o => matchesCommon(o, f, { skipStage: true }));
+    const openStages = stages.filter(s => s.type === 'open' && String(s.id) !== String(INATIVA_STAGE_ID));
+    const ramp = ordinalRamp(openStages.length);
+    const c = colors();
+
+    const rows = [];
+    openStages.forEach((s, i) => {
+      rows.push({ label: s.name_short, count: oppsForFunnel.filter(o => String(o.stage_id) === String(s.id)).length, color: ramp[i] });
+    });
+    const inativa = stages.find(s => String(s.id) === String(INATIVA_STAGE_ID));
+    if (inativa) rows.push({ label: inativa.name_short, count: oppsForFunnel.filter(o => String(o.stage_id) === String(inativa.id)).length, color: c.textMuted });
+    const winStage = stages.find(s => s.type === 'win');
+    const lossStage = stages.find(s => s.type === 'loss');
+    if (winStage) rows.push({ label: winStage.name_short, count: oppsForFunnel.filter(o => String(o.stage_id) === String(winStage.id)).length, color: c.good });
+    if (lossStage) rows.push({ label: lossStage.name_short, count: oppsForFunnel.filter(o => String(o.stage_id) === String(lossStage.id)).length, color: c.critical });
+
+    horizontalBarChart('chart-funnel', rows.map(r => r.label), rows.map(r => r.count), rows.map(r => r.color), true);
+    buildMiniTable(document.getElementById('funnel-table'), ['Etapa', 'Oportunidades'], rows.map(r => [r.label, fmtInt(r.count)]));
+  }
+
+  // ================= timeline =================
+  function renderTimeline(f, oppsPeriod) {
+    const c = colors();
+    destroyChart('chart-timeline');
+    const desc = document.getElementById('timeline-desc');
+    if (!oppsPeriod.length) {
+      const ctx = document.getElementById('chart-timeline').getContext('2d');
+      chartInstances['chart-timeline'] = new Chart(ctx, { type: 'line', data: { labels: [], datasets: [] }, options: { responsive: true, maintainAspectRatio: false } });
+      buildMiniTable(document.getElementById('timeline-table'), ['Período', 'Novas oportunidades'], []);
+      desc.textContent = 'Sem dados no período selecionado.';
+      return;
+    }
+    const dates = oppsPeriod.map(o => parseDate(o.added_in)).filter(Boolean);
+    const spanDays = (Math.max(...dates) - Math.min(...dates)) / 86400000;
+    const groupByWeek = spanDays > 60;
+    desc.textContent = groupByWeek ? 'Agrupado por semana' : 'Agrupado por dia';
+
+    function bucketKey(d) {
+      if (groupByWeek) {
+        const monday = new Date(d);
+        const day = (monday.getDay() + 6) % 7;
+        monday.setDate(monday.getDate() - day);
+        return toDateInputValue(monday);
+      }
+      return toDateInputValue(d);
+    }
+    const counts = {};
+    dates.forEach(d => { const k = bucketKey(d); counts[k] = (counts[k] || 0) + 1; });
+    const sortedKeys = Object.keys(counts).sort();
+
+    const ctx = document.getElementById('chart-timeline').getContext('2d');
+    chartInstances['chart-timeline'] = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: sortedKeys.map(k => new Date(k + 'T00:00:00').toLocaleDateString('pt-BR')),
+        datasets: [{
+          data: sortedKeys.map(k => counts[k]),
+          borderColor: c.series1, backgroundColor: c.series1 + '1a',
+          fill: true, tension: 0.25, pointRadius: 2, pointBackgroundColor: c.series1, borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(baseTooltip(c), { callbacks: { label: (ctx2) => ' ' + fmtInt(ctx2.parsed.y) + ' novas oportunidades' } })
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { precision: 0, color: c.textMuted }, grid: { color: c.grid } },
+          x: { ticks: { color: c.textMuted, maxRotation: 45, minRotation: 45 }, grid: { display: false } }
+        }
+      }
+    });
+    buildMiniTable(document.getElementById('timeline-table'), ['Período', 'Novas oportunidades'],
+      sortedKeys.map(k => [new Date(k + 'T00:00:00').toLocaleDateString('pt-BR'), fmtInt(counts[k])]));
+  }
+
+  // ================= rep performance (opportunities) =================
+  function renderRepPerformance(f) {
+    const c = colors();
+    const oppsForReps = opportunities.filter(o => matchesCommon(o, f));
+    const repIds = Object.keys(usersById);
+    const rows = repIds.map(id => {
+      const mine = oppsForReps.filter(o => String(o.user_id) === String(id));
+      const open = mine.filter(o => o.stages && o.stages.type === 'open').length;
+      const won = mine.filter(o => o.stages && o.stages.type === 'win').length;
+      const lost = mine.filter(o => o.stages && o.stages.type === 'loss').length;
+      return { name: usersById[id].name, open, won, lost, total: open + won + lost };
+    }).filter(r => r.total > 0).sort((a, b) => b.total - a.total);
+
+    destroyChart('chart-reps');
+    const ctx = document.getElementById('chart-reps').getContext('2d');
+    chartInstances['chart-reps'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: rows.map(r => r.name),
+        datasets: [
+          { label: 'Aberta', data: rows.map(r => r.open), backgroundColor: c.neutral, stack: 's', borderRadius: 3, maxBarThickness: 18 },
+          { label: 'Ganha', data: rows.map(r => r.won), backgroundColor: c.good, stack: 's', borderRadius: 3, maxBarThickness: 18 },
+          { label: 'Perdida', data: rows.map(r => r.lost), backgroundColor: c.critical, stack: 's', borderRadius: 3, maxBarThickness: 18 }
+        ]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(baseTooltip(c), { callbacks: { label: (ctx2) => ` ${ctx2.dataset.label}: ${fmtInt(ctx2.parsed.x)}` } })
+        },
+        scales: {
+          x: { stacked: true, beginAtZero: true, ticks: { precision: 0, color: c.textMuted }, grid: { color: c.grid } },
+          y: { stacked: true, grid: { display: false }, ticks: { color: c.textSecondary } }
+        }
+      }
+    });
+    buildMiniTable(document.getElementById('reps-table'), ['Responsável', 'Aberta', 'Ganha', 'Perdida', 'Taxa de conversão'],
+      rows.map(r => {
+        const closed = r.won + r.lost;
+        const rate = closed ? Math.round(r.won / closed * 100) + '%' : '—';
+        return [r.name, fmtInt(r.open), fmtInt(r.won), fmtInt(r.lost), rate];
+      }));
+  }
+
+  // ================= rep productivity (tasks) =================
+  function renderTaskReps(f) {
+    const c = colors();
+    const periodTasks = tasks.filter(t => inPeriod(t.event_time || t.added_in, f.start, f.end));
+    const repIds = Object.keys(usersById);
+    const rows = repIds.map(id => {
+      const mine = periodTasks.filter(t => String(t.user_id) === String(id));
+      const done = mine.filter(t => t.concluded === 'Y').length;
+      const overdue = mine.filter(t => t.concluded === 'N' && parseDate(t.event_time) && parseDate(t.event_time) < NOW).length;
+      const pending = mine.filter(t => t.concluded === 'N').length - overdue;
+      return { name: usersById[id].name, done, pending, overdue, total: done + pending + overdue };
+    }).filter(r => r.total > 0).sort((a, b) => b.total - a.total);
+
+    destroyChart('chart-taskreps');
+    const ctx = document.getElementById('chart-taskreps').getContext('2d');
+    chartInstances['chart-taskreps'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: rows.map(r => r.name),
+        datasets: [
+          { label: 'Concluída', data: rows.map(r => r.done), backgroundColor: c.good, stack: 's', borderRadius: 3, maxBarThickness: 18 },
+          { label: 'Pendente', data: rows.map(r => r.pending), backgroundColor: c.neutral, stack: 's', borderRadius: 3, maxBarThickness: 18 },
+          { label: 'Atrasada', data: rows.map(r => r.overdue), backgroundColor: c.critical, stack: 's', borderRadius: 3, maxBarThickness: 18 }
+        ]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(baseTooltip(c), { callbacks: { label: (ctx2) => ` ${ctx2.dataset.label}: ${fmtInt(ctx2.parsed.x)}` } })
+        },
+        scales: {
+          x: { stacked: true, beginAtZero: true, ticks: { precision: 0, color: c.textMuted }, grid: { color: c.grid } },
+          y: { stacked: true, grid: { display: false }, ticks: { color: c.textSecondary } }
+        }
+      }
+    });
+    buildMiniTable(document.getElementById('taskreps-table'), ['Responsável', 'Concluída', 'Pendente', 'Atrasada'],
+      rows.map(r => [r.name, fmtInt(r.done), fmtInt(r.pending), fmtInt(r.overdue)]));
+  }
+
+  // ================= lead profile (origem / área / uf / segmento) =================
+  function topNWithOther(counts, n) {
+    const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const top = entries.slice(0, n);
+    const restSum = entries.slice(n).reduce((s, e) => s + e[1], 0);
+    if (restSum > 0) top.push(['Outros', restSum]);
+    return top;
+  }
+
+  function renderProfileChart(canvasId, tableId, oppsPeriod, getterFn) {
+    const c = colors();
+    const counts = {};
+    let filled = 0;
+    oppsPeriod.forEach(o => {
+      const v = getterFn(o);
+      if (v) { counts[v] = (counts[v] || 0) + 1; filled++; }
+    });
+    const rows = topNWithOther(counts, 6);
+    horizontalBarChart(canvasId, rows.map(r => r[0]), rows.map(r => r[1]), rows.map(() => c.series1), true);
+    buildMiniTable(document.getElementById(tableId), ['Categoria', 'Oportunidades'], rows.map(r => [r[0], fmtInt(r[1])]));
+    return { filled, total: oppsPeriod.length };
+  }
+
+  function renderProfiles(f, oppsPeriod) {
+    const origin = renderProfileChart('chart-origem', 'origem-table', opportunities.filter(o => matchesCommon(o, f)), oppOrigin);
+    const area = renderProfileChart('chart-area', 'area-table', opportunities.filter(o => matchesCommon(o, f, { skipArea: true })), oppArea);
+    const uf = renderProfileChart('chart-uf', 'uf-table', opportunities.filter(o => matchesCommon(o, f)), oppUF);
+    const seg = renderProfileChart('chart-segmento', 'segmento-table', opportunities.filter(o => matchesCommon(o, f)), oppSegmento);
+    const pct = (x) => x.total ? Math.round(x.filled / x.total * 100) : 0;
+    document.getElementById('profile-desc').textContent =
+      `Origem, área do direito, estado e segmento — dados preenchidos em ${pct(origin)}% / ${pct(area)}% / ${pct(uf)}% / ${pct(seg)}% das oportunidades do filtro atual, respectivamente.`;
+  }
+
+  // ================= tasks table =================
+  const TASKS_PAGE_SIZE = 25;
+  let tasksPage = 0;
+
+  function renderTasksTable(taskList) {
+    const tbody = document.getElementById('tasks-tbody');
+    const emptyEl = document.getElementById('tasks-empty');
+    tbody.innerHTML = '';
+
+    if (!taskList.length) {
+      emptyEl.style.display = 'block';
+      document.getElementById('tasks-count').textContent = '0 tarefas';
+      document.getElementById('tasks-prev').disabled = true;
+      document.getElementById('tasks-next').disabled = true;
+      return;
+    }
+    emptyEl.style.display = 'none';
+
+    const sorted = taskList.slice().sort((a, b) => {
+      const da = parseDate(a.event_time || a.added_in) || new Date(0);
+      const db = parseDate(b.event_time || b.added_in) || new Date(0);
+      return db - da;
+    });
+
+    const maxPage = Math.max(0, Math.ceil(sorted.length / TASKS_PAGE_SIZE) - 1);
+    if (tasksPage > maxPage) tasksPage = maxPage;
+    const pageItems = sorted.slice(tasksPage * TASKS_PAGE_SIZE, (tasksPage + 1) * TASKS_PAGE_SIZE);
+
+    pageItems.forEach(t => {
+      const tr = document.createElement('tr');
+      const related = (t.opportunities && t.opportunities.title) ||
+        (t.organizations && t.organizations.name) ||
+        (t.persons && t.persons.name) || '–';
+      const userName = (usersById[t.user_id] || {}).name || '–';
+      const eventDate = parseDate(t.event_time);
+      const isOverdue = t.concluded === 'N' && eventDate && eventDate < NOW;
+      let statusBadge;
+      if (t.concluded === 'Y') statusBadge = '<span class="badge badge-done"><span class="dot"></span>concluída</span>';
+      else if (isOverdue) statusBadge = '<span class="badge badge-overdue"><span class="dot"></span>atrasada</span>';
+      else statusBadge = '<span class="badge badge-pending"><span class="dot"></span>pendente</span>';
+
+      const tdDate = document.createElement('td'); tdDate.textContent = fmtDateTime(t.event_time || t.added_in);
+      const tdType = document.createElement('td'); tdType.textContent = t.type_title || '–';
+      const tdDesc = document.createElement('td'); tdDesc.className = 'desc-cell'; tdDesc.textContent = t.description || '';
+      const tdUser = document.createElement('td'); tdUser.textContent = userName;
+      const tdRelated = document.createElement('td'); tdRelated.textContent = related;
+      const tdStatus = document.createElement('td'); tdStatus.innerHTML = statusBadge;
+      tr.append(tdDate, tdType, tdDesc, tdUser, tdRelated, tdStatus);
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('tasks-count').textContent =
+      `${fmtInt(sorted.length)} tarefas — página ${tasksPage + 1} de ${maxPage + 1}`;
+    document.getElementById('tasks-prev').disabled = tasksPage === 0;
+    document.getElementById('tasks-next').disabled = tasksPage === maxPage;
+  }
+
+  document.getElementById('tasks-prev').addEventListener('click', () => { if (tasksPage > 0) { tasksPage--; render(); } });
+  document.getElementById('tasks-next').addEventListener('click', () => { tasksPage++; render(); });
+
+  // ================= notes table =================
+  const NOTES_PAGE_SIZE = 15;
+  const NOTE_PREVIEW_LEN = 220;
+  let notesPage = 0;
+
+  function renderNotesTable(noteList) {
+    const tbody = document.getElementById('notes-tbody');
+    const emptyEl = document.getElementById('notes-empty');
+    tbody.innerHTML = '';
+
+    if (!noteList.length) {
+      emptyEl.style.display = 'block';
+      document.getElementById('notes-count').textContent = '0 notas';
+      document.getElementById('notes-prev').disabled = true;
+      document.getElementById('notes-next').disabled = true;
+      return;
+    }
+    emptyEl.style.display = 'none';
+
+    const sorted = noteList.slice().sort((a, b) => {
+      const da = parseDate(a.updated_in) || parseDate(a.added_in) || new Date(0);
+      const db = parseDate(b.updated_in) || parseDate(b.added_in) || new Date(0);
+      return db - da;
+    });
+
+    const maxPage = Math.max(0, Math.ceil(sorted.length / NOTES_PAGE_SIZE) - 1);
+    if (notesPage > maxPage) notesPage = maxPage;
+    const pageItems = sorted.slice(notesPage * NOTES_PAGE_SIZE, (notesPage + 1) * NOTES_PAGE_SIZE);
+
+    pageItems.forEach(o => {
+      const tr = document.createElement('tr');
+      const userName = (usersById[o.user_id] || {}).name || '–';
+      const orgName = (o.organizations && o.organizations.name) || '–';
+      const hist = oppHistory(o);
+      const isLong = hist.length > NOTE_PREVIEW_LEN;
+
+      const tdDate = document.createElement('td'); tdDate.textContent = fmtDateTime(o.updated_in || o.added_in);
+      const tdOpp = document.createElement('td'); tdOpp.textContent = o.title || '–';
+      const tdOrg = document.createElement('td'); tdOrg.textContent = orgName;
+      const tdUser = document.createElement('td'); tdUser.textContent = userName;
+
+      const tdNote = document.createElement('td'); tdNote.className = 'note-cell';
+      const preview = document.createElement('div'); preview.className = 'note-preview';
+      preview.textContent = isLong ? hist.slice(0, NOTE_PREVIEW_LEN) + '…' : hist;
+      tdNote.appendChild(preview);
+      if (isLong) {
+        const full = document.createElement('div'); full.className = 'note-full';
+        full.textContent = hist;
+        const toggle = document.createElement('button'); toggle.className = 'note-toggle'; toggle.type = 'button';
+        toggle.textContent = 'ver nota completa';
+        toggle.addEventListener('click', () => {
+          const showing = full.style.display === 'block';
+          full.style.display = showing ? 'none' : 'block';
+          toggle.textContent = showing ? 'ver nota completa' : 'ver menos';
+        });
+        tdNote.append(toggle, full);
+      }
+
+      tr.append(tdDate, tdOpp, tdOrg, tdUser, tdNote);
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('notes-count').textContent =
+      `${fmtInt(sorted.length)} notas — página ${notesPage + 1} de ${maxPage + 1}`;
+    document.getElementById('notes-prev').disabled = notesPage === 0;
+    document.getElementById('notes-next').disabled = notesPage === maxPage;
+  }
+
+  document.getElementById('notes-prev').addEventListener('click', () => { if (notesPage > 0) { notesPage--; render(); } });
+  document.getElementById('notes-next').addEventListener('click', () => { notesPage++; render(); });
+
+  // ================= main render =================
+  function render() {
+    const f = getFilters();
+    const oppsPeriod = filteredOpportunities(f);
+    const tasksInPeriod = filteredTasks(f);
+    const notesInPeriod = filteredNotes(f);
+
+    renderKPIs(f, oppsPeriod);
+    renderRecommendations(f);
+    renderPipelineFunnel(f, oppsPeriod);
+    renderMeetingReps(f);
+    renderFunnel(f);
+    renderTimeline(f, oppsPeriod);
+    renderRepPerformance(f);
+    renderTaskReps(f);
+    renderProfiles(f, oppsPeriod);
+    renderTasksTable(tasksInPeriod);
+    renderNotesTable(notesInPeriod);
+  }
+
+  render();
+})();
+</script>
+
+</body>
+</html>
