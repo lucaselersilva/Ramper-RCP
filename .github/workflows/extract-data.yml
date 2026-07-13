@@ -1,0 +1,32 @@
+name: Extract Ramper Data
+
+on:
+  schedule:
+    # Roda todo dia às 7h (UTC-3 = 10h Brasília)
+    - cron: '0 10 * * *'
+  workflow_dispatch:  # Permite rodar manualmente no GitHub
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Extract data from Ramper API
+        env:
+          RAMPER_API_TOKEN: ${{ secrets.RAMPER_API_TOKEN }}
+        run: python3 extract.py
+
+      - name: Commit and push data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update extracted Ramper data [skip ci]" && git push)
