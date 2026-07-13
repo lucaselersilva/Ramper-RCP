@@ -1,0 +1,268 @@
+[
+  {
+    "id": "1",
+    "pipe_id": "1",
+    "type": "win",
+    "name_short": "Ganha",
+    "order": "12",
+    "background": "#43b54b",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2017-06-30 11:38:03",
+    "updated_in": "2026-06-25 11:20:32",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Ganha"
+  },
+  {
+    "id": "2",
+    "pipe_id": "1",
+    "type": "loss",
+    "name_short": "Perdida",
+    "order": "13",
+    "background": "#e01d1d",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2017-06-30 11:38:03",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Perdida"
+  },
+  {
+    "id": "3",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Prospecção/Qualifi",
+    "order": "1",
+    "background": "#c8cacc",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2017-06-30 11:38:03",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Prospecção/Qualifi"
+  },
+  {
+    "id": "4",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Negociação",
+    "order": "3",
+    "background": "#1594d6",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2017-06-30 11:38:03",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Negociação"
+  },
+  {
+    "id": "5",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Contrato",
+    "order": "5",
+    "background": "#FFFF00",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2017-06-30 11:38:03",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Contrato"
+  },
+  {
+    "id": "7",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Reunião",
+    "order": "4",
+    "background": "#AA55FF",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2025-01-23 10:54:48",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Reunião"
+  },
+  {
+    "id": "8",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Proposta Comercial",
+    "order": "2",
+    "background": "#FF8000",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2025-01-23 10:55:07",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Proposta Comercial"
+  },
+  {
+    "id": "9",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Inativa",
+    "order": "14",
+    "background": "#CCC",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2025-04-04 16:44:41",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Inativa"
+  },
+  {
+    "id": "10",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "Possível Cotação",
+    "order": "6",
+    "background": "#FF55AA",
+    "color": "#FFF",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2025-10-21 11:29:30",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - Possível Cotação"
+  },
+  {
+    "id": "11",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "1 Lic. Análise",
+    "order": "7",
+    "background": "#EAD4BF",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2026-06-25 11:04:46",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - 1 Lic. Análise"
+  },
+  {
+    "id": "12",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "2 Lic. Proposta",
+    "order": "8",
+    "background": "#EAD4BF",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2026-06-25 11:15:26",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - 2 Lic. Proposta"
+  },
+  {
+    "id": "13",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "3 Lic. Habilitação",
+    "order": "9",
+    "background": "#EAD4BF",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2026-06-25 11:16:07",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - 3 Lic. Habilitação"
+  },
+  {
+    "id": "14",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "4 Lic. Homologação",
+    "order": "10",
+    "background": "#EAD4BF",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2026-06-25 11:16:53",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - 4 Lic. Homologação"
+  },
+  {
+    "id": "15",
+    "pipe_id": "1",
+    "type": "open",
+    "name_short": "5 Lic. Suspensa",
+    "order": "11",
+    "background": "#EAD4BF",
+    "color": "#000",
+    "icon": "",
+    "active": "Y",
+    "added_in": "2026-06-25 11:17:43",
+    "updated_in": "2026-06-25 11:20:33",
+    "pipes": {
+      "id": "1",
+      "name": "Funil padrão",
+      "name_short": "Funil Padrão"
+    },
+    "pipe_and_stage_name": "Funil Padrão - 5 Lic. Suspensa"
+  }
+]

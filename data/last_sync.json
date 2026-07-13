@@ -1,0 +1,14 @@
+{
+  "last_sync": "2026-07-13T20:28:01.367451-03:00",
+  "counts": {
+    "opportunities": 913,
+    "tasks": 901,
+    "organizations": 1019,
+    "persons": 1070,
+    "users": 9,
+    "stages": 14,
+    "pipes": 1
+  },
+  "errors": {},
+  "success": true
+}
