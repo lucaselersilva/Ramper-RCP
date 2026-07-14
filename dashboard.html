@@ -179,6 +179,14 @@
     white-space: nowrap;
   }
   .table-toggle:hover { background: var(--page); }
+  .csv-export-btn {
+    display: block; margin: 0 0 8px auto;
+    font-size: 11px; color: var(--series-1);
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    padding: 3px 8px; cursor: pointer; white-space: nowrap;
+  }
+  .csv-export-btn:hover { background: var(--page); }
+  .table-box-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
   .chart-wrap { position: relative; height: 270px; }
   .chart-wrap.tall { height: 320px; }
   .chart-mini-table { display: none; max-height: 300px; overflow: auto; }
@@ -363,6 +371,36 @@
 
   <section class="block">
     <div class="block-header">
+      <h2>Evolução mensal do pipeline</h2>
+      <div class="desc" id="monthly-desc">Como o funil se comportou mês a mês — separa a tendência recente do efeito da importação em massa de fev/2025.</div>
+    </div>
+    <div class="chart-grid cols-2">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Coortes por mês de entrada</h3><div class="desc">Situação hoje (aberta/ganha/perdida) dos leads que entraram em cada mês</div></div>
+          <button class="table-toggle" data-target="cohort">Ver tabela</button>
+        </div>
+        <div class="chart-wrap tall" id="cohort-chart-wrap"><canvas id="chart-cohort"></canvas></div>
+        <div class="chart-mini-table" id="cohort-table"></div>
+        <div class="legend-row">
+          <span><span class="dot" style="background:var(--neutral)"></span>Aberta</span>
+          <span><span class="dot" style="background:var(--good)"></span>Ganha</span>
+          <span><span class="dot" style="background:var(--critical)"></span>Perdida</span>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="table-box-head">
+          <h3>Comparativo mês a mês</h3>
+          <button class="csv-export-btn" id="monthly-export" type="button">Exportar CSV</button>
+        </div>
+        <div class="desc" style="margin-bottom:10px;">Novos leads, reuniões marcadas e fechamentos por mês (data do evento de cada um)</div>
+        <div class="table-scroll" id="monthly-table-wrap" style="max-height:320px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
       <h2>Funil de vendas</h2>
       <div class="desc">Distribuição das oportunidades por etapa (filtra por período e responsável). Ganhas e perdidas aparecem em destaque por serem o resultado final.</div>
     </div>
@@ -423,6 +461,27 @@
 
   <section class="block">
     <div class="block-header">
+      <h2>Cadência de resposta</h2>
+      <div class="desc">Tempo entre a criação do lead e a primeira tarefa registrada nele — mede a velocidade de reação do time, não só o volume.</div>
+    </div>
+    <div class="chart-grid cols-2b">
+      <div class="kpis" style="margin-bottom: 0;">
+        <div class="kpi"><div class="label">Mediana até o 1º contato</div><div class="value" id="cadence-median">–</div><div class="caption" id="cadence-median-cap"></div></div>
+        <div class="kpi tone-warning"><div class="label">Leads sem nenhuma tarefa registrada</div><div class="value" id="cadence-notask">–</div><div class="caption" id="cadence-notask-cap"></div></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div><h3>Mediana de dias até o 1º contato</h3><div class="desc">Por responsável, entre leads com ao menos 1 tarefa</div></div>
+          <button class="table-toggle" data-target="cadence">Ver tabela</button>
+        </div>
+        <div class="chart-wrap" id="cadence-chart-wrap"><canvas id="chart-cadence"></canvas></div>
+        <div class="chart-mini-table" id="cadence-table"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-header">
       <h2>Perfil dos leads</h2>
       <div class="desc" id="profile-desc">Origem, área do direito, estado e segmento — apenas oportunidades do período selecionado com o campo preenchido.</div>
     </div>
@@ -452,7 +511,42 @@
 
   <section class="block">
     <div class="table-box">
-      <h3>Tarefas</h3>
+      <div class="table-box-head">
+        <h3>Contas sem atividade recente</h3>
+        <button class="csv-export-btn" id="dormant-export" type="button">Exportar CSV</button>
+      </div>
+      <div class="subtitle" id="dormant-subtitle">Organizações com oportunidade aberta e sem nenhuma tarefa, nota ou mudança de etapa recente.</div>
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Organização</th>
+              <th>Responsável</th>
+              <th>Oportunidades abertas</th>
+              <th>Última atividade</th>
+              <th>Dias parado</th>
+            </tr>
+          </thead>
+          <tbody id="dormant-tbody"></tbody>
+        </table>
+        <div class="empty-state" id="dormant-empty" style="display:none;">Nenhuma conta parada com os filtros atuais.</div>
+      </div>
+      <div class="pagination">
+        <span id="dormant-count"></span>
+        <div>
+          <button id="dormant-prev">&laquo; Anterior</button>
+          <button id="dormant-next">Próxima &raquo;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="table-box">
+      <div class="table-box-head">
+        <h3>Tarefas</h3>
+        <button class="csv-export-btn" id="tasks-export" type="button">Exportar CSV</button>
+      </div>
       <div class="subtitle" id="tasks-subtitle">Filtradas por período (data do evento), responsável e busca de texto.</div>
       <div class="table-scroll">
         <table class="data-table">
@@ -482,7 +576,10 @@
 
   <section class="block">
     <div class="table-box">
-      <h3>Notas das oportunidades</h3>
+      <div class="table-box-head">
+        <h3>Notas das oportunidades</h3>
+        <button class="csv-export-btn" id="notes-export" type="button">Exportar CSV</button>
+      </div>
       <div class="subtitle">Histórico de interações registrado manualmente na oportunidade (fora do fluxo de tarefas agendadas) — filtrado por período, responsável, etapa, área e busca de texto.</div>
       <div class="table-scroll">
         <table class="data-table">
@@ -656,19 +753,19 @@
         endInput.value = toDateInputValue(new Date(Math.max(...oppDates)));
       }
     }
-    tasksPage = 0; notesPage = 0; render();
+    tasksPage = 0; notesPage = 0; dormantPage = 0; render();
   });
 
   document.getElementById('clear-filters').addEventListener('click', () => {
     periodSelect.value = 'all';
     startWrap.classList.add('hidden'); endWrap.classList.add('hidden');
     userSelect.value = ''; stageSelect.value = ''; areaSelect.value = ''; searchInput.value = '';
-    tasksPage = 0; notesPage = 0; render();
+    tasksPage = 0; notesPage = 0; dormantPage = 0; render();
   });
 
   [startInput, endInput, userSelect, stageSelect, areaSelect].forEach(el =>
-    el.addEventListener('change', () => { tasksPage = 0; notesPage = 0; render(); }));
-  searchInput.addEventListener('input', () => { tasksPage = 0; notesPage = 0; render(); });
+    el.addEventListener('change', () => { tasksPage = 0; notesPage = 0; dormantPage = 0; render(); }));
+  searchInput.addEventListener('input', () => { tasksPage = 0; notesPage = 0; dormantPage = 0; render(); });
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
 
@@ -764,13 +861,43 @@
       btn.textContent = showingTable ? 'Ver tabela' : 'Ver gráfico';
     });
   });
-  function buildMiniTable(container, headers, rows) {
-    let html = '<table><thead><tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
+  // ================= CSV export =================
+  function csvEscape(v) {
+    const s = String(v === undefined || v === null ? '' : v);
+    return /[",;\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }
+  function downloadCSV(filename, headers, rows) {
+    const lines = [headers.map(csvEscape).join(';')].concat(rows.map(r => r.map(csvEscape).join(';')));
+    const csv = '﻿' + lines.join('\r\n');
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  function buildMiniTable(container, headers, rows, filename) {
+    container.innerHTML = '';
+    if (filename) {
+      const btn = document.createElement('button');
+      btn.className = 'csv-export-btn'; btn.type = 'button'; btn.textContent = 'Exportar CSV';
+      btn.addEventListener('click', () => downloadCSV(filename, headers, rows));
+      container.appendChild(btn);
+    }
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const headRow = document.createElement('tr');
+    headers.forEach(h => { const th = document.createElement('th'); th.textContent = h; headRow.appendChild(th); });
+    thead.appendChild(headRow);
+    const tbody = document.createElement('tbody');
     rows.forEach(r => {
-      html += '<tr>' + r.map((c, i) => `<td class="${i === 0 ? '' : 'num'}">${c}</td>`).join('') + '</tr>';
+      const tr = document.createElement('tr');
+      r.forEach((c, i) => { const td = document.createElement('td'); if (i > 0) td.className = 'num'; td.textContent = c; tr.appendChild(td); });
+      tbody.appendChild(tr);
     });
-    html += '</tbody></table>';
-    container.innerHTML = html;
+    table.append(thead, tbody);
+    container.appendChild(table);
   }
 
   // ================= chart instances =================
@@ -1171,7 +1298,7 @@
       [rows[0].label, fmtInt(rows[0].count), '—'],
       [rows[1].label, fmtInt(rows[1].count), meetingShareOfLeads],
       [rows[2].label, fmtInt(rows[2].count), rows[0].count ? Math.round(rows[2].count / rows[0].count * 100) + '% dos leads' : '—']
-    ]);
+    ], 'pipeline_leads_reunioes_fechamentos.csv');
 
     const cohortRate = pipe.allTimeMeetingTotal ? Math.round(pipe.allTimeMeetingWon / pipe.allTimeMeetingTotal * 100) : null;
     let desc = `"Reuniões marcadas" conta oportunidades com ao menos uma tarefa do tipo "Reunião Com" agendada no período e vinculada a uma oportunidade (reuniões internas não entram). ${fmtInt(pipe.meetingTasksTotal)} tarefas de reunião no total do período`;
@@ -1192,8 +1319,157 @@
     })).filter(r => r.count > 0).sort((a, b) => b.count - a.count);
 
     horizontalBarChart('chart-meetingreps', rows.map(r => r.name), rows.map(r => r.count), rows.map(() => c.series1), true);
-    buildMiniTable(document.getElementById('meetingreps-table'), ['Responsável', 'Reuniões'], rows.map(r => [r.name, fmtInt(r.count)]));
+    buildMiniTable(document.getElementById('meetingreps-table'), ['Responsável', 'Reuniões'], rows.map(r => [r.name, fmtInt(r.count)]), 'reunioes_por_responsavel.csv');
   }
+
+  // ================= monthly evolution: cohorts + comparison =================
+  function monthKey(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0'); }
+  function monthLabel(key) {
+    const [y, m] = key.split('-');
+    return new Date(Number(y), Number(m) - 1, 1).toLocaleDateString('pt-BR', { month: 'short', year: '2-digit' });
+  }
+
+  function computeCohorts(f) {
+    const opps = opportunities.filter(o => matchesCommon(o, f, { skipStage: true }));
+    const byMonth = {};
+    opps.forEach(o => {
+      const d = parseDate(o.added_in);
+      if (!d) return;
+      const key = monthKey(d);
+      byMonth[key] = byMonth[key] || { open: 0, won: 0, lost: 0, total: 0 };
+      byMonth[key].total++;
+      const t = o.stages && o.stages.type;
+      if (t === 'win') byMonth[key].won++;
+      else if (t === 'loss') byMonth[key].lost++;
+      else byMonth[key].open++;
+    });
+    return Object.keys(byMonth).sort().map(key => Object.assign({ key }, byMonth[key]));
+  }
+
+  function renderCohortChart(f) {
+    const c = colors();
+    const cohorts = computeCohorts(f);
+    destroyChart('chart-cohort');
+    const ctx = document.getElementById('chart-cohort').getContext('2d');
+    chartInstances['chart-cohort'] = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: cohorts.map(x => monthLabel(x.key)),
+        datasets: [
+          { label: 'Aberta', data: cohorts.map(x => x.open), backgroundColor: c.neutral, stack: 's', borderRadius: 3, maxBarThickness: 26 },
+          { label: 'Ganha', data: cohorts.map(x => x.won), backgroundColor: c.good, stack: 's', borderRadius: 3, maxBarThickness: 26 },
+          { label: 'Perdida', data: cohorts.map(x => x.lost), backgroundColor: c.critical, stack: 's', borderRadius: 3, maxBarThickness: 26 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(baseTooltip(c), { callbacks: { label: (ctx2) => ` ${ctx2.dataset.label}: ${fmtInt(ctx2.parsed.y)}` } })
+        },
+        scales: {
+          x: { stacked: true, grid: { display: false }, ticks: { color: c.textSecondary, maxRotation: 45, minRotation: 45 } },
+          y: { stacked: true, beginAtZero: true, ticks: { precision: 0, color: c.textMuted }, grid: { color: c.grid } }
+        }
+      }
+    });
+
+    buildMiniTable(document.getElementById('cohort-table'), ['Mês', 'Leads', 'Aberta', 'Ganha', 'Perdida', 'Taxa de conversão'],
+      cohorts.map(x => {
+        const closed = x.won + x.lost;
+        const rate = closed ? Math.round(x.won / closed * 100) + '%' : '—';
+        return [monthLabel(x.key), fmtInt(x.total), fmtInt(x.open), fmtInt(x.won), fmtInt(x.lost), rate];
+      }), 'coortes_por_mes.csv');
+  }
+
+  function computeMonthlyComparison(f) {
+    const leadsOpps = opportunities.filter(o => matchesCommon(o, f, { skipStage: true }));
+    const leadsByMonth = {};
+    leadsOpps.forEach(o => {
+      const d = parseDate(o.added_in);
+      if (!d) return;
+      const key = monthKey(d);
+      leadsByMonth[key] = (leadsByMonth[key] || 0) + 1;
+    });
+
+    const meetingsByMonth = {};
+    tasks.forEach(t => {
+      if (!isMeetingTask(t)) return;
+      if (f.userId && String(t.user_id) !== String(f.userId)) return;
+      const d = parseDate(t.event_time || t.added_in);
+      if (!d) return;
+      const opp = t.opportunity_id && String(t.opportunity_id) !== '0' ? oppsById[t.opportunity_id] : null;
+      if (!opp) return;
+      if (f.area && oppArea(opp) !== f.area) return;
+      if (f.stageId && String(opp.stage_id) !== String(f.stageId)) return;
+      const key = monthKey(d);
+      meetingsByMonth[key] = meetingsByMonth[key] || new Set();
+      meetingsByMonth[key].add(t.opportunity_id);
+    });
+
+    const closingsByMonth = {};
+    opportunities.forEach(o => {
+      const t = o.stages && o.stages.type;
+      if (t !== 'win' && t !== 'loss') return;
+      if (!matchesCommon(o, f, { skipStage: true, skipPeriod: true })) return;
+      const d = parseDate(o.stage_last_change);
+      if (!d) return;
+      const key = monthKey(d);
+      closingsByMonth[key] = closingsByMonth[key] || { won: 0, lost: 0 };
+      if (t === 'win') closingsByMonth[key].won++; else closingsByMonth[key].lost++;
+    });
+
+    const allKeys = new Set([...Object.keys(leadsByMonth), ...Object.keys(meetingsByMonth), ...Object.keys(closingsByMonth)]);
+    let keys = [...allKeys].sort();
+    if (f.start || f.end) {
+      keys = keys.filter(k => {
+        const d = new Date(k + '-01T00:00:00');
+        if (f.start && d < new Date(f.start.getFullYear(), f.start.getMonth(), 1)) return false;
+        if (f.end && d > f.end) return false;
+        return true;
+      });
+    }
+
+    return keys.map(key => {
+      const leads = leadsByMonth[key] || 0;
+      const meetings = meetingsByMonth[key] ? meetingsByMonth[key].size : 0;
+      const won = (closingsByMonth[key] || {}).won || 0;
+      const lost = (closingsByMonth[key] || {}).lost || 0;
+      const rate = (won + lost) ? Math.round(won / (won + lost) * 100) + '%' : '—';
+      return { key, leads, meetings, won, lost, rate };
+    });
+  }
+
+  let lastMonthlyRows = [];
+
+  function renderMonthlyComparison(f) {
+    const rows = computeMonthlyComparison(f);
+    lastMonthlyRows = rows;
+    const wrap = document.getElementById('monthly-table-wrap');
+    wrap.innerHTML = '';
+    const table = document.createElement('table'); table.className = 'data-table';
+    const thead = document.createElement('thead');
+    const headRow = document.createElement('tr');
+    ['Mês', 'Novos leads', 'Reuniões', 'Fechamentos (ganhas)', 'Taxa de conversão'].forEach(h => {
+      const th = document.createElement('th'); th.textContent = h; headRow.appendChild(th);
+    });
+    thead.appendChild(headRow);
+    const tbody = document.createElement('tbody');
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      [monthLabel(r.key), fmtInt(r.leads), fmtInt(r.meetings), fmtInt(r.won), r.rate].forEach((val, i) => {
+        const td = document.createElement('td'); if (i > 0) td.className = 'num'; td.textContent = val; tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.append(thead, tbody);
+    wrap.appendChild(table);
+  }
+
+  document.getElementById('monthly-export').addEventListener('click', () => {
+    downloadCSV('comparativo_mensal.csv', ['Mês', 'Novos leads', 'Reuniões', 'Fechamentos (ganhas)', 'Taxa de conversão'],
+      lastMonthlyRows.map(r => [monthLabel(r.key), r.leads, r.meetings, r.won, r.rate]));
+  });
 
   // ================= funnel =================
   function renderFunnel(f) {
@@ -1214,7 +1490,7 @@
     if (lossStage) rows.push({ label: lossStage.name_short, count: oppsForFunnel.filter(o => String(o.stage_id) === String(lossStage.id)).length, color: c.critical });
 
     horizontalBarChart('chart-funnel', rows.map(r => r.label), rows.map(r => r.count), rows.map(r => r.color), true);
-    buildMiniTable(document.getElementById('funnel-table'), ['Etapa', 'Oportunidades'], rows.map(r => [r.label, fmtInt(r.count)]));
+    buildMiniTable(document.getElementById('funnel-table'), ['Etapa', 'Oportunidades'], rows.map(r => [r.label, fmtInt(r.count)]), 'funil_por_etapa.csv');
   }
 
   // ================= timeline =================
@@ -1271,7 +1547,7 @@
       }
     });
     buildMiniTable(document.getElementById('timeline-table'), ['Período', 'Novas oportunidades'],
-      sortedKeys.map(k => [new Date(k + 'T00:00:00').toLocaleDateString('pt-BR'), fmtInt(counts[k])]));
+      sortedKeys.map(k => [new Date(k + 'T00:00:00').toLocaleDateString('pt-BR'), fmtInt(counts[k])]), 'novas_oportunidades_no_tempo.csv');
   }
 
   // ================= rep performance (opportunities) =================
@@ -1316,7 +1592,7 @@
         const closed = r.won + r.lost;
         const rate = closed ? Math.round(r.won / closed * 100) + '%' : '—';
         return [r.name, fmtInt(r.open), fmtInt(r.won), fmtInt(r.lost), rate];
-      }));
+      }), 'oportunidades_por_responsavel.csv');
   }
 
   // ================= rep productivity (tasks) =================
@@ -1357,7 +1633,64 @@
       }
     });
     buildMiniTable(document.getElementById('taskreps-table'), ['Responsável', 'Concluída', 'Pendente', 'Atrasada'],
-      rows.map(r => [r.name, fmtInt(r.done), fmtInt(r.pending), fmtInt(r.overdue)]));
+      rows.map(r => [r.name, fmtInt(r.done), fmtInt(r.pending), fmtInt(r.overdue)]), 'tarefas_por_responsavel.csv');
+  }
+
+  // ================= response cadence (time to first task) =================
+  function median(arr) {
+    if (!arr.length) return null;
+    const s = arr.slice().sort((a, b) => a - b);
+    const mid = Math.floor(s.length / 2);
+    return s.length % 2 ? s[mid] : Math.round((s[mid - 1] + s[mid]) / 2);
+  }
+
+  function computeCadence(f) {
+    const opps = opportunities.filter(o => matchesCommon(o, f));
+
+    const firstTaskByOpp = {};
+    tasks.forEach(t => {
+      if (!t.opportunity_id || String(t.opportunity_id) === '0') return;
+      const d = parseDate(t.added_in);
+      if (!d) return;
+      const cur = firstTaskByOpp[t.opportunity_id];
+      if (!cur || d < cur) firstTaskByOpp[t.opportunity_id] = d;
+    });
+
+    let withTask = 0, noTask = 0;
+    const daysList = [];
+    const byRepDays = {};
+    opps.forEach(o => {
+      const created = parseDate(o.added_in);
+      const firstTask = firstTaskByOpp[o.id];
+      if (!created || !firstTask) { noTask++; return; }
+      withTask++;
+      const days = Math.max(0, daysBetween(firstTask, created));
+      daysList.push(days);
+      byRepDays[o.user_id] = byRepDays[o.user_id] || [];
+      byRepDays[o.user_id].push(days);
+    });
+
+    const repRows = Object.keys(byRepDays)
+      .map(id => ({ name: (usersById[id] || {}).name, median: median(byRepDays[id]), n: byRepDays[id].length }))
+      .filter(r => r.name)
+      .sort((a, b) => a.median - b.median);
+
+    return { overallMedian: median(daysList), withTask, noTask, total: opps.length, repRows };
+  }
+
+  function renderCadence(f) {
+    const c = colors();
+    const data = computeCadence(f);
+    document.getElementById('cadence-median').textContent = data.overallMedian === null ? '—' : fmtInt(data.overallMedian) + ' dias';
+    document.getElementById('cadence-median-cap').textContent = data.withTask
+      ? `mediana entre ${fmtInt(data.withTask)} leads com tarefa registrada` : 'sem leads com tarefa registrada no filtro atual';
+    document.getElementById('cadence-notask').textContent = fmtInt(data.noTask);
+    document.getElementById('cadence-notask-cap').textContent = data.total
+      ? `${Math.round(data.noTask / data.total * 100)}% dos ${fmtInt(data.total)} leads do filtro atual` : '';
+
+    horizontalBarChart('chart-cadence', data.repRows.map(r => r.name), data.repRows.map(r => r.median), data.repRows.map(() => c.series1), true);
+    buildMiniTable(document.getElementById('cadence-table'), ['Responsável', 'Mediana (dias)', 'Leads com tarefa'],
+      data.repRows.map(r => [r.name, fmtInt(r.median), fmtInt(r.n)]), 'cadencia_por_responsavel.csv');
   }
 
   // ================= lead profile (origem / área / uf / segmento) =================
@@ -1369,7 +1702,7 @@
     return top;
   }
 
-  function renderProfileChart(canvasId, tableId, oppsPeriod, getterFn) {
+  function renderProfileChart(canvasId, tableId, oppsPeriod, getterFn, filename) {
     const c = colors();
     const counts = {};
     let filled = 0;
@@ -1379,23 +1712,127 @@
     });
     const rows = topNWithOther(counts, 6);
     horizontalBarChart(canvasId, rows.map(r => r[0]), rows.map(r => r[1]), rows.map(() => c.series1), true);
-    buildMiniTable(document.getElementById(tableId), ['Categoria', 'Oportunidades'], rows.map(r => [r[0], fmtInt(r[1])]));
+    buildMiniTable(document.getElementById(tableId), ['Categoria', 'Oportunidades'], rows.map(r => [r[0], fmtInt(r[1])]), filename);
     return { filled, total: oppsPeriod.length };
   }
 
   function renderProfiles(f, oppsPeriod) {
-    const origin = renderProfileChart('chart-origem', 'origem-table', opportunities.filter(o => matchesCommon(o, f)), oppOrigin);
-    const area = renderProfileChart('chart-area', 'area-table', opportunities.filter(o => matchesCommon(o, f, { skipArea: true })), oppArea);
-    const uf = renderProfileChart('chart-uf', 'uf-table', opportunities.filter(o => matchesCommon(o, f)), oppUF);
-    const seg = renderProfileChart('chart-segmento', 'segmento-table', opportunities.filter(o => matchesCommon(o, f)), oppSegmento);
+    const origin = renderProfileChart('chart-origem', 'origem-table', opportunities.filter(o => matchesCommon(o, f)), oppOrigin, 'leads_por_origem.csv');
+    const area = renderProfileChart('chart-area', 'area-table', opportunities.filter(o => matchesCommon(o, f, { skipArea: true })), oppArea, 'leads_por_area_do_direito.csv');
+    const uf = renderProfileChart('chart-uf', 'uf-table', opportunities.filter(o => matchesCommon(o, f)), oppUF, 'leads_por_uf.csv');
+    const seg = renderProfileChart('chart-segmento', 'segmento-table', opportunities.filter(o => matchesCommon(o, f)), oppSegmento, 'leads_por_segmento.csv');
     const pct = (x) => x.total ? Math.round(x.filled / x.total * 100) : 0;
     document.getElementById('profile-desc').textContent =
       `Origem, área do direito, estado e segmento — dados preenchidos em ${pct(origin)}% / ${pct(area)}% / ${pct(uf)}% / ${pct(seg)}% das oportunidades do filtro atual, respectivamente.`;
   }
 
+  // ================= dormant accounts =================
+  const DORMANT_THRESHOLD_DAYS = 60;
+
+  function computeDormantAccounts(f) {
+    const orgMap = {};
+    opportunities.forEach(o => {
+      if (!(o.stages && o.stages.type === 'open') || String(o.stage_id) === String(INATIVA_STAGE_ID)) return;
+      if (!matchesCommon(o, f, { skipPeriod: true })) return;
+      const orgId = o.organization_id;
+      if (!orgId || orgId === '0') return;
+      const org = orgsById[orgId];
+      if (!org) return;
+      if (!orgMap[orgId]) orgMap[orgId] = { org, openOpps: [], lastActivity: null, repName: null };
+      orgMap[orgId].openOpps.push(o);
+      [o.added_in, o.stage_last_change, o.updated_in].forEach(ds => {
+        const d = parseDate(ds);
+        if (d && (!orgMap[orgId].lastActivity || d > orgMap[orgId].lastActivity)) orgMap[orgId].lastActivity = d;
+      });
+      if (!orgMap[orgId].repName) orgMap[orgId].repName = (usersById[o.user_id] || {}).name || '–';
+    });
+
+    const oppIdToOrgId = {};
+    Object.keys(orgMap).forEach(orgId => orgMap[orgId].openOpps.forEach(o => { oppIdToOrgId[o.id] = orgId; }));
+
+    tasks.forEach(t => {
+      let orgId = null;
+      if (t.organization_id && t.organization_id !== '0' && orgMap[t.organization_id]) orgId = t.organization_id;
+      else if (t.opportunity_id && oppIdToOrgId[t.opportunity_id]) orgId = oppIdToOrgId[t.opportunity_id];
+      if (!orgId) return;
+      const d = parseDate(t.event_time) || parseDate(t.added_in);
+      if (d && (!orgMap[orgId].lastActivity || d > orgMap[orgId].lastActivity)) orgMap[orgId].lastActivity = d;
+    });
+
+    return Object.values(orgMap)
+      .map(entry => ({
+        orgName: entry.org.name,
+        repName: entry.repName || '–',
+        openCount: entry.openOpps.length,
+        lastActivity: entry.lastActivity,
+        days: entry.lastActivity ? daysBetween(NOW, entry.lastActivity) : null
+      }))
+      .filter(r => r.days !== null && r.days > DORMANT_THRESHOLD_DAYS)
+      .sort((a, b) => b.days - a.days);
+  }
+
+  const DORMANT_PAGE_SIZE = 20;
+  let dormantPage = 0;
+  let lastDormantRows = [];
+
+  function renderDormantAccounts(f) {
+    const rows = computeDormantAccounts(f);
+    lastDormantRows = rows;
+    const tbody = document.getElementById('dormant-tbody');
+    const emptyEl = document.getElementById('dormant-empty');
+    tbody.innerHTML = '';
+    document.getElementById('dormant-subtitle').textContent =
+      `Organizações com oportunidade aberta e sem nenhuma tarefa, nota ou mudança de etapa há mais de ${DORMANT_THRESHOLD_DAYS} dias (respeita os filtros de responsável e área).`;
+
+    if (!rows.length) {
+      emptyEl.style.display = 'block';
+      document.getElementById('dormant-count').textContent = '0 contas';
+      document.getElementById('dormant-prev').disabled = true;
+      document.getElementById('dormant-next').disabled = true;
+      return;
+    }
+    emptyEl.style.display = 'none';
+
+    const maxPage = Math.max(0, Math.ceil(rows.length / DORMANT_PAGE_SIZE) - 1);
+    if (dormantPage > maxPage) dormantPage = maxPage;
+    const pageItems = rows.slice(dormantPage * DORMANT_PAGE_SIZE, (dormantPage + 1) * DORMANT_PAGE_SIZE);
+
+    pageItems.forEach(r => {
+      const tr = document.createElement('tr');
+      const tdOrg = document.createElement('td'); tdOrg.textContent = r.orgName;
+      const tdRep = document.createElement('td'); tdRep.textContent = r.repName;
+      const tdCount = document.createElement('td'); tdCount.textContent = fmtInt(r.openCount);
+      const tdDate = document.createElement('td'); tdDate.textContent = r.lastActivity.toLocaleDateString('pt-BR');
+      const tdDays = document.createElement('td'); tdDays.textContent = fmtInt(r.days);
+      tr.append(tdOrg, tdRep, tdCount, tdDate, tdDays);
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById('dormant-count').textContent =
+      `${fmtInt(rows.length)} contas — página ${dormantPage + 1} de ${maxPage + 1}`;
+    document.getElementById('dormant-prev').disabled = dormantPage === 0;
+    document.getElementById('dormant-next').disabled = dormantPage === maxPage;
+  }
+
+  document.getElementById('dormant-prev').addEventListener('click', () => { if (dormantPage > 0) { dormantPage--; render(); } });
+  document.getElementById('dormant-next').addEventListener('click', () => { dormantPage++; render(); });
+  document.getElementById('dormant-export').addEventListener('click', () => {
+    downloadCSV('contas_sem_atividade.csv', ['Organização', 'Responsável', 'Oportunidades abertas', 'Última atividade', 'Dias parado'],
+      lastDormantRows.map(r => [r.orgName, r.repName, r.openCount, r.lastActivity.toLocaleDateString('pt-BR'), r.days]));
+  });
+
   // ================= tasks table =================
   const TASKS_PAGE_SIZE = 25;
   let tasksPage = 0;
+
+  let lastTasksSorted = [];
+
+  function taskStatusLabel(t) {
+    const eventDate = parseDate(t.event_time);
+    if (t.concluded === 'Y') return 'concluída';
+    if (t.concluded === 'N' && eventDate && eventDate < NOW) return 'atrasada';
+    return 'pendente';
+  }
 
   function renderTasksTable(taskList) {
     const tbody = document.getElementById('tasks-tbody');
@@ -1403,6 +1840,7 @@
     tbody.innerHTML = '';
 
     if (!taskList.length) {
+      lastTasksSorted = [];
       emptyEl.style.display = 'block';
       document.getElementById('tasks-count').textContent = '0 tarefas';
       document.getElementById('tasks-prev').disabled = true;
@@ -1416,6 +1854,7 @@
       const db = parseDate(b.event_time || b.added_in) || new Date(0);
       return db - da;
     });
+    lastTasksSorted = sorted;
 
     const maxPage = Math.max(0, Math.ceil(sorted.length / TASKS_PAGE_SIZE) - 1);
     if (tasksPage > maxPage) tasksPage = maxPage;
@@ -1452,11 +1891,24 @@
 
   document.getElementById('tasks-prev').addEventListener('click', () => { if (tasksPage > 0) { tasksPage--; render(); } });
   document.getElementById('tasks-next').addEventListener('click', () => { tasksPage++; render(); });
+  document.getElementById('tasks-export').addEventListener('click', () => {
+    downloadCSV('tarefas.csv', ['Data', 'Tipo', 'Descrição', 'Responsável', 'Relacionado a', 'Status'],
+      lastTasksSorted.map(t => [
+        fmtDateTime(t.event_time || t.added_in),
+        t.type_title || '',
+        t.description || '',
+        (usersById[t.user_id] || {}).name || '',
+        (t.opportunities && t.opportunities.title) || (t.organizations && t.organizations.name) || (t.persons && t.persons.name) || '',
+        taskStatusLabel(t)
+      ]));
+  });
 
   // ================= notes table =================
   const NOTES_PAGE_SIZE = 15;
   const NOTE_PREVIEW_LEN = 220;
   let notesPage = 0;
+
+  let lastNotesSorted = [];
 
   function renderNotesTable(noteList) {
     const tbody = document.getElementById('notes-tbody');
@@ -1464,6 +1916,7 @@
     tbody.innerHTML = '';
 
     if (!noteList.length) {
+      lastNotesSorted = [];
       emptyEl.style.display = 'block';
       document.getElementById('notes-count').textContent = '0 notas';
       document.getElementById('notes-prev').disabled = true;
@@ -1477,6 +1930,7 @@
       const db = parseDate(b.updated_in) || parseDate(b.added_in) || new Date(0);
       return db - da;
     });
+    lastNotesSorted = sorted;
 
     const maxPage = Math.max(0, Math.ceil(sorted.length / NOTES_PAGE_SIZE) - 1);
     if (notesPage > maxPage) notesPage = maxPage;
@@ -1521,6 +1975,17 @@
     document.getElementById('notes-next').disabled = notesPage === maxPage;
   }
 
+  document.getElementById('notes-export').addEventListener('click', () => {
+    downloadCSV('notas.csv', ['Atualizado em', 'Oportunidade', 'Organização', 'Responsável', 'Nota'],
+      lastNotesSorted.map(o => [
+        fmtDateTime(o.updated_in || o.added_in),
+        o.title || '',
+        (o.organizations && o.organizations.name) || '',
+        (usersById[o.user_id] || {}).name || '',
+        oppHistory(o)
+      ]));
+  });
+
   document.getElementById('notes-prev').addEventListener('click', () => { if (notesPage > 0) { notesPage--; render(); } });
   document.getElementById('notes-next').addEventListener('click', () => { notesPage++; render(); });
 
@@ -1535,11 +2000,15 @@
     renderRecommendations(f);
     renderPipelineFunnel(f, oppsPeriod);
     renderMeetingReps(f);
+    renderCohortChart(f);
+    renderMonthlyComparison(f);
     renderFunnel(f);
     renderTimeline(f, oppsPeriod);
     renderRepPerformance(f);
     renderTaskReps(f);
+    renderCadence(f);
     renderProfiles(f, oppsPeriod);
+    renderDormantAccounts(f);
     renderTasksTable(tasksInPeriod);
     renderNotesTable(notesInPeriod);
   }

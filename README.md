@@ -122,12 +122,34 @@ e notas reagem aos filtros combinados.
   acima de 100%, já que nem todo fechamento passou por uma reunião logada
   como tarefa — ver a recomendação sobre isso). Também mostra reuniões por
   responsável.
+- **Evolução mensal do pipeline**: duas visões complementares por mês —
+  **coortes por mês de entrada** (o que aconteceu, até hoje, com os leads
+  que entraram em cada mês: quantos estão abertos, ganhos ou perdidos) e o
+  **comparativo mês a mês** (novos leads, reuniões e fechamentos lado a
+  lado). Serve para enxergar tendência sem o pico da importação de fev/2025
+  dominar a leitura.
 - **Funil de vendas**, **Performance da equipe**, **Perfil dos leads**:
   gráficos com botão "Ver tabela" para os números exatos.
+- **Cadência de resposta**: mediana de dias entre a criação do lead e a
+  primeira tarefa registrada nele, geral e por responsável, mais o % de
+  leads que nunca receberam nenhuma tarefa.
+- **Contas sem atividade recente**: organizações com oportunidade aberta
+  sem nenhuma tarefa, nota ou mudança de etapa há mais de 60 dias —
+  candidatas a "conta esquecida", separado do alerta de pipeline parado
+  (que olha por oportunidade, não por conta).
 - **Tarefas** e **Notas das oportunidades**: tabelas paginadas e filtráveis.
   "Notas" é o campo `history` da API — o histórico de interações registrado
   na oportunidade (e-mails, ligações etc.), separado do fluxo de tarefas
   agendadas.
+
+### Exportar para CSV
+
+Todo gráfico com botão "Ver tabela" e todas as tabelas principais (Tarefas,
+Notas, Contas sem atividade recente, Comparativo mês a mês) têm um botão
+"Exportar CSV" — gera o arquivo na hora, no navegador, com os dados já
+filtrados (a exportação das tabelas paginadas inclui todas as linhas do
+filtro atual, não só a página visível). O CSV usa `;` como separador e
+codificação UTF-8 com BOM, para abrir certo no Excel em português.
 
 ## 4. Por que existe `dashboard_data.js` além dos `.json`?
 
