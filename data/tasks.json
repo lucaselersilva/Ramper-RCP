@@ -4074,10 +4074,10 @@
       "entity_name": "Total Express"
     },
     "description": "Enviar outro e-mail Criada em : 03/04/2024",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2024-04-10 15:11:00",
     "added_in": "2024-04-03 00:00:00",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 16:03:00",
     "persons": {
       "id": "",
       "name": ""
@@ -4198,10 +4198,10 @@
       "entity_name": "CIMENTO TUPI"
     },
     "description": "FUP CIMENTO TUPO Criada em : 05/10/2023",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2024-05-06 14:10:00",
     "added_in": "2023-10-05 00:00:00",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 15:39:46",
     "persons": {
       "id": "",
       "name": ""
@@ -27634,10 +27634,10 @@
       "entity_name": "Total Express"
     },
     "description": "cobrar e mail",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-14 08:15:00",
     "added_in": "2026-07-10 10:24:17",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 16:02:56",
     "persons": {
       "id": "",
       "name": ""
@@ -27851,10 +27851,10 @@
       "entity_name": "Serabigold"
     },
     "description": "cobrar e mail.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-15 10:15:00",
     "added_in": "2026-07-13 12:40:29",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 15:46:05",
     "persons": {
       "id": "",
       "name": ""
@@ -28191,11 +28191,11 @@
       "entity_type": "opportunities",
       "entity_name": "ammo varejo"
     },
-    "description": "mensagem pra Ana Sitta, ver se ela ja me aceitou.",
+    "description": "mensagem pra Ana Sitta, ver se ela ja me aceitou.\n\nver com daniel vieira tambem se ele indica via linkedin",
     "concluded": "N",
     "event_time": "2026-07-24 08:30:00",
     "added_in": "2026-07-14 15:25:08",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 13:48:06",
     "persons": {
       "id": "",
       "name": ""
@@ -28393,6 +28393,409 @@
     "opportunities": {
       "id": "",
       "title": ""
+    }
+  },
+  {
+    "id": "923",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "512",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Serabigold"
+    },
+    "description": "tentar achar alguem",
+    "concluded": "N",
+    "event_time": "2026-07-29 08:00:00",
+    "added_in": "2026-07-15 13:13:44",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "512",
+      "title": "Serabigold"
+    }
+  },
+  {
+    "id": "924",
+    "type_id": "2",
+    "type_title": "Reunião Com",
+    "user_id": "17759",
+    "opportunity_id": "627",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Reunião Com",
+      "entity_type": "opportunities",
+      "entity_name": "Afya"
+    },
+    "description": "Reuniao com Ana.",
+    "concluded": "N",
+    "event_time": "2026-07-29 10:00:00",
+    "added_in": "2026-07-15 13:14:14",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "627",
+      "title": "Afya"
+    }
+  },
+  {
+    "id": "925",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "48",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "chg-meridian"
+    },
+    "description": "mensagem via linkedin.",
+    "concluded": "N",
+    "event_time": "2026-07-20 07:30:00",
+    "added_in": "2026-07-15 13:35:02",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "48",
+      "title": "chg-meridian"
+    }
+  },
+  {
+    "id": "926",
+    "type_id": "1",
+    "type_title": "Ligação",
+    "user_id": "17759",
+    "opportunity_id": "21",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Ligação",
+      "entity_type": "opportunities",
+      "entity_name": "Start QuAmica"
+    },
+    "description": "ligar para Ranier - ele estava no almoço",
+    "concluded": "Y",
+    "event_time": "2026-07-15 16:00:00",
+    "added_in": "2026-07-15 13:43:57",
+    "updated_in": "2026-07-15 16:18:33",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "21",
+      "title": "Start QuAmica"
+    }
+  },
+  {
+    "id": "927",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "49",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "SAPORE"
+    },
+    "description": "verificar retorno do e mail e do wpp .",
+    "concluded": "N",
+    "event_time": "2026-07-17 10:00:00",
+    "added_in": "2026-07-15 14:11:13",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "49",
+      "title": "SAPORE"
+    }
+  },
+  {
+    "id": "928",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "15157",
+    "opportunity_id": "281",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "LACTALIS"
+    },
+    "description": "",
+    "concluded": "N",
+    "event_time": "2026-07-14 10:30:00",
+    "added_in": "2026-07-15 15:31:12",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "281",
+      "title": "LACTALIS"
+    }
+  },
+  {
+    "id": "929",
+    "type_id": "1",
+    "type_title": "Ligação",
+    "user_id": "15173",
+    "opportunity_id": "586",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Ligação",
+      "entity_type": "opportunities",
+      "entity_name": "CIMENTO TUPI"
+    },
+    "description": "tENTAR AGENDAR APRESENTAÇÃO",
+    "concluded": "N",
+    "event_time": "2026-07-16 09:15:00",
+    "added_in": "2026-07-15 15:51:40",
+    "updated_in": "2026-07-15 16:11:28",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "586",
+      "title": "CIMENTO TUPI"
+    }
+  },
+  {
+    "id": "930",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "11",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Supermercado Rede Mania"
+    },
+    "description": "cobrar e mail.",
+    "concluded": "N",
+    "event_time": "2026-07-20 07:00:00",
+    "added_in": "2026-07-15 16:00:37",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "11",
+      "title": "Supermercado Rede Mania"
+    }
+  },
+  {
+    "id": "931",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "578",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "Total Express"
+    },
+    "description": "tentando estabelecer um contato via linkedin com a Aldrey.",
+    "concluded": "N",
+    "event_time": "2026-07-17 07:45:00",
+    "added_in": "2026-07-15 16:03:49",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "578",
+      "title": "Total Express"
+    }
+  },
+  {
+    "id": "932",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "21",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "Start QuAmica"
+    },
+    "description": "FUP - verse a situação mudou",
+    "concluded": "N",
+    "event_time": "2027-01-21 07:30:00",
+    "added_in": "2026-07-15 16:19:08",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "21",
+      "title": "Start QuAmica"
+    }
+  },
+  {
+    "id": "933",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "51",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "FORNAC"
+    },
+    "description": "verificar retorno do e mail e da mensagem de wpp que mandei pra central, pedidno direcionamento.",
+    "concluded": "N",
+    "event_time": "2026-07-17 07:00:00",
+    "added_in": "2026-07-15 17:43:14",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "51",
+      "title": "FORNAC"
+    }
+  },
+  {
+    "id": "934",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15157",
+    "opportunity_id": "545",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)"
+    },
+    "description": "checar se bid sera aberto",
+    "concluded": "N",
+    "event_time": "2026-07-30 10:00:00",
+    "added_in": "2026-07-15 18:29:27",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "545",
+      "title": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)"
+    }
+  },
+  {
+    "id": "935",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15173",
+    "opportunity_id": "545",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)"
+    },
+    "description": "checar bid",
+    "concluded": "N",
+    "event_time": "2026-07-31 10:00:00",
+    "added_in": "2026-07-15 18:29:47",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "545",
+      "title": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)"
     }
   }
 ]

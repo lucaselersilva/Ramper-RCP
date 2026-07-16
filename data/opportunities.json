@@ -549,20 +549,20 @@
   },
   {
     "id": "11",
-    "entity_type": "persons",
-    "title": "Wallef",
+    "entity_type": "organizations",
+    "title": "Supermercado Rede Mania",
     "created_user_id": "-13",
     "user_id": "17759",
-    "organization_id": "0",
-    "person_id": "11",
+    "organization_id": "1053",
+    "person_id": "0",
     "stage_id": "3",
     "stage_last_change": "2025-02-21 12:49:35",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "E mail enviado:\n\nWallef, boa tarde!\n\nMeu nome é Fernanda e faço parte da área comercial do RCP Advogados.\n\nGostaria de saber se a avaliação de novos escritórios parceiros passa por você. Caso sim, gostaria de verificar se podemos agendar uma breve conversa para apresentar o nosso trabalho.\n\nSe essa análise for realizada por outra área, você poderia, por gentileza, me indicar o contato responsável?\n\nEncaminho nossa apresentação institucional em anexo. \n\nAtenciosamente,",
     "loss_reason_id": "0",
     "added_in": "2025-02-21 15:49:35",
-    "updated_in": "2026-07-15 09:36:07",
+    "updated_in": "2026-07-15 16:00:37",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -572,14 +572,14 @@
       "pipe_name": "Funil padrão",
       "pipe_name_short": "Funil Padrão"
     },
-    "organizations": [],
-    "persons": {
-      "id": "11",
-      "name": "Wallef",
-      "email": "comprasviana@gmail.com",
-      "phone": "",
-      "address": ""
+    "organizations": {
+      "id": "1053",
+      "name": "Supermercado Rede Mania",
+      "address": "Rua Furquim Werneck, 843 - Tupi, Belo Horizonte - MG, 31840-050, Brazil",
+      "document": "",
+      "phone": ""
     },
+    "persons": [],
     "organizations_first_person": [],
     "additional_values": {
       "opportunities": {
@@ -606,10 +606,17 @@
         "gclid": "",
         "fbclid": ""
       },
-      "persons": {
-        "cargo": "",
-        "linkedin": "",
-        "telefone_completo": ""
+      "organizations": {
+        "site": "",
+        "segmento": "",
+        "porte_por_faturamento": "",
+        "uf": "",
+        "qtd_de_funcionarios": "",
+        "observacoes": "",
+        "linkedin_da_organizacao": "",
+        "capital_social": "",
+        "principais_clientes": "",
+        "projetos_estrategicos_em_andamento": ""
       }
     },
     "users": {
@@ -1443,10 +1450,10 @@
     "stage_last_change": "2025-02-21 12:50:32",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "contato estabelecido com Ranier, pediu nossa apresentação, mas disse que estão bem servidos com os escritorios parceiros telefone (34) 9 9971-7051",
     "loss_reason_id": "0",
     "added_in": "2025-02-21 15:50:32",
-    "updated_in": "2026-07-15 09:36:06",
+    "updated_in": "2026-07-15 16:19:08",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -1460,7 +1467,7 @@
       "id": "20",
       "name": "Start QuAmica",
       "address": "",
-      "document": "",
+      "document": "22685341000180",
       "phone": ""
     },
     "persons": [],
@@ -1468,11 +1475,11 @@
       "id": "21",
       "name": "Ranier",
       "email": "ranierdonizetinunes@gmail.com",
-      "phone": "3432926100ramal6106",
+      "phone": "(34) 3292-6100",
       "address": "",
-      "cargo": "Advogado",
+      "cargo": "Gestor Juridico",
       "linkedin": "",
-      "telefone_completo": "3432926100ramal6106"
+      "telefone_completo": "ramal - 6106"
     },
     "additional_values": {
       "opportunities": {
@@ -1500,13 +1507,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.startquimica.com.br/pt-BR",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/start-qu%C3%ADmica/people/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -3699,10 +3706,10 @@
     "stage_last_change": "2025-02-21 12:52:57",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Identifiquei o responsavel - Osmar - mas nao consegui o contato dele, conectei via linkedin.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 15:52:57",
-    "updated_in": "2026-07-15 09:36:05",
+    "updated_in": "2026-07-15 13:35:03",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -3714,9 +3721,9 @@
     },
     "organizations": {
       "id": "47",
-      "name": "chg-meridian",
+      "name": "CHG-Meridian no Brasil (CHG-MERIDIAN DO BRASIL ARRENDAMENTO MERCANTIL S.A.)",
       "address": "",
-      "document": "",
+      "document": "18539102000145",
       "phone": ""
     },
     "persons": [],
@@ -3728,6 +3735,16 @@
       "address": "",
       "cargo": "",
       "linkedin": "",
+      "telefone_completo": ""
+    },
+    "organizations_second_person": {
+      "id": "1081",
+      "name": "Osmar da Costa Junior",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "cargo": "head juridico",
+      "linkedin": "https://www.linkedin.com/in/osmar-da-costa-junior-5307804b/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -3756,7 +3773,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.chg-meridian.com/br-pt/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -3788,10 +3805,10 @@
     "stage_last_change": "2025-02-21 12:53:02",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "E mail e wpp enviados à meire - Gerente juridica do trabalhista",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 15:53:02",
-    "updated_in": "2026-07-15 09:36:04",
+    "updated_in": "2026-07-15 14:11:13",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -3810,23 +3827,13 @@
     },
     "persons": [],
     "organizations_first_person": {
-      "id": "48",
-      "name": "Daniel Vieira",
-      "email": "daniel.vieira@ammovarejo.com.br",
-      "phone": "",
-      "address": "",
-      "cargo": "",
-      "linkedin": "",
-      "telefone_completo": ""
-    },
-    "organizations_second_person": {
       "id": "80",
-      "name": "meire.alexandra@sapore.com.br",
+      "name": "Meire Guizzo",
       "email": "meire.alexandra@sapore.com.br",
-      "phone": "",
+      "phone": "19 99100-5707",
       "address": "",
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/meire-guizzo-8b8957190/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -3855,7 +3862,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://sapore.com.br/sapore-alimentacao-qualidade-operacoes-remotas/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -3887,10 +3894,10 @@
     "stage_last_change": "2025-02-21 12:53:06",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "e mail enviado, mas retornou, eles não tem linkedin.\n\nLucila, boa tarde! Tudo bem?\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nGostaria de verificar se a avaliação de novos escritórios parceiros passa por você. Caso positivo, gostaria de saber se conseguimos agendar uma breve conversa para apresentar o escritório. Se essa análise ficar com outra área, poderia, por gentileza, me indicar o contato responsável?\n\nAproveito para encaminhar nossa apresentação institucional em anexo. \n\nDesde já, agradeço pela atenção e fico à disposição.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 15:53:06",
-    "updated_in": "2026-07-15 09:36:03",
+    "updated_in": "2026-07-15 16:11:44",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -3902,9 +3909,9 @@
     },
     "organizations": {
       "id": "49",
-      "name": "cursos apientia",
+      "name": "Cursos Sapentia",
       "address": "",
-      "document": "",
+      "document": "16629350000151",
       "phone": ""
     },
     "persons": [],
@@ -3944,7 +3951,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.cursosapientia.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -3976,10 +3983,10 @@
     "stage_last_change": "2025-02-21 12:53:12",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "e mail enviado \n\nTiago, boa tarde! Tudo bem?\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nEncontrei seu contato e gostaria de verificar se a avaliação de novos escritórios parceiros passa por você. Caso faça sentido, teria disponibilidade para uma breve conversa de 20 minutos? Se essa demanda estiver com outra área, poderia, por gentileza, me indicar o contato responsável?\n\nAproveito para encaminhar nossa apresentação institucional em anexo. \n\nFico à disposição e agradeço pela atenção.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 15:53:12",
-    "updated_in": "2026-07-15 09:36:03",
+    "updated_in": "2026-07-15 17:43:14",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -3993,8 +4000,8 @@
       "id": "50",
       "name": "FORNAC",
       "address": "",
-      "document": "",
-      "phone": ""
+      "document": "08323559000164",
+      "phone": "11 94441 - 5965"
     },
     "persons": [],
     "organizations_first_person": {
@@ -4033,7 +4040,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.fonarc.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -4082,7 +4089,7 @@
       "id": "51",
       "name": "IMIC",
       "address": "",
-      "document": "",
+      "document": "18689125000217",
       "phone": ""
     },
     "persons": [],
@@ -4090,10 +4097,10 @@
       "id": "51",
       "name": "Sandra Silva",
       "email": "sandra.silva@imic.com.br",
-      "phone": "sandrasilvaaimiccombr",
+      "phone": "",
       "address": "",
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Vice Presidente",
+      "linkedin": "https://www.linkedin.com/in/sandra-silva-30b6b3158/",
       "telefone_completo": "sandrasilvaaimiccombr"
     },
     "organizations_second_person": {
@@ -4102,8 +4109,8 @@
       "email": "roque.bertuane@imic.com.br",
       "phone": "",
       "address": "",
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Administrativo e Finaceiro",
+      "linkedin": "https://www.linkedin.com/in/roquebertuane/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -4132,13 +4139,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://imic.com.br/en/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/imicbr/?originalSubdomain=br",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -6427,8 +6434,8 @@
       "email": "roque.bertuane@imic.com.br",
       "phone": "",
       "address": "",
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Administrativo e Finaceiro",
+      "linkedin": "https://www.linkedin.com/in/roquebertuane/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -22886,17 +22893,17 @@
     "entity_type": "organizations",
     "title": "LACTALIS",
     "created_user_id": "-13",
-    "user_id": "17759",
+    "user_id": "15157",
     "organization_id": "279",
     "person_id": "0",
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:13:43",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Emails enviados por Julio no passado sem retorno...Falei por whats em julh/24 pediu para mandr a apresentação mas não teve interesse em reunião...tentando por whats novamente",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:13:44",
-    "updated_in": "2026-07-15 09:33:19",
+    "updated_in": "2026-07-15 15:33:41",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -22918,7 +22925,7 @@
       "id": "263",
       "name": "alessandra.bianchi@lactalis.com.br",
       "email": "alessandra.bianchi@lactalis.com.br",
-      "phone": "",
+      "phone": "(11) 98873-9769",
       "address": "",
       "cargo": "",
       "linkedin": "",
@@ -22963,10 +22970,10 @@
       }
     },
     "users": {
-      "id": "17759",
-      "name": "Fernanda Orly",
-      "name_only": "Fernanda",
-      "name_short": "Fernanda O."
+      "id": "15157",
+      "name": "Rodrigo Pena",
+      "name_only": "Rodrigo",
+      "name_short": "Rodrigo P."
     },
     "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=281"
   },
@@ -23071,10 +23078,10 @@
     "stage_last_change": "2025-02-21 13:13:55",
     "value": "0.00",
     "close_in": "2023-10-19",
-    "history": "",
+    "history": "Tentando Samuel Mol (11)99305-7219 Gerente Senior de Relações Trabalhistas e Preventivo: deve cuidar de ações estratégicas, acho que fica em BH",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:13:55",
-    "updated_in": "2026-07-15 09:33:17",
+    "updated_in": "2026-07-15 15:23:02",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41814,10 +41821,10 @@
     "stage_last_change": "2025-02-21 13:34:33",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "tentei mandar e mail pro samir, mas voltou.\nnão localizei ele no linkedin, nem nenhuma pessoa da area juridica ou rh.\ntentei um email geral",
+    "history": "tentei mandar e mail pro samir, mas voltou.\nnão localizei ele no linkedin, nem nenhuma pessoa da area juridica ou rh.\ntentei um email geral\nPrezados, boa tarde!\n\nPassando apenas para reiterar o e-mail abaixo e verificar se tiveram a oportunidade de analisá-lo.\n\nCaso este não seja o canal responsável pela avaliação de novos escritórios parceiros, poderiam, por gentileza, encaminhá-lo ao setor competente ou me informar o contato mais adequado?\n\nPermaneço à disposição e agradeço desde já pela atenção.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:33",
-    "updated_in": "2026-07-15 09:30:49",
+    "updated_in": "2026-07-15 15:46:05",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -44121,7 +44128,7 @@
   {
     "id": "545",
     "entity_type": "organizations",
-    "title": "SEQUOIA LOG",
+    "title": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)",
     "created_user_id": "-13",
     "user_id": "15157",
     "organization_id": "543",
@@ -44129,11 +44136,11 @@
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:37:54",
     "value": "0.00",
-    "close_in": "2025-12-31",
-    "history": "",
+    "close_in": "2027-12-31",
+    "history": "Ata de Reunião – MOVE3 / Sequoia\n\nMOVE3 / Sequoia: Jessica Betarelli Vieira\nRCP Advogados: Rodrigo, Tiago e Fernanda\n\nPrincipais pontos discutidos\n\nA MOVE3/Sequoia informou que o grupo atravessa um importante processo de reestruturação financeira e operacional, voltado à reorganização das atividades e ao equacionamento de passivos, o que atualmente impõe algumas restrições internas.\n\nNo contexto da expansão de suas operações, foi destacado que o grupo realizou operações de M&A que culminaram na aquisição das empresas Flash Courier e Carriers, atualmente integradas à estrutura da companhia. Além da tradicional atuação em logística, o grupo passou a operar também no segmento de cartões e meios de pagamento.\n\nComo parte da reestruturação, houve uma redução aproximada de 1.000 colaboradores, cenário que contribuiu para um elevado volume de demandas trabalhistas.\n\nEstrutura jurídica e oportunidades\n\nJessica informou que o departamento jurídico também passa por um processo de reorganização e que a empresa pretende realizar, provavelmente em agosto, um processo de BID para reavaliar e substituir parte dos escritórios e fornecedores jurídicos atualmente contratados.\n\nFoi destacado que a empresa utiliza o sistema ProJuris como plataforma de gestão processual e busca parceiros que possuam:\n- experiência na utilização do ProJuris;\n- capacidade de integração operacional com o sistema;\n- conhecimento em eSocial e rotinas correlatas;\n- estrutura para atendimento de carteiras trabalhistas de grande volume.\n\nOutro ponto de atenção mencionado foi a existência de discussões relacionadas à pejotização, especialmente envolvendo a empresa Flash Courier. Trata-se de um tema sensível e estratégico para o grupo, representando uma oportunidade para demonstrarmos a experiência do RCP em consultoria preventiva e contencioso trabalhista.\n\nRCP: apresentação institucional, destacando:\n- experiência na gestão de carteiras estratégicas de contencioso;\n- atuação em grandes empresas e grupos empresariais;\n- expertise em processos de reestruturação de passivos;\n- utilização de tecnologia e indicadores de desempenho;\n- experiência com ProJuris, gestão operacional e integração de processos;\n- atuação consultiva e contenciosa em Direito do Trabalho, incluindo temas relacionados ao eSocial e novas relações de trabalho.\n\nPróximos passos\n- Encaminhar a apresentação institucional do RCP Advogados;\n- Enviar a documentação cadastral necessária para inclusão do escritório no processo de compras e homologação de fornecedores;\n- Manter acompanhamento do cronograma do BID previsto para agosto, preparando uma abordagem específica para as necessidades identificadas, especialmente nas áreas de contencioso trabalhista, eSocial, gestão via ProJuris e demandas envolvendo pejotização.\nTiago Câmara l RCP Advogados\n​jessica.betarelli@move3.com.br​\nRodrigo Pena | RCP Advogados;​\nComercial RCP Advogados​\n\nPrezada Dra. Jéssica, boa tarde\nGostaria de agradecer a reunião que realizamos hoje, a gentileza em compartilhar um pouco da sua experiência com a Cia, bem como os desafios conduzidos pelo departamento jurídico. Foi uma conversa produtiva e ficamos felizes em identificar oportunidades de sinergia entre as necessidades do grupo e a atuação do RCP.\nConforme conversamos, encaminho em anexo nossa documentação institucional para que, se possível, seja direcionada ao time de Compras, viabilizando o cadastramento do escritório (Apresentação Institucional, Cartão CNPJ e nosso Código de Ética e Conduta).\nA conversa reforçou a convicção de que podemos agregar valor ao Grupo, especialmente considerando nossa experiência na gestão de contencioso trabalhista de grande volume, utilização do ProJuris como plataforma de gestão processual, integração de fluxos operacionais, atuação em projetos relacionados ao eSocial e suporte jurídico em cenários de reestruturação empresarial. Da mesma forma, entendo que nossa experiência em temas envolvendo novas relações de trabalho, incluindo a discussão sobre pejotização, pode contribuir para a mitigação de riscos e para a construção de soluções alinhadas às necessidades do Grupo.\nPermanecemos à disposição para encaminhar qualquer documentação complementar necessária e esperamos ter a oportunidade de participar do BID previsto para os próximos meses.\nAgradeço novamente pela receptividade e fico à disposição para qualquer necessidade.\nAtenciosamente,",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:37:55",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-15 18:29:47",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -44145,48 +44152,38 @@
     },
     "organizations": {
       "id": "543",
-      "name": "SEQUOIA LOG",
-      "address": "",
-      "document": "",
+      "name": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)",
+      "address": "Alameda Rio Negro, nº 500, 6º andar, sala 601, Alphaville, Barueri/SP",
+      "document": "01599101000193",
       "phone": ""
     },
     "persons": [],
     "organizations_first_person": {
-      "id": "510",
-      "name": "SEQUOIA LOG",
-      "email": "",
-      "phone": "",
-      "address": "",
-      "cargo": "",
-      "linkedin": "",
-      "telefone_completo": ""
-    },
-    "organizations_second_person": {
       "id": "511",
-      "name": "JESSICA BETARELLI",
+      "name": "Jessica Betarelli Vieira",
       "email": "jessica.betarelli@sequoialog.com.br",
-      "phone": "1143918000",
+      "phone": "(11) 4391-8000",
       "address": "",
       "cargo": "Coordenador Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/jessica-betarelli-vieira-11bb1b194/",
       "telefone_completo": "1143918000"
     },
     "additional_values": {
       "opportunities": {
         "origem_da_oportunidade": "",
-        "area_do_direito_principal": "",
+        "area_do_direito_principal": "Trabalhista",
         "fonte": "Prospecção Ativa",
         "resp_interno_pela_captacao": "",
-        "status_oportunidade": "",
-        "ultimas_anotacoes": "",
+        "status_oportunidade": "Ativa",
+        "ultimas_anotacoes": "A abordagem prioritária deveria ser:\r\n\r\nGestão nacional do contencioso trabalhista, inclusive carteiras provenientes de desligamentos, terceirização, motoristas, agregados e responsabilidade subsidiária.\r\nContencioso cível e consumerista de logística, com política de acordos e tratamento de demandas por falha, atraso, avaria e extravio.\r\nControladoria jurídica e revisão de contingências, integrando dados processuais, financeiros e de provisão.\r\nTributário estratégico, principalmente acompanhamento da PGFN, ICMS, ISS, parcelamentos e aproveitamento de créditos.\r\nContratos, societário e reestruturação, apoiando as operações com credores, debêntures, alienação de ativos e reorganizações.",
         "produto": "",
-        "potenciais_demandas_consultivo": "",
-        "potenciais_demandas_contencioso": "",
-        "volume_de_processos_ativos": "",
-        "situacoes_de_risco_regulatoriofiscal": "",
-        "oportunidade_para_controladoria_juridica": "",
-        "interesse_nos_servicos_do_rcp": "",
-        "urgencia_em_demanda": "",
+        "potenciais_demandas_consultivo": "Cível, Contratos, Trabalhista",
+        "potenciais_demandas_contencioso": "Cível, Consumidor, Contratos, Trabalhista",
+        "volume_de_processos_ativos": "1121",
+        "situacoes_de_risco_regulatoriofiscal": "Trabalhista. Muito alto. Redução expressiva do quadro, milhares de desligamentos, 1.121 reclamações trabalhistas, pedidos de vínculo com motoristas e prestadores e discussões de responsabilidade subsidiária.\r\nFiscal federal. Alto, em fase de regularização. A transação com a PGFN reduziu substancialmente o passivo, mas exige cumprimento rigoroso de parcelas, obrigações correntes, desistência de processos e manutenção das condições negociadas.\r\nConsumidor e responsabilidade civil. Alto. As principais demandas cíveis decorrem de falhas de entrega, danos, avarias, extravios e alegações de inadimplemento contratual.",
+        "oportunidade_para_controladoria_juridica": "Sim",
+        "interesse_nos_servicos_do_rcp": "Médio",
+        "urgencia_em_demanda": "Médio Prazo",
         "escritorios_concorrentes": "",
         "utm_source": "",
         "utm_medium": "",
@@ -44197,15 +44194,15 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
-        "segmento": "",
-        "porte_por_faturamento": "",
-        "uf": "",
-        "qtd_de_funcionarios": "",
-        "observacoes": "",
-        "linkedin_da_organizacao": "",
-        "capital_social": "",
-        "principais_clientes": "",
+        "site": "https://ri.sequoialog.com.br/",
+        "segmento": "Logistica",
+        "porte_por_faturamento": "Entre R$501M a R$1B",
+        "uf": "SP",
+        "qtd_de_funcionarios": "Acima de 5000",
+        "observacoes": "Administrada principalmente pela Flash Courier, com cerca de 7 milhões de objetos bancários por mês, mais de 4 mil entregadores vinculados às franquias e cobertura de aproximadamente 1.559 cidade.\r\nLeopoldo de Bruggen e Silva — CEO, CFO e Diretor de Relações com Investidores",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/sequoialog/about/",
+        "capital_social": "1.430.000.000,00",
+        "principais_clientes": "A companhia não divulga nominalmente a carteira por razões comerciais. Informa atender mais de 150 bancos, fintechs e empresas de benefícios, incluindo os maiores bancos privados e fintechs do país. A página institucional declara atendimento a 8 dos 10 maiores operadores de e-commerce, embora essa referência possa refletir a estrutura anterior à saída do B2C",
         "projetos_estrategicos_em_andamento": ""
       }
     },
@@ -46416,10 +46413,10 @@
     "stage_last_change": "2025-02-21 13:41:27",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "Aldrey, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados. \n\nSomos um escritório full service, com forte experiência em contencioso estratégico e de volume, atendendo empresas em todo o território nacional. \n\nGostaria de verificar se vocês trabalham com escritórios parceiros. Caso sim, você teria disponibilidade para uma breve reunião de 20 minutos nos próximos dias para apresentarmos o RCP e entender um pouco mais das necessidades da Total Express?\n\nEncaminho anexa nossa apresentação institucional para que você possa conhecer um pouco da nossa atuação.\n\nFico à disposição e agradeço pela atenção.",
+    "history": "Aldrey, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados. \n\nSomos um escritório full service, com forte experiência em contencioso estratégico e de volume, atendendo empresas em todo o território nacional. \n\nGostaria de verificar se vocês trabalham com escritórios parceiros. Caso sim, você teria disponibilidade para uma breve reunião de 20 minutos nos próximos dias para apresentarmos o RCP e entender um pouco mais das necessidades da Total Express?\n\nEncaminho anexa nossa apresentação institucional para que você possa conhecer um pouco da nossa atuação.\n\nFico à disposição e agradeço pela atenção.\nTentando via linkedin, não retornou o e mail.\nela já me aceitou.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:41:27",
-    "updated_in": "2026-07-15 09:30:43",
+    "updated_in": "2026-07-15 16:03:49",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -46856,9 +46853,9 @@
   {
     "id": "586",
     "entity_type": "organizations",
-    "title": "LetAcia",
+    "title": "CIMENTO TUPI",
     "created_user_id": "-13",
-    "user_id": "15157",
+    "user_id": "15173",
     "organization_id": "583",
     "person_id": "0",
     "stage_id": "3",
@@ -46868,7 +46865,7 @@
     "history": "",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:42:11",
-    "updated_in": "2025-04-30 17:23:07",
+    "updated_in": "2026-07-15 15:51:40",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -46935,10 +46932,10 @@
       }
     },
     "users": {
-      "id": "15157",
-      "name": "Rodrigo Pena",
-      "name_only": "Rodrigo",
-      "name_short": "Rodrigo P."
+      "id": "15173",
+      "name": "Tiago Câmara",
+      "name_only": "Tiago",
+      "name_short": "Tiago C."
     },
     "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=586"
   },
@@ -49600,7 +49597,7 @@
     "history": "Kamila pediu para ligar semana que vem\n11/02 Olá Dr. Rodrigo, tudo bem? Boa noite. \nNesse momento não estamos contratando novos escritórios.\nO contato de vocês segue conosco para qualquer oportunidade.\nAbraços.\nFiz contato com a Izabela Nogueira - diretora de Expsansão da Afya. \n\nEla se disponibilizou em intermediar a reuniao com o responsável da área.\n\nPegou meu número e meu email.\ntentando contato com a Ana Guimaraes, da controladoria juridica.\nReuniao Marcada para 29/07/2026 ás 10:00.\n\ninvite enviado.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:46:00",
-    "updated_in": "2026-07-09 13:09:28",
+    "updated_in": "2026-07-15 13:14:14",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -50659,7 +50656,7 @@
     "history": "Localizei a responsavel - Ana Heloisa Sitta, mas nao encontrei nenhum contato dela.\n\nSolicitei amizade no linkedin.\nainda nao me aceitou no linkedin.\n\nacompanhar.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:47:22",
-    "updated_in": "2026-07-15 09:30:31",
+    "updated_in": "2026-07-15 13:48:06",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -50678,6 +50675,16 @@
     },
     "persons": [],
     "organizations_first_person": {
+      "id": "48",
+      "name": "Daniel Vieira",
+      "email": "daniel.vieira@ammovarejo.com.br",
+      "phone": "",
+      "address": "",
+      "cargo": "",
+      "linkedin": "",
+      "telefone_completo": ""
+    },
+    "organizations_second_person": {
       "id": "605",
       "name": "Ammo Varejo",
       "email": "",
@@ -50687,7 +50694,7 @@
       "linkedin": "",
       "telefone_completo": "1921022207"
     },
-    "organizations_second_person": {
+    "organizations_third_person": {
       "id": "606",
       "name": "Daniel Pezzo",
       "email": "danpv82@hotmail.com",
@@ -50695,16 +50702,6 @@
       "address": "",
       "cargo": "",
       "linkedin": "",
-      "telefone_completo": ""
-    },
-    "organizations_third_person": {
-      "id": "1058",
-      "name": "Ana Heloisa L. P. Sitta",
-      "email": "sitta.ana@ammovarejo.com.br",
-      "phone": "",
-      "address": "",
-      "cargo": "Gerente Juridico",
-      "linkedin": "https://www.linkedin.com/in/anaheloisalp/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -82775,5 +82772,85 @@
       "name_short": "Tiago C."
     },
     "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=1047"
+  },
+  {
+    "id": "1048",
+    "entity_type": "organizations",
+    "title": "Companhia de Saneamento de Minas Gerais (COPASA MG)",
+    "created_user_id": "15173",
+    "user_id": "15173",
+    "organization_id": "1055",
+    "person_id": "0",
+    "stage_id": "3",
+    "stage_last_change": "2026-07-15 18:43:46",
+    "value": "0.00",
+    "close_in": "2027-07-22",
+    "history": "",
+    "loss_reason_id": "0",
+    "added_in": "2026-07-15 18:43:46",
+    "updated_in": "0000-00-00 00:00:00",
+    "stages": {
+      "id": "3",
+      "name_short": "Prospecção/Qualifi",
+      "background": "#c8cacc",
+      "type": "open",
+      "pipe_id": "1",
+      "pipe_name": "Funil padrão",
+      "pipe_name_short": "Funil Padrão"
+    },
+    "organizations": {
+      "id": "1055",
+      "name": "Companhia de Saneamento de Minas Gerais (COPASA MG)",
+      "address": "Rua Mar de Espanha, 525 - Santo Antônio, Belo Horizonte - MG, Brasil",
+      "document": "17281106000103",
+      "phone": "(31) 99770-7000"
+    },
+    "persons": [],
+    "organizations_first_person": [],
+    "additional_values": {
+      "opportunities": {
+        "origem_da_oportunidade": "",
+        "area_do_direito_principal": "Trabalhista",
+        "fonte": "",
+        "resp_interno_pela_captacao": "",
+        "status_oportunidade": "Ativa",
+        "ultimas_anotacoes": "A abordagem inicial mais promissora é:\r\n- Regulatório, ambiental e infraestrutura, destacando experiência em utilities, contratos de concessão, gestão de passivos e grandes projetos.\r\n- Contencioso cível e consumerista de volume, com política de acordos, indicadores, controladoria jurídica e tratamento de demandas repetitivas.\r\n- Trabalhista empresarial, principalmente em razão da privatização, eventual reorganização interna, terceirização, segurança do trabalho e relações sindicais.\r\n- Societário, governança e compliance, para apoiar a integração pós-privatização e as exigências de companhia aberta.\r\n- Contratos, fundiário e desapropriações, relacionados às obras, redes, adutoras, estações e expansão do saneamento.",
+        "produto": "",
+        "potenciais_demandas_consultivo": "Ambiental, Cível, Contratos, Regulatório, Trabalhista",
+        "potenciais_demandas_contencioso": "Ambiental, Cível, Consumidor, Trabalhista, Regulatório",
+        "volume_de_processos_ativos": "7099",
+        "situacoes_de_risco_regulatoriofiscal": "Regulatório e tarifário. Muito alto. A receita depende de tarifas, revisões e reajustes regulados, cumprimento de indicadores, fiscalização e preservação do equilíbrio econômico-financeiro.\r\nConsumerista. Alto. Base de milhões de consumidores e elevada judicialização sobre cobrança, qualidade, continuidade e danos materiais ou morais.\r\nTrabalhista. Alto. Grande quadro de empregados, sindicatos, atividades operacionais de risco, trabalho em campo, terceirização e possível reorganização pós-privatização.",
+        "oportunidade_para_controladoria_juridica": "Sim",
+        "interesse_nos_servicos_do_rcp": "",
+        "urgencia_em_demanda": "",
+        "escritorios_concorrentes": "",
+        "utm_source": "",
+        "utm_medium": "",
+        "utm_campaign": "",
+        "utm_term": "",
+        "utm_content": "",
+        "gclid": "",
+        "fbclid": ""
+      },
+      "organizations": {
+        "site": "https://ri.copasa.com.br/",
+        "segmento": "Saneamento",
+        "porte_por_faturamento": "",
+        "uf": "MG",
+        "qtd_de_funcionarios": "Acima de 5000",
+        "observacoes": "Diretora-Presidente\tMarília Carvalho de Melo, eleita em 24 de dezembro de 2025.\r\nDiretor Financeiro e de Relações com Investidores\tAdriano Rudek de Moura.\r\nDiretor de Clientes, Comunicação e Sustentabilidade\tCleyson Jacomini de Sousa.\r\nDiretora de Operações\tLaura Petri Geraldino.\r\nDiretor de Engenharia e Meio Ambiente\tPablo Ferraço Andreão.\r\nPresidente do Conselho de Administração\tGustavo de Oliveira Barbosa, eleito em 30 de abril de 2026.\r\nVice-Presidente do Conselho\tMárcia Fragoso Soares.\r\nConselheiros identificados\tCarlos Alexandre Jorge da Costa, José Alvim Pereira, José Formoso Martinez, Marília Carvalho de Melo e Roberto Corrêa Barbuti.",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/aquitemcopasa/about/",
+        "capital_social": "",
+        "principais_clientes": "A base é pulverizada entre consumidores residenciais, comerciais, industriais e órgãos públicos dos municípios atendidos. Não se trata de uma companhia com poucos clientes corporativos nomináveis; seus principais clientes são as unidades consumidoras e os municípios titulares ou integrantes dos contratos de prestação dos serviços.",
+        "projetos_estrategicos_em_andamento": ""
+      }
+    },
+    "users": {
+      "id": "15173",
+      "name": "Tiago Câmara",
+      "name_only": "Tiago",
+      "name_short": "Tiago C."
+    },
+    "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=1048"
   }
 ]

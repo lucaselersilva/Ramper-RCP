@@ -686,21 +686,21 @@
     "created_user_id": "-13",
     "name": "Start QuAmica",
     "address": "",
-    "document": "",
+    "document": "22685341000180",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:50:29",
-    "updated_in": "2026-07-15 09:36:06",
+    "updated_in": "2026-07-15 13:38:40",
     "additional_values": {
-      "site": "",
+      "site": "https://www.startquimica.com.br/pt-BR",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/start-qu%C3%ADmica/people/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -710,7 +710,7 @@
         "id": "21",
         "name": "Ranier",
         "email": "ranierdonizetinunes@gmail.com",
-        "phone": "3432926100ramal6106",
+        "phone": "(34) 3292-6100",
         "address": ""
       }
     ],
@@ -1675,17 +1675,17 @@
     "id": "47",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "chg-meridian",
+    "name": "CHG-Meridian no Brasil (CHG-MERIDIAN DO BRASIL ARRENDAMENTO MERCANTIL S.A.)",
     "address": "",
-    "document": "",
+    "document": "18539102000145",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:52:54",
-    "updated_in": "2026-07-15 09:36:05",
+    "updated_in": "2026-07-15 13:24:09",
     "additional_values": {
-      "site": "",
+      "site": "https://www.chg-meridian.com/br-pt/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -1703,9 +1703,16 @@
         "email": "luiz.nali@chg-meridian.com",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1081",
+        "name": "Osmar da Costa Junior",
+        "email": "",
+        "phone": "",
+        "address": ""
       }
     ],
-    "persons_ids": "47"
+    "persons_ids": "47, 1081"
   },
   {
     "id": "48",
@@ -1719,9 +1726,9 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:53:01",
-    "updated_in": "2026-07-15 09:36:04",
+    "updated_in": "2026-07-15 13:47:22",
     "additional_values": {
-      "site": "",
+      "site": "https://sapore.com.br/sapore-alimentacao-qualidade-operacoes-remotas/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -1734,37 +1741,30 @@
     },
     "persons": [
       {
-        "id": "48",
-        "name": "Daniel Vieira",
-        "email": "daniel.vieira@ammovarejo.com.br",
-        "phone": "",
-        "address": ""
-      },
-      {
         "id": "80",
-        "name": "meire.alexandra@sapore.com.br",
+        "name": "Meire Guizzo",
         "email": "meire.alexandra@sapore.com.br",
-        "phone": "",
+        "phone": "19 99100-5707",
         "address": ""
       }
     ],
-    "persons_ids": "48, 80"
+    "persons_ids": "80"
   },
   {
     "id": "49",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "cursos apientia",
+    "name": "Cursos Sapentia",
     "address": "",
-    "document": "",
+    "document": "16629350000151",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:53:05",
-    "updated_in": "2026-07-15 09:36:04",
+    "updated_in": "2026-07-15 16:05:46",
     "additional_values": {
-      "site": "",
+      "site": "https://www.cursosapientia.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -1792,15 +1792,15 @@
     "created_user_id": "-13",
     "name": "FORNAC",
     "address": "",
-    "document": "",
-    "phone": "",
+    "document": "08323559000164",
+    "phone": "11 94441 - 5965",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:53:11",
-    "updated_in": "2026-07-15 09:36:03",
+    "updated_in": "2026-07-15 17:22:49",
     "additional_values": {
-      "site": "",
+      "site": "https://www.fonarc.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -1828,21 +1828,21 @@
     "created_user_id": "-13",
     "name": "IMIC",
     "address": "",
-    "document": "",
+    "document": "18689125000217",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:53:15",
-    "updated_in": "2026-07-15 09:36:02",
+    "updated_in": "2026-07-15 17:48:25",
     "additional_values": {
-      "site": "",
+      "site": "https://imic.com.br/en/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/imicbr/?originalSubdomain=br",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -1852,7 +1852,7 @@
         "id": "51",
         "name": "Sandra Silva",
         "email": "sandra.silva@imic.com.br",
-        "phone": "sandrasilvaaimiccombr",
+        "phone": "",
         "address": ""
       },
       {
@@ -3058,9 +3058,9 @@
     "persons": [
       {
         "id": "80",
-        "name": "meire.alexandra@sapore.com.br",
+        "name": "Meire Guizzo",
         "email": "meire.alexandra@sapore.com.br",
-        "phone": "",
+        "phone": "19 99100-5707",
         "address": ""
       }
     ],
@@ -10172,7 +10172,7 @@
   },
   {
     "id": "279",
-    "user_id": "17759",
+    "user_id": "15157",
     "created_user_id": "-13",
     "name": "LACTALIS",
     "address": "",
@@ -10182,7 +10182,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:13:41",
-    "updated_in": "2026-07-15 09:33:20",
+    "updated_in": "2026-07-15 15:31:20",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -10200,7 +10200,7 @@
         "id": "263",
         "name": "alessandra.bianchi@lactalis.com.br",
         "email": "alessandra.bianchi@lactalis.com.br",
-        "phone": "",
+        "phone": "(11) 98873-9769",
         "address": ""
       }
     ],
@@ -19841,44 +19841,37 @@
     "id": "543",
     "user_id": "15157",
     "created_user_id": "-13",
-    "name": "SEQUOIA LOG",
-    "address": "",
-    "document": "",
+    "name": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)",
+    "address": "Alameda Rio Negro, nº 500, 6º andar, sala 601, Alphaville, Barueri/SP",
+    "document": "01599101000193",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:37:52",
-    "updated_in": "2025-02-21 16:38:00",
+    "updated_in": "2026-07-15 18:24:32",
     "additional_values": {
-      "site": "",
-      "segmento": "",
-      "porte_por_faturamento": "",
-      "uf": "",
-      "qtd_de_funcionarios": "",
-      "observacoes": "",
-      "linkedin_da_organizacao": "",
-      "capital_social": "",
-      "principais_clientes": "",
+      "site": "https://ri.sequoialog.com.br/",
+      "segmento": "Logistica",
+      "porte_por_faturamento": "Entre R$501M a R$1B",
+      "uf": "SP",
+      "qtd_de_funcionarios": "Acima de 5000",
+      "observacoes": "Administrada principalmente pela Flash Courier, com cerca de 7 milhões de objetos bancários por mês, mais de 4 mil entregadores vinculados às franquias e cobertura de aproximadamente 1.559 cidade.\r\nLeopoldo de Bruggen e Silva — CEO, CFO e Diretor de Relações com Investidores",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/sequoialog/about/",
+      "capital_social": "1.430.000.000,00",
+      "principais_clientes": "A companhia não divulga nominalmente a carteira por razões comerciais. Informa atender mais de 150 bancos, fintechs e empresas de benefícios, incluindo os maiores bancos privados e fintechs do país. A página institucional declara atendimento a 8 dos 10 maiores operadores de e-commerce, embora essa referência possa refletir a estrutura anterior à saída do B2C",
       "projetos_estrategicos_em_andamento": ""
     },
     "persons": [
       {
-        "id": "510",
-        "name": "SEQUOIA LOG",
-        "email": "",
-        "phone": "",
-        "address": ""
-      },
-      {
         "id": "511",
-        "name": "JESSICA BETARELLI",
+        "name": "Jessica Betarelli Vieira",
         "email": "jessica.betarelli@sequoialog.com.br",
-        "phone": "1143918000",
+        "phone": "(11) 4391-8000",
         "address": ""
       }
     ],
-    "persons_ids": "510, 511"
+    "persons_ids": "511"
   },
   {
     "id": "544",
@@ -19908,9 +19901,9 @@
     "persons": [
       {
         "id": "511",
-        "name": "JESSICA BETARELLI",
+        "name": "Jessica Betarelli Vieira",
         "email": "jessica.betarelli@sequoialog.com.br",
-        "phone": "1143918000",
+        "phone": "(11) 4391-8000",
         "address": ""
       }
     ],
@@ -21069,7 +21062,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:41:25",
-    "updated_in": "2026-07-15 09:30:43",
+    "updated_in": "2026-07-15 16:03:01",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -21332,7 +21325,7 @@
   },
   {
     "id": "583",
-    "user_id": "15157",
+    "user_id": "15173",
     "created_user_id": "-13",
     "name": "CIMENTO TUPI",
     "address": "",
@@ -21342,7 +21335,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:42:09",
-    "updated_in": "2025-04-30 13:45:38",
+    "updated_in": "2026-07-15 15:39:46",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -23252,7 +23245,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:47:21",
-    "updated_in": "2026-07-15 09:30:31",
+    "updated_in": "2026-07-15 13:47:45",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -23266,6 +23259,13 @@
       "projetos_estrategicos_em_andamento": ""
     },
     "persons": [
+      {
+        "id": "48",
+        "name": "Daniel Vieira",
+        "email": "daniel.vieira@ammovarejo.com.br",
+        "phone": "",
+        "address": ""
+      },
       {
         "id": "605",
         "name": "Ammo Varejo",
@@ -23288,7 +23288,7 @@
         "address": ""
       }
     ],
-    "persons_ids": "605, 606, 1058"
+    "persons_ids": "48, 605, 606, 1058"
   },
   {
     "id": "636",
@@ -37983,6 +37983,134 @@
       "linkedin_da_organizacao": "",
       "capital_social": "",
       "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [],
+    "persons_ids": ""
+  },
+  {
+    "id": "1052",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Itaminas",
+    "address": "",
+    "document": "18752824000183",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-15 15:09:31",
+    "updated_in": "2026-07-15 15:10:22",
+    "additional_values": {
+      "site": "https://www.itaminas.com.br/",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/itaminasminerios/",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1082",
+        "name": "Pablo Lanna",
+        "email": "pablo.lanna@itaminas.com.br",
+        "phone": "31988941529",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1082"
+  },
+  {
+    "id": "1053",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Supermercado Rede Mania",
+    "address": "Rua Furquim Werneck, 843 - Tupi, Belo Horizonte - MG, 31840-050, Brazil",
+    "document": "",
+    "phone": "",
+    "avatar": "",
+    "lat": "-19.836821",
+    "lng": "-43.920807",
+    "added_in": "2026-07-15 15:49:20",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "site": "",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [],
+    "persons_ids": ""
+  },
+  {
+    "id": "1054",
+    "user_id": "0",
+    "created_user_id": "0",
+    "name": "Rede Mania Supermercados",
+    "address": "",
+    "document": "",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-15 15:56:37",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "site": "",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "11",
+        "name": "Wallef",
+        "email": "comprasviana@gmail.com",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "11"
+  },
+  {
+    "id": "1055",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Companhia de Saneamento de Minas Gerais (COPASA MG)",
+    "address": "Rua Mar de Espanha, 525 - Santo Antônio, Belo Horizonte - MG, Brasil",
+    "document": "17281106000103",
+    "phone": "(31) 99770-7000",
+    "avatar": "",
+    "lat": "-19.944700",
+    "lng": "-43.943829",
+    "added_in": "2026-07-15 18:38:21",
+    "updated_in": "2026-07-15 18:43:49",
+    "additional_values": {
+      "site": "https://ri.copasa.com.br/",
+      "segmento": "Saneamento",
+      "porte_por_faturamento": "",
+      "uf": "MG",
+      "qtd_de_funcionarios": "Acima de 5000",
+      "observacoes": "Diretora-Presidente\tMarília Carvalho de Melo, eleita em 24 de dezembro de 2025.\r\nDiretor Financeiro e de Relações com Investidores\tAdriano Rudek de Moura.\r\nDiretor de Clientes, Comunicação e Sustentabilidade\tCleyson Jacomini de Sousa.\r\nDiretora de Operações\tLaura Petri Geraldino.\r\nDiretor de Engenharia e Meio Ambiente\tPablo Ferraço Andreão.\r\nPresidente do Conselho de Administração\tGustavo de Oliveira Barbosa, eleito em 30 de abril de 2026.\r\nVice-Presidente do Conselho\tMárcia Fragoso Soares.\r\nConselheiros identificados\tCarlos Alexandre Jorge da Costa, José Alvim Pereira, José Formoso Martinez, Marília Carvalho de Melo e Roberto Corrêa Barbuti.",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/aquitemcopasa/about/",
+      "capital_social": "",
+      "principais_clientes": "A base é pulverizada entre consumidores residenciais, comerciais, industriais e órgãos públicos dos municípios atendidos. Não se trata de uma companhia com poucos clientes corporativos nomináveis; seus principais clientes são as unidades consumidoras e os municípios titulares ou integrantes dos contratos de prestação dos serviços.",
       "projetos_estrategicos_em_andamento": ""
     },
     "persons": [],

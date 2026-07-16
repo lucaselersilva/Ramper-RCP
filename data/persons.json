@@ -365,16 +365,16 @@
     "created_user_id": "-13",
     "name": "Ranier",
     "email": "ranierdonizetinunes@gmail.com",
-    "phone": "3432926100ramal6106",
+    "phone": "3432926100",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 15:50:28",
-    "updated_in": "2026-07-15 09:36:06",
+    "updated_in": "2026-07-15 13:43:24",
     "additional_values": {
-      "cargo": "Advogado",
+      "cargo": "Gestor Juridico",
       "linkedin": "",
-      "telefone_completo": "3432926100ramal6106"
+      "telefone_completo": "ramal - 6106"
     }
   },
   {
@@ -874,7 +874,7 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 15:53:04",
-    "updated_in": "2026-07-15 09:36:04",
+    "updated_in": "2026-07-15 16:11:00",
     "additional_values": {
       "cargo": "",
       "linkedin": "",
@@ -905,15 +905,15 @@
     "created_user_id": "-13",
     "name": "Sandra Silva",
     "email": "sandra.silva@imic.com.br",
-    "phone": "sandrasilvaaimiccombr",
+    "phone": "",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 15:53:15",
-    "updated_in": "2026-07-15 09:36:02",
+    "updated_in": "2026-07-15 17:52:11",
     "additional_values": {
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Vice Presidente",
+      "linkedin": "https://www.linkedin.com/in/sandra-silva-30b6b3158/",
       "telefone_completo": "sandrasilvaaimiccombr"
     }
   },
@@ -1342,10 +1342,10 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 15:55:20",
-    "updated_in": "2026-07-15 09:36:02",
+    "updated_in": "2026-07-15 17:49:28",
     "additional_values": {
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Administrativo e Finaceiro",
+      "linkedin": "https://www.linkedin.com/in/roquebertuane/",
       "telefone_completo": ""
     }
   },
@@ -1407,17 +1407,17 @@
     "id": "80",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "meire.alexandra@sapore.com.br",
+    "name": "Meire Guizzo",
     "email": "meire.alexandra@sapore.com.br",
-    "phone": "",
+    "phone": "19991005707",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 15:55:59",
-    "updated_in": "2026-07-15 09:36:05",
+    "updated_in": "2026-07-15 13:58:20",
     "additional_values": {
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/meire-guizzo-8b8957190/",
       "telefone_completo": ""
     }
   },
@@ -4699,16 +4699,16 @@
   },
   {
     "id": "263",
-    "user_id": "17759",
+    "user_id": "15157",
     "created_user_id": "-13",
     "name": "alessandra.bianchi@lactalis.com.br",
     "email": "alessandra.bianchi@lactalis.com.br",
-    "phone": "",
+    "phone": "11988739769",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:13:40",
-    "updated_in": "2026-07-15 09:33:20",
+    "updated_in": "2026-07-15 15:31:49",
     "additional_values": {
       "cargo": "",
       "linkedin": "",
@@ -9165,17 +9165,17 @@
     "id": "511",
     "user_id": "15157",
     "created_user_id": "-13",
-    "name": "JESSICA BETARELLI",
+    "name": "Jessica Betarelli Vieira",
     "email": "jessica.betarelli@sequoialog.com.br",
     "phone": "1143918000",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:37:58",
-    "updated_in": "2025-02-21 16:38:07",
+    "updated_in": "2026-07-15 17:51:00",
     "additional_values": {
       "cargo": "Coordenador Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/jessica-betarelli-vieira-11bb1b194/",
       "telefone_completo": "1143918000"
     }
   },
@@ -9811,7 +9811,7 @@
   },
   {
     "id": "549",
-    "user_id": "15157",
+    "user_id": "15173",
     "created_user_id": "-13",
     "name": "ANDREA JUNQUEIRA",
     "email": "andrea.junqueira@cimentotupi.com.br",
@@ -9820,7 +9820,7 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:42:09",
-    "updated_in": "2025-02-21 16:42:14",
+    "updated_in": "2026-07-15 15:38:18",
     "additional_values": {
       "cargo": "Gerente Juridico",
       "linkedin": "",
@@ -19292,6 +19292,42 @@
     "additional_values": {
       "cargo": "",
       "linkedin": "https://www.linkedin.com/in/leon-harari-9a70312a/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1081",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Osmar da Costa Junior",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-15 13:24:03",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "head juridico",
+      "linkedin": "https://www.linkedin.com/in/osmar-da-costa-junior-5307804b/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1082",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Pablo Lanna",
+    "email": "pablo.lanna@itaminas.com.br",
+    "phone": "31988941529",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-15 15:09:28",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Gerente Jurídico",
+      "linkedin": "",
       "telefone_completo": ""
     }
   }
