@@ -22118,7 +22118,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:44:29",
-    "updated_in": "2025-05-15 15:31:30",
+    "updated_in": "2026-07-16 14:09:53",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -22345,7 +22345,7 @@
   },
   {
     "id": "612",
-    "user_id": "15157",
+    "user_id": "17759",
     "created_user_id": "-13",
     "name": "alelo",
     "address": "",
@@ -22355,7 +22355,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:45:05",
-    "updated_in": "2025-02-21 16:45:12",
+    "updated_in": "2026-07-16 15:19:08",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -22434,7 +22434,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:45:18",
-    "updated_in": "2025-04-30 13:46:06",
+    "updated_in": "2026-07-16 16:23:41",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -38111,6 +38111,34 @@
       "linkedin_da_organizacao": "https://www.linkedin.com/company/aquitemcopasa/about/",
       "capital_social": "",
       "principais_clientes": "A base é pulverizada entre consumidores residenciais, comerciais, industriais e órgãos públicos dos municípios atendidos. Não se trata de uma companhia com poucos clientes corporativos nomináveis; seus principais clientes são as unidades consumidoras e os municípios titulares ou integrantes dos contratos de prestação dos serviços.",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [],
+    "persons_ids": ""
+  },
+  {
+    "id": "1056",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Celesc Distribuição S.A.",
+    "address": "Avenida Itamarati, nº 160, blocos A1, B1 e B2, bairro Itacorubi, Florianópolis/SC, CEP 88034-900",
+    "document": "08336783000190",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-16 15:02:41",
+    "updated_in": "2026-07-16 15:07:33",
+    "additional_values": {
+      "site": "celesc.com.br",
+      "segmento": "Energia Elétrica",
+      "porte_por_faturamento": "Acima de R$1B",
+      "uf": "SC",
+      "qtd_de_funcionarios": "Acima de 5000",
+      "observacoes": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/celescoficial/about/",
+      "capital_social": "",
+      "principais_clientes": "A base é pulverizada entre aproximadamente 3,6 milhões de unidades consumidoras residenciais, comerciais, industriais, rurais e do poder público. A companhia não divulga publicamente uma relação nominal dos maiores consumidores.",
       "projetos_estrategicos_em_andamento": ""
     },
     "persons": [],

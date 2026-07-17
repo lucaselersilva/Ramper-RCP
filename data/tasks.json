@@ -4787,10 +4787,10 @@
       "entity_name": "Cenibra"
     },
     "description": "FUP CENIBRA Criada em : 19/03/2024",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2024-06-19 14:30:00",
     "added_in": "2024-03-19 00:00:00",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-16 14:09:53",
     "persons": {
       "id": "",
       "name": ""
@@ -4942,10 +4942,10 @@
       "entity_name": "HYDRO"
     },
     "description": "vERIFICAR IDA EM sp P CAFÉ Hydro Criada em : 12/06/2024",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2024-06-27 17:20:00",
     "added_in": "2024-06-12 00:00:00",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-16 16:23:41",
     "persons": {
       "id": "",
       "name": ""
@@ -10553,10 +10553,10 @@
       "entity_name": "alelo"
     },
     "description": "Procurar contata na holding Elopar; Juliane Onha (11) 98521-4407",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2024-06-24 19:34:00",
     "added_in": "2025-05-15 15:11:16",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-16 15:20:10",
     "persons": {
       "id": "",
       "name": ""
@@ -22054,10 +22054,10 @@
       "entity_name": "Companhia de Saneamento Básico do Estado de São Paulo - Sabesp"
     },
     "description": "fup",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-04-01 10:00:00",
     "added_in": "2026-03-25 15:31:15",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-16 11:06:30",
     "persons": {
       "id": "",
       "name": ""
@@ -28595,10 +28595,10 @@
       "entity_name": "CIMENTO TUPI"
     },
     "description": "tENTAR AGENDAR APRESENTAÇÃO",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-16 09:15:00",
     "added_in": "2026-07-15 15:51:40",
-    "updated_in": "2026-07-15 16:11:28",
+    "updated_in": "2026-07-16 14:50:27",
     "persons": {
       "id": "",
       "name": ""
@@ -28796,6 +28796,192 @@
     "opportunities": {
       "id": "545",
       "title": "Sequoia Logística e Transportes S.A. (Grupo MOVE3 Sequoia)"
+    }
+  },
+  {
+    "id": "936",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15173",
+    "opportunity_id": "1011",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Companhia de Saneamento Básico do Estado de São Paulo - Sabesp"
+    },
+    "description": "checar email de cadastro de novo fornecedor",
+    "concluded": "N",
+    "event_time": "2026-07-20 10:00:00",
+    "added_in": "2026-07-16 11:06:58",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "1011",
+      "title": "Companhia de Saneamento Básico do Estado de São Paulo - Sabesp"
+    }
+  },
+  {
+    "id": "937",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15157",
+    "opportunity_id": "611",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Cenibra"
+    },
+    "description": "fup",
+    "concluded": "N",
+    "event_time": "2026-08-26 10:00:00",
+    "added_in": "2026-07-16 14:10:07",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "611",
+      "title": "Cenibra"
+    }
+  },
+  {
+    "id": "938",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "15173",
+    "opportunity_id": "586",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "CIMENTO TUPI"
+    },
+    "description": "mensagem de abertura de conexão",
+    "concluded": "N",
+    "event_time": "2026-07-17 10:00:00",
+    "added_in": "2026-07-16 14:51:05",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "586",
+      "title": "CIMENTO TUPI"
+    }
+  },
+  {
+    "id": "939",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15173",
+    "opportunity_id": "1049",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Celesc Distribuição S.A."
+    },
+    "description": "fup",
+    "concluded": "N",
+    "event_time": "2026-07-27 10:00:00",
+    "added_in": "2026-07-16 15:08:50",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "1049",
+      "title": "Celesc Distribuição S.A."
+    }
+  },
+  {
+    "id": "940",
+    "type_id": "3",
+    "type_title": "Atividade",
+    "user_id": "17759",
+    "opportunity_id": "618",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Atividade",
+      "entity_type": "opportunities",
+      "entity_name": "alelo"
+    },
+    "description": "Procurar novo contato ou tentar meio de contato com Gustavo Mattos Sarachini",
+    "concluded": "N",
+    "event_time": "2026-07-17 10:15:00",
+    "added_in": "2026-07-16 15:19:01",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "618",
+      "title": "alelo"
+    }
+  },
+  {
+    "id": "941",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "15157",
+    "opportunity_id": "620",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "HYDRO"
+    },
+    "description": "(deixar tarefa antiga para fup) dps regularizamos",
+    "concluded": "N",
+    "event_time": "2024-06-25 09:30:00",
+    "added_in": "2026-07-16 16:25:17",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "620",
+      "title": "HYDRO"
     }
   }
 ]

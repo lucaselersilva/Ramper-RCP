@@ -46861,11 +46861,11 @@
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:42:11",
     "value": "0.00",
-    "close_in": "2025-12-31",
-    "history": "",
+    "close_in": "2027-12-31",
+    "history": "Solicitado conexão no Linkedin",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:42:11",
-    "updated_in": "2026-07-15 15:51:40",
+    "updated_in": "2026-07-16 14:51:12",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -48565,10 +48565,10 @@
     "stage_last_change": "2025-02-21 13:44:24",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Não consegui no fixo da Kamila, enviei email\nRodrigo Pena | RCP Advogados\n​'Kamila Carolina Richardes de Paula' <kamila.paula@cenibra.com.br>​\n​equipecomercial​\n\nBom dia Kamila, tudo bem?\nTranscorrido algum tempo, gostaríamos de verificar o momento atual da CENIBRA e eventuais oportunidades.\nSomos full service com unidades em BH, RJ e atuação em todo país.\nTemos grande atuação no contencioso, principalmente cível e trabalhista, mas atendemos outras áreas, bem como consultivo e projetos específicos.\nConseguimos marcar nova apresentação?\nDesde já agradeço.\nAtenciosamente,",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:44:24",
-    "updated_in": "2025-05-15 15:31:41",
+    "updated_in": "2026-07-16 14:10:07",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -48664,10 +48664,10 @@
     "stage_last_change": "2025-02-21 13:44:37",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Denise informou que tem interesse em novo trabalho de recuperação de depósitos e que podemos marcar uma reunião para verificar outras frentes de trabalho no contencioso e consultivo",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:44:37",
-    "updated_in": "2025-05-08 09:25:16",
+    "updated_in": "2026-07-16 14:17:36",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -48934,17 +48934,17 @@
     "entity_type": "organizations",
     "title": "alelo",
     "created_user_id": "-13",
-    "user_id": "15157",
+    "user_id": "17759",
     "organization_id": "612",
     "person_id": "0",
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:45:07",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Juliana saiu...procurar novo contato ou tentar Gustavo",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:45:07",
-    "updated_in": "2025-05-15 15:11:16",
+    "updated_in": "2026-07-16 15:20:10",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -49021,10 +49021,10 @@
       }
     },
     "users": {
-      "id": "15157",
-      "name": "Rodrigo Pena",
-      "name_only": "Rodrigo",
-      "name_short": "Rodrigo P."
+      "id": "17759",
+      "name": "Fernanda Orly",
+      "name_only": "Fernanda",
+      "name_short": "Fernanda O."
     },
     "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=618"
   },
@@ -49040,10 +49040,10 @@
     "stage_last_change": "2025-02-21 13:45:20",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Reunião para atualização e follow up com Thiago em 26/03. Oferecemos NR1 mas ele já fez internamente....Pedimos alguma oportunidade para nos testar, ele ficou de mandar",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:45:20",
-    "updated_in": "2025-05-08 09:27:50",
+    "updated_in": "2026-07-16 16:25:17",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -79908,7 +79908,7 @@
     "history": "",
     "loss_reason_id": "0",
     "added_in": "2026-03-25 15:30:47",
-    "updated_in": "2026-03-25 15:31:15",
+    "updated_in": "2026-07-16 11:06:58",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -82852,5 +82852,85 @@
       "name_short": "Tiago C."
     },
     "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=1048"
+  },
+  {
+    "id": "1049",
+    "entity_type": "organizations",
+    "title": "Celesc Distribuição S.A.",
+    "created_user_id": "15173",
+    "user_id": "15173",
+    "organization_id": "1056",
+    "person_id": "0",
+    "stage_id": "3",
+    "stage_last_change": "2026-07-16 15:07:31",
+    "value": "0.00",
+    "close_in": "2027-07-23",
+    "history": "Rodrigo Pena | RCP Advogados\n​luizfcv@celesc.com.br​\n​equipecomercial​\n\nBoa tarde Luiz, como vai?\nNão estou certo se recebeu nossos últimos emails.\nDe todo modo, permanecemos à disposição para eventuais necessidades da CELESC.\nSomos especializados no setor elétrico, com atuação no contencioso de volume e estratégico, bem como na regulação.\nAtendemos distribuidoras, geradoras e transmissoras, como CEMIG, CPFL, TAESA, AXIA, ENEL, STATE GRID, COBRA, SPIC, ARGO, CELEO, ENERGISA, LIGHT e NEOENERGIA, em todas as instâncias judiciais e/ou administrativas.\nNossa maior força está no contencioso de elétricas, principalmente em matérias de cível/consumidor, fundiário, regulatório, ambiental e trabalhista.\nDesde já agradeço.\nAtenciosamente,",
+    "loss_reason_id": "0",
+    "added_in": "2026-07-16 15:07:31",
+    "updated_in": "2026-07-16 15:08:50",
+    "stages": {
+      "id": "3",
+      "name_short": "Prospecção/Qualifi",
+      "background": "#c8cacc",
+      "type": "open",
+      "pipe_id": "1",
+      "pipe_name": "Funil padrão",
+      "pipe_name_short": "Funil Padrão"
+    },
+    "organizations": {
+      "id": "1056",
+      "name": "Celesc Distribuição S.A.",
+      "address": "Avenida Itamarati, nº 160, blocos A1, B1 e B2, bairro Itacorubi, Florianópolis/SC, CEP 88034-900",
+      "document": "08336783000190",
+      "phone": ""
+    },
+    "persons": [],
+    "organizations_first_person": [],
+    "additional_values": {
+      "opportunities": {
+        "origem_da_oportunidade": "Prospecção Ativa",
+        "area_do_direito_principal": "Trabalhista",
+        "fonte": "",
+        "resp_interno_pela_captacao": "",
+        "status_oportunidade": "Ativa",
+        "ultimas_anotacoes": "A abordagem comercial mais apropriada seria:\r\n\r\nContencioso cível e consumerista de volume, com jurimetria, matriz de acordos, revisão de provisões e atuação em Juizados Especiais.\r\nRegulatório e estratégico, envolvendo ANEEL, qualidade do serviço, perdas, geração distribuída, compartilhamento de postes e equilíbrio da concessão.\r\nFundiário e infraestrutura, abrangendo servidões, desapropriações, reintegrações de posse e obras de expansão.\r\nTrabalhista e segurança do trabalho, sobretudo acidentes, periculosidade, terceirização e equipes operacionais.\r\nAmbiental, contratos e compliance, relacionados à expansão da rede, eventos climáticos, fornecedores, licitações e inovação tecnológica.",
+        "produto": "",
+        "potenciais_demandas_consultivo": "Cível, Contratos, Fundiário, Trabalhista",
+        "potenciais_demandas_contencioso": "Cível, Consumidor, Contratos, Fundiário, Trabalhista, Regulatório",
+        "volume_de_processos_ativos": "122993",
+        "situacoes_de_risco_regulatoriofiscal": "Regulatório e tarifário. Muito alto. A receita e a remuneração dos investimentos dependem diretamente de reajustes, revisões tarifárias, Base de Remuneração Regulatória, custos reconhecidos e decisões da ANEEL.\r\nConsumerista. Muito alto. Milhões de consumidores e mais de 122 mil ocorrências processuais identificadas tornam a matéria central para a companhia\r\nTrabalhista e segurança. Alto. Trabalho com eletricidade, atividades de campo, terceirização, sobreaviso, periculosidade e risco elevado de acidentes.\r\nFundiário. Alto. Redes e linhas dependem de servidões, faixas de passagem e acesso a propriedades privadas, com frequentes conflitos indenizatórios.",
+        "oportunidade_para_controladoria_juridica": "",
+        "interesse_nos_servicos_do_rcp": "",
+        "urgencia_em_demanda": "",
+        "escritorios_concorrentes": "",
+        "utm_source": "",
+        "utm_medium": "",
+        "utm_campaign": "",
+        "utm_term": "",
+        "utm_content": "",
+        "gclid": "",
+        "fbclid": ""
+      },
+      "organizations": {
+        "site": "celesc.com.br",
+        "segmento": "Energia Elétrica",
+        "porte_por_faturamento": "Acima de R$1B",
+        "uf": "SC",
+        "qtd_de_funcionarios": "Acima de 5000",
+        "observacoes": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/celescoficial/about/",
+        "capital_social": "",
+        "principais_clientes": "A base é pulverizada entre aproximadamente 3,6 milhões de unidades consumidoras residenciais, comerciais, industriais, rurais e do poder público. A companhia não divulga publicamente uma relação nominal dos maiores consumidores.",
+        "projetos_estrategicos_em_andamento": ""
+      }
+    },
+    "users": {
+      "id": "15173",
+      "name": "Tiago Câmara",
+      "name_only": "Tiago",
+      "name_short": "Tiago C."
+    },
+    "url_sistema": "https://lscrm.com.br/opportunities/action=edit&id=1049"
   }
 ]
