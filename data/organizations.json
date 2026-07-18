@@ -34960,7 +34960,7 @@
     "lat": "-23.497461",
     "lng": "-46.844601",
     "added_in": "2025-09-02 11:29:05",
-    "updated_in": "2026-03-11 09:49:17",
+    "updated_in": "2026-07-17 11:51:17",
     "additional_values": {
       "site": "https://www.arcosdorados.com/",
       "segmento": "Alimenticio",
@@ -38143,5 +38143,41 @@
     },
     "persons": [],
     "persons_ids": ""
+  },
+  {
+    "id": "1057",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "LIV UP COMERCIO DE ALIMENTOS LTDA",
+    "address": "",
+    "document": "23353693001920",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-17 11:56:53",
+    "updated_in": "2026-07-17 13:45:42",
+    "additional_values": {
+      "site": "https://www.livup.com.br/",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1083",
+        "name": "Daniel Grajzer",
+        "email": "",
+        "phone": "11985737394",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1083"
   }
 ]

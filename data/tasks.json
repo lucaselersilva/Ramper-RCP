@@ -28099,10 +28099,10 @@
       "entity_name": "Biomedical"
     },
     "description": "tentar pelo linkedin da marina - agurdando conexão.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-17 08:00:00",
     "added_in": "2026-07-14 15:09:50",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-17 12:04:45",
     "persons": {
       "id": "",
       "name": ""
@@ -28982,6 +28982,130 @@
     "opportunities": {
       "id": "620",
       "title": "HYDRO"
+    }
+  },
+  {
+    "id": "942",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15173",
+    "opportunity_id": "0",
+    "organization_id": "963",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "organizations",
+      "entity_name": "Arcos Dorados (McDonald's)"
+    },
+    "description": "fup",
+    "concluded": "N",
+    "event_time": "2026-07-23 10:00:00",
+    "added_in": "2026-07-17 11:51:17",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "963",
+      "name": "Arcos Dorados (McDonald's)"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "943",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "1057",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "organizations",
+      "entity_name": "LIV UP COMERCIO DE ALIMENTOS LTDA"
+    },
+    "description": "marcar reuniao.\n\nja mandei wpp",
+    "concluded": "Y",
+    "event_time": "2026-07-20 07:45:00",
+    "added_in": "2026-07-17 11:57:19",
+    "updated_in": "2026-07-17 13:45:42",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "1057",
+      "name": "LIV UP COMERCIO DE ALIMENTOS LTDA"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "944",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "515",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Biomedical"
+    },
+    "description": "cobrar e mail.",
+    "concluded": "N",
+    "event_time": "2026-07-21 08:00:00",
+    "added_in": "2026-07-17 12:05:46",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "515",
+      "title": "Biomedical"
+    }
+  },
+  {
+    "id": "945",
+    "type_id": "2",
+    "type_title": "Reunião Com",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "1057",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Reunião Com",
+      "entity_type": "organizations",
+      "entity_name": "LIV UP COMERCIO DE ALIMENTOS LTDA"
+    },
+    "description": "Reuniao Com Daniel . Head Juridico .",
+    "concluded": "N",
+    "event_time": "2026-07-23 15:00:00",
+    "added_in": "2026-07-17 13:45:39",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "1057",
+      "name": "LIV UP COMERCIO DE ALIMENTOS LTDA"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
     }
   }
 ]

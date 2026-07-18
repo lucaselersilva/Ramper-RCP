@@ -19330,5 +19330,23 @@
       "linkedin": "",
       "telefone_completo": ""
     }
+  },
+  {
+    "id": "1083",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Daniel Grajzer",
+    "email": "",
+    "phone": "11985737394",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-17 11:56:47",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Diretor Juridico",
+      "linkedin": "https://www.linkedin.com/in/daniel-grajzer-413366132/",
+      "telefone_completo": ""
+    }
   }
 ]
