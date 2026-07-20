@@ -253,6 +253,49 @@
     display: inline-block; margin-top: 4px; font-size: 11.5px; color: var(--series-1);
     background: none; border: none; padding: 0; cursor: pointer; font-weight: 600;
   }
+
+  /* ---- month x month comparison ---- */
+  .compare-controls { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px; }
+  .delta-up { color: var(--good); font-weight: 650; white-space: nowrap; }
+  .delta-down { color: var(--critical); font-weight: 650; white-space: nowrap; }
+  .delta-flat { color: var(--text-muted); font-weight: 600; white-space: nowrap; }
+
+  /* ---- print summary (only shown when printing) ---- */
+  #print-summary { display: none; }
+
+  /* ---- print / PDF export ---- */
+  @media print {
+    :root {
+      --surface-1:      #ffffff;
+      --page:           #ffffff;
+      --text-primary:   #000000;
+      --text-secondary: #333333;
+      --text-muted:     #555555;
+      --gridline:       #cccccc;
+      --baseline:       #999999;
+      --border:         rgba(0,0,0,0.18);
+      --series-1:       #2a78d6;
+      --good:           #0b7d0b;
+      --warning:        #a1670a;
+      --serious:        #c15b34;
+      --critical:       #b32828;
+      --neutral:        #666666;
+    }
+    @page { size: A4 landscape; margin: 12mm 10mm; }
+    body { background: #fff; color: #000; }
+    header { position: static; }
+    #refresh-help-btn, #print-btn, .refresh-help, .filters,
+    .table-toggle, .csv-export-btn, .pagination, .note-toggle { display: none !important; }
+    #print-summary { display: block; }
+    .print-hide { display: none !important; }
+    main { padding: 8px 0 0; max-width: 100%; }
+    .table-scroll { max-height: none !important; overflow: visible !important; }
+    .chart-mini-table { display: none !important; }
+    section.block, .chart-card, .kpi, .rec-item, .table-box { break-inside: avoid; page-break-inside: avoid; }
+    section.block { margin-bottom: 14px; }
+    .chart-grid.cols-2, .chart-grid.cols-2b { grid-template-columns: 1fr 1fr; }
+    .chart-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -267,7 +310,10 @@
   </div>
   <div class="header-right">
     <div id="sync-info">Carregando...</div>
-    <button id="refresh-help-btn" class="table-toggle" type="button">Como atualizar os dados agora</button>
+    <div style="display:flex; gap:8px;">
+      <button id="print-btn" class="table-toggle" type="button">Gerar PDF / Imprimir</button>
+      <button id="refresh-help-btn" class="table-toggle" type="button">Como atualizar os dados agora</button>
+    </div>
   </div>
 </header>
 <div class="refresh-help hidden" id="refresh-help">
@@ -278,6 +324,7 @@
     <li>Se esta aba já estiver aberta em outro lugar, dê F5 para recarregar e ver os dados novos.</li>
   </ol>
 </div>
+<div id="print-summary"></div>
 
 <main>
   <div class="filters">
@@ -397,6 +444,24 @@
         <div class="table-scroll" id="monthly-table-wrap" style="max-height:320px;"></div>
       </div>
     </div>
+    <div class="chart-card" style="margin-top:16px;">
+      <div class="table-box-head">
+        <h3>O que melhorou e o que piorou de um mês para o outro</h3>
+        <button class="csv-export-btn" id="monthcompare-export" type="button">Exportar CSV</button>
+      </div>
+      <div class="desc" style="margin-bottom:10px;">Escolha dois meses para comparar lado a lado — verde indica melhora, vermelho indica piora em cada indicador.</div>
+      <div class="compare-controls">
+        <div class="filter-field">
+          <label for="compare-month-a">Mês base</label>
+          <select id="compare-month-a"></select>
+        </div>
+        <div class="filter-field">
+          <label for="compare-month-b">Mês comparado</label>
+          <select id="compare-month-b"></select>
+        </div>
+      </div>
+      <div class="table-scroll" id="monthcompare-wrap" style="max-height:none;"></div>
+    </div>
   </section>
 
   <section class="block">
@@ -509,7 +574,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block print-hide">
     <div class="table-box">
       <div class="table-box-head">
         <h3>Contas sem atividade recente</h3>
@@ -541,7 +606,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block print-hide">
     <div class="table-box">
       <div class="table-box-head">
         <h3>Tarefas</h3>
@@ -574,7 +639,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block print-hide">
     <div class="table-box">
       <div class="table-box-head">
         <h3>Notas das oportunidades</h3>
@@ -652,7 +717,7 @@
   function fmtInt(n) { return (n || 0).toLocaleString('pt-BR'); }
   function daysBetween(a, b) { return Math.floor((a - b) / 86400000); }
   function cssVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-  function isDarkMode() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  function isDarkMode() { return !window.__printing && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
   function hexToRgb(hex) {
     hex = hex.replace('#', '');
     if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
@@ -706,6 +771,19 @@
   document.getElementById('refresh-help-btn').addEventListener('click', () => {
     document.getElementById('refresh-help').classList.toggle('hidden');
   });
+
+  // ================= print / PDF export =================
+  // Charts bake their colors into the canvas at draw time, so a straight window.print()
+  // would keep whatever theme (light/dark) was on screen. Re-rendering on beforeprint/afterprint
+  // forces Chart.js to redraw using the light, high-contrast palette defined in the @media print
+  // CSS block, regardless of the viewer's OS color scheme. Animations are also disabled while
+  // printing: the print layout resizes chart containers, and Chart.js's default bar/line growth
+  // animation can otherwise still be mid-flight (canvas blank or partially drawn) at the instant
+  // the browser rasterizes the page for the PDF.
+  window.__printing = false;
+  document.getElementById('print-btn').addEventListener('click', () => window.print());
+  window.addEventListener('beforeprint', () => { window.__printing = true; Chart.defaults.animation = false; render(); });
+  window.addEventListener('afterprint', () => { window.__printing = false; Chart.defaults.animation = true; render(); });
 
   // ================= filter controls =================
   const periodSelect = document.getElementById('f-period');
@@ -1419,6 +1497,16 @@
       if (t === 'win') closingsByMonth[key].won++; else closingsByMonth[key].lost++;
     });
 
+    const doneByMonth = {}, overdueByMonth = {};
+    tasks.forEach(t => {
+      if (f.userId && String(t.user_id) !== String(f.userId)) return;
+      const d = parseDate(t.event_time || t.added_in);
+      if (!d) return;
+      const key = monthKey(d);
+      if (t.concluded === 'Y') doneByMonth[key] = (doneByMonth[key] || 0) + 1;
+      else if (parseDate(t.event_time) && parseDate(t.event_time) < NOW) overdueByMonth[key] = (overdueByMonth[key] || 0) + 1;
+    });
+
     const allKeys = new Set([...Object.keys(leadsByMonth), ...Object.keys(meetingsByMonth), ...Object.keys(closingsByMonth)]);
     let keys = [...allKeys].sort();
     if (f.start || f.end) {
@@ -1435,8 +1523,11 @@
       const meetings = meetingsByMonth[key] ? meetingsByMonth[key].size : 0;
       const won = (closingsByMonth[key] || {}).won || 0;
       const lost = (closingsByMonth[key] || {}).lost || 0;
-      const rate = (won + lost) ? Math.round(won / (won + lost) * 100) + '%' : '—';
-      return { key, leads, meetings, won, lost, rate };
+      const rateNum = (won + lost) ? Math.round(won / (won + lost) * 100) : null;
+      const rate = rateNum === null ? '—' : rateNum + '%';
+      const done = doneByMonth[key] || 0;
+      const overdue = overdueByMonth[key] || 0;
+      return { key, leads, meetings, won, lost, rate, rateNum, done, overdue };
     });
   }
 
@@ -1445,6 +1536,7 @@
   function renderMonthlyComparison(f) {
     const rows = computeMonthlyComparison(f);
     lastMonthlyRows = rows;
+    renderMonthCompareWidget(rows);
     const wrap = document.getElementById('monthly-table-wrap');
     wrap.innerHTML = '';
     const table = document.createElement('table'); table.className = 'data-table';
@@ -1469,6 +1561,100 @@
   document.getElementById('monthly-export').addEventListener('click', () => {
     downloadCSV('comparativo_mensal.csv', ['Mês', 'Novos leads', 'Reuniões', 'Fechamentos (ganhas)', 'Taxa de conversão'],
       lastMonthlyRows.map(r => [monthLabel(r.key), r.leads, r.meetings, r.won, r.rate]));
+  });
+
+  // ================= month x month comparison (what improved / worsened) =================
+  const COMPARE_METRICS = [
+    { key: 'leads', label: 'Novos leads', higherIsBetter: true, fmt: fmtInt },
+    { key: 'meetings', label: 'Reuniões marcadas', higherIsBetter: true, fmt: fmtInt },
+    { key: 'won', label: 'Fechamentos (ganhas)', higherIsBetter: true, fmt: fmtInt },
+    { key: 'lost', label: 'Oportunidades perdidas', higherIsBetter: false, fmt: fmtInt },
+    { key: 'rateNum', label: 'Taxa de conversão', higherIsBetter: true, fmt: v => v === null ? '—' : v + '%', unit: ' p.p.' },
+    { key: 'done', label: 'Tarefas concluídas', higherIsBetter: true, fmt: fmtInt },
+    { key: 'overdue', label: 'Tarefas atrasadas', higherIsBetter: false, fmt: fmtInt }
+  ];
+
+  const compareSelA = document.getElementById('compare-month-a');
+  const compareSelB = document.getElementById('compare-month-b');
+  let lastCompareExportRows = [];
+  let lastCompareLabels = ['Métrica', 'Mês base', 'Mês comparado', 'Variação'];
+
+  function renderMonthCompareWidget(rows) {
+    const wrap = document.getElementById('monthcompare-wrap');
+    const prevA = compareSelA.value, prevB = compareSelB.value;
+    const keys = rows.map(r => r.key);
+
+    [compareSelA, compareSelB].forEach(sel => {
+      sel.innerHTML = '';
+      rows.forEach(r => {
+        const opt = document.createElement('option');
+        opt.value = r.key; opt.textContent = monthLabel(r.key);
+        sel.appendChild(opt);
+      });
+    });
+
+    if (!keys.length) {
+      wrap.innerHTML = '<div class="empty-state">Sem dados suficientes para comparar meses com os filtros atuais.</div>';
+      lastCompareExportRows = [];
+      return;
+    }
+    compareSelA.value = keys.includes(prevA) ? prevA : keys[Math.max(0, keys.length - 2)];
+    compareSelB.value = keys.includes(prevB) ? prevB : keys[keys.length - 1];
+
+    const rowA = rows.find(r => r.key === compareSelA.value);
+    const rowB = rows.find(r => r.key === compareSelB.value);
+    wrap.innerHTML = '';
+    if (!rowA || !rowB) {
+      wrap.innerHTML = '<div class="empty-state">Sem dados suficientes para comparar meses com os filtros atuais.</div>';
+      lastCompareExportRows = [];
+      return;
+    }
+
+    const labelA = monthLabel(rowA.key), labelB = monthLabel(rowB.key);
+    lastCompareLabels = ['Métrica', labelA, labelB, 'Variação'];
+    const table = document.createElement('table'); table.className = 'data-table';
+    const thead = document.createElement('thead');
+    const headRow = document.createElement('tr');
+    lastCompareLabels.forEach(h => { const th = document.createElement('th'); th.textContent = h; headRow.appendChild(th); });
+    thead.appendChild(headRow);
+    const tbody = document.createElement('tbody');
+    const exportRows = [];
+
+    COMPARE_METRICS.forEach(m => {
+      const a = rowA[m.key], b = rowB[m.key];
+      const tr = document.createElement('tr');
+      const tdLabel = document.createElement('td'); tdLabel.textContent = m.label;
+      const tdA = document.createElement('td'); tdA.className = 'num'; tdA.textContent = m.fmt(a);
+      const tdB = document.createElement('td'); tdB.className = 'num'; tdB.textContent = m.fmt(b);
+      const tdDelta = document.createElement('td'); tdDelta.className = 'num';
+
+      let deltaText;
+      if (a === null || b === null) {
+        deltaText = '—';
+        tdDelta.textContent = deltaText;
+      } else {
+        const diff = b - a;
+        const arrow = diff > 0 ? '▲' : diff < 0 ? '▼' : '●';
+        const cls = diff === 0 ? 'delta-flat' : (m.higherIsBetter ? diff > 0 : diff < 0) ? 'delta-up' : 'delta-down';
+        deltaText = (diff > 0 ? '+' : '') + diff + (m.unit || '');
+        const span = document.createElement('span'); span.className = cls; span.textContent = arrow + ' ' + deltaText;
+        tdDelta.appendChild(span);
+      }
+
+      tr.append(tdLabel, tdA, tdB, tdDelta);
+      tbody.appendChild(tr);
+      exportRows.push([m.label, m.fmt(a), m.fmt(b), deltaText]);
+    });
+
+    table.append(thead, tbody);
+    wrap.appendChild(table);
+    lastCompareExportRows = exportRows;
+  }
+
+  [compareSelA, compareSelB].forEach(sel => sel.addEventListener('change', () => renderMonthCompareWidget(lastMonthlyRows)));
+
+  document.getElementById('monthcompare-export').addEventListener('click', () => {
+    downloadCSV('comparativo_entre_meses.csv', lastCompareLabels, lastCompareExportRows);
   });
 
   // ================= funnel =================
@@ -1989,6 +2175,19 @@
   document.getElementById('notes-prev').addEventListener('click', () => { if (notesPage > 0) { notesPage--; render(); } });
   document.getElementById('notes-next').addEventListener('click', () => { notesPage++; render(); });
 
+  // ================= print summary (context shown only in the printed/PDF output) =================
+  function renderPrintSummary(f) {
+    const parts = ['Período: ' + f.periodLabel];
+    if (f.userId) parts.push('Responsável: ' + (usersById[f.userId] || {}).name);
+    if (f.stageId) { const s = stages.find(s => String(s.id) === String(f.stageId)); if (s) parts.push('Etapa: ' + s.name_short); }
+    if (f.area) parts.push('Área do direito: ' + f.area);
+    if (f.search) parts.push('Busca: "' + f.search + '"');
+    document.getElementById('print-summary').innerHTML =
+      '<div style="font-size:11.5px; color:#333; margin:2px 0 12px; padding-bottom:8px; border-bottom:1px solid #ccc;">' +
+      'Relatório gerado em ' + NOW.toLocaleString('pt-BR') + ' &middot; ' + parts.join(' &middot; ') +
+      '</div>';
+  }
+
   // ================= main render =================
   function render() {
     const f = getFilters();
@@ -1996,6 +2195,7 @@
     const tasksInPeriod = filteredTasks(f);
     const notesInPeriod = filteredNotes(f);
 
+    renderPrintSummary(f);
     renderKPIs(f, oppsPeriod);
     renderRecommendations(f);
     renderPipelineFunnel(f, oppsPeriod);
