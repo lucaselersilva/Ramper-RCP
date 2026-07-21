@@ -21372,10 +21372,10 @@
       "entity_name": "Ana Paula Kacuta"
     },
     "description": "fup",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-04-02 10:00:00",
     "added_in": "2026-03-11 09:44:21",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:11:16",
     "persons": {
       "id": "",
       "name": ""
@@ -25123,10 +25123,10 @@
       "entity_name": "Algar Telecom S/A"
     },
     "description": "Tentar ligar pro Luciano.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-06-26 07:00:00",
     "added_in": "2026-06-24 09:16:25",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 14:56:20",
     "persons": {
       "id": "",
       "name": ""
@@ -25185,10 +25185,10 @@
       "entity_name": "FUJITSU GENERAL DO BRASIL LTDA."
     },
     "description": "tentar logar pra ligia",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-06-29 07:00:00",
     "added_in": "2026-06-24 15:01:07",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:17:56",
     "persons": {
       "id": "",
       "name": ""
@@ -25216,10 +25216,10 @@
       "entity_name": "Engetron (Engetron Engenharia Eletrônica Ind. e Com. Ltda)"
     },
     "description": "verificar retorno do e mail.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-06-26 07:00:00",
     "added_in": "2026-06-24 15:21:00",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:23:34",
     "persons": {
       "id": "",
       "name": ""
@@ -26766,10 +26766,10 @@
       "entity_name": "FERRAMENTAS GERAIS COMERCIO E IMPORTACAO DE FERRAMENTAS E MA"
     },
     "description": "tentar localizar responsavel",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-15 07:00:00",
     "added_in": "2026-07-08 12:02:14",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:43:03",
     "persons": {
       "id": "",
       "name": ""
@@ -27417,10 +27417,10 @@
       "entity_name": "INFOTEC BRASIL"
     },
     "description": "tentar e mail ou linkedin.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-14 07:00:00",
     "added_in": "2026-07-09 14:42:46",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:46:25",
     "persons": {
       "id": "",
       "name": ""
@@ -27510,10 +27510,10 @@
       "entity_name": "Martins Comércio e Serviços de Distribuição S.A"
     },
     "description": "tentar achar o email se eel nao me repsonder no linkedin.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-15 07:00:00",
     "added_in": "2026-07-09 15:37:44",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:52:07",
     "persons": {
       "id": "",
       "name": ""
@@ -28037,10 +28037,10 @@
       "entity_name": "COTAÇÃO DE PREÇOS Nº 007/2026"
     },
     "description": "verificação",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-17 10:00:00",
     "added_in": "2026-07-14 15:01:20",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:46:12",
     "persons": {
       "id": "",
       "name": ""
@@ -28874,10 +28874,10 @@
       "entity_name": "CIMENTO TUPI"
     },
     "description": "mensagem de abertura de conexão",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-17 10:00:00",
     "added_in": "2026-07-16 14:51:05",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-20 15:13:28",
     "persons": {
       "id": "",
       "name": ""
@@ -29106,6 +29106,223 @@
     "opportunities": {
       "id": "",
       "title": ""
+    }
+  },
+  {
+    "id": "946",
+    "type_id": "1",
+    "type_title": "Ligação",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "486",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Ligação",
+      "entity_type": "organizations",
+      "entity_name": "Algar Telecom S/A"
+    },
+    "description": "tentar ligar de novo.",
+    "concluded": "N",
+    "event_time": "2026-07-27 07:15:00",
+    "added_in": "2026-07-20 14:58:25",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "486",
+      "name": "Algar Telecom S/A"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "947",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "15173",
+    "opportunity_id": "586",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "CIMENTO TUPI"
+    },
+    "description": "fup",
+    "concluded": "N",
+    "event_time": "2026-07-22 10:00:00",
+    "added_in": "2026-07-20 15:13:42",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "586",
+      "title": "CIMENTO TUPI"
+    }
+  },
+  {
+    "id": "948",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "307",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "organizations",
+      "entity_name": "FUJITSU GENERAL DO BRASIL LTDA."
+    },
+    "description": "buscar novo gestor",
+    "concluded": "N",
+    "event_time": "2026-07-28 07:15:00",
+    "added_in": "2026-07-20 15:18:28",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "307",
+      "name": "FUJITSU GENERAL DO BRASIL LTDA."
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "949",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "127",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "organizations",
+      "entity_name": "Engetron (Engetron Engenharia Eletrônica Ind. e Com. Ltda)"
+    },
+    "description": "tentar de novo. \n\nligar e e mail.",
+    "concluded": "N",
+    "event_time": "2026-08-24 07:30:00",
+    "added_in": "2026-07-20 15:24:33",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "127",
+      "name": "Engetron (Engetron Engenharia Eletrônica Ind. e Com. Ltda)"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "950",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "650",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "FERRAMENTAS GERAIS COMERCIO E IMPORTACAO DE FERRAMENTAS E MA"
+    },
+    "description": "tentar via linkedin - RH",
+    "concluded": "N",
+    "event_time": "2026-07-24 07:30:00",
+    "added_in": "2026-07-20 15:44:47",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "650",
+      "title": "FERRAMENTAS GERAIS COMERCIO E IMPORTACAO DE FERRAMENTAS E MA"
+    }
+  },
+  {
+    "id": "951",
+    "type_id": "1",
+    "type_title": "Ligação",
+    "user_id": "17759",
+    "opportunity_id": "625",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Ligação",
+      "entity_type": "opportunities",
+      "entity_name": "INFOTEC BRASIL"
+    },
+    "description": "tentar ligar na empresa.",
+    "concluded": "N",
+    "event_time": "2026-07-24 07:30:00",
+    "added_in": "2026-07-20 15:47:04",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "625",
+      "title": "INFOTEC BRASIL"
+    }
+  },
+  {
+    "id": "952",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "15173",
+    "opportunity_id": "254",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "mdiasbranco"
+    },
+    "description": "fup",
+    "concluded": "N",
+    "event_time": "2026-07-29 10:00:00",
+    "added_in": "2026-07-20 15:49:38",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "254",
+      "title": "mdiasbranco"
     }
   }
 ]
