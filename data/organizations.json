@@ -23159,7 +23159,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:47:05",
-    "updated_in": "2026-06-18 09:45:03",
+    "updated_in": "2026-07-21 12:54:19",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -37594,7 +37594,7 @@
     "lat": "-19.919052",
     "lng": "-43.938667",
     "added_in": "2026-07-01 14:32:36",
-    "updated_in": "2026-07-13 10:30:54",
+    "updated_in": "2026-07-21 15:06:11",
     "additional_values": {
       "site": "https://www.apoan.com.br/",
       "segmento": "",
@@ -37622,7 +37622,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-02 15:19:25",
-    "updated_in": "2026-07-14 15:21:25",
+    "updated_in": "2026-07-21 16:14:09",
     "additional_values": {
       "site": "https://valenet.com.br/",
       "segmento": "Telefonia",
@@ -37780,7 +37780,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-08 12:06:51",
-    "updated_in": "2026-07-13 10:12:45",
+    "updated_in": "2026-07-21 15:08:13",
     "additional_values": {
       "site": "https://www.verdecampo.com.br/",
       "segmento": "",
@@ -37872,7 +37872,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-09 15:06:00",
-    "updated_in": "2026-07-20 15:52:07",
+    "updated_in": "2026-07-21 15:36:52",
     "additional_values": {
       "site": "https://www.martinsatacado.com.br/",
       "segmento": "",
@@ -37903,12 +37903,12 @@
     "name": "Grupo Bom Jesus",
     "address": "",
     "document": "",
-    "phone": "",
+    "phone": "66 3411 5600",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2026-07-09 17:12:23",
-    "updated_in": "2026-07-09 17:12:47",
+    "updated_in": "2026-07-21 16:36:31",
     "additional_values": {
       "site": "https://www.bomjesus.com/",
       "segmento": "",
@@ -38179,5 +38179,41 @@
       }
     ],
     "persons_ids": "1083"
+  },
+  {
+    "id": "1058",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Minas Mineração",
+    "address": "",
+    "document": "31096483000101",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-21 17:33:43",
+    "updated_in": "2026-07-21 17:34:56",
+    "additional_values": {
+      "site": "https://minasmineracao.net.br/",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1084",
+        "name": "Guilherme Menezes",
+        "email": "guilherme.menezes@minasmineracao.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1084"
   }
 ]
