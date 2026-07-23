@@ -146,6 +146,18 @@
   .kpi.tone-good .value { color: var(--good); }
   .kpi.tone-warning .caption { color: var(--warning); font-weight: 600; }
 
+  /* ---- KPI groups (period-bound vs. pipeline snapshot) ---- */
+  .kpi-group + .kpi-group { margin-top: 18px; }
+  .kpi-group-label { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .kpi-group-label .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .kpi-group-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: var(--text-primary); }
+  .kpi-group-hint { font-size: 11.5px; color: var(--text-muted); }
+  .kpi-group-period .kpis { border-left: 3px solid var(--series-1); padding-left: 14px; }
+  .kpi-group-period .kpi-group-label .dot { background: var(--series-1); }
+  .kpi-group-snapshot .kpis { border-left: 3px solid var(--neutral); padding-left: 14px; }
+  .kpi-group-snapshot .kpi-group-label .dot { background: var(--neutral); }
+  .kpi-group-snapshot .kpi-group-title { color: var(--text-secondary); }
+
   /* ---- chart cards ---- */
   .chart-grid { display: grid; gap: 16px; }
   .chart-grid.cols-2 { grid-template-columns: 1.15fr 1fr; }
@@ -238,8 +250,16 @@
   }
   .rec-item .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 5px; flex: none; }
   .rec-item .text { font-size: 13px; color: var(--text-primary); }
-  .rec-item .text b { font-weight: 650; display: block; }
-  .rec-item .text .sub { display: block; font-size: 12.5px; color: var(--text-secondary); margin-top: 3px; }
+  .rec-item .text .rec-metric { font-weight: 650; display: block; font-size: 13.5px; }
+  .rec-item .text .rec-action { display: block; font-size: 12.5px; color: var(--text-primary); margin-top: 4px; }
+  .rec-item .text .rec-why-toggle {
+    display: inline-block; margin-top: 5px; font-size: 11.5px; color: var(--series-1);
+    background: none; border: none; padding: 0; cursor: pointer; font-weight: 600;
+  }
+  .rec-item .text .rec-rationale { display: none; font-size: 12px; color: var(--text-secondary); margin-top: 5px; }
+  .rec-item .text .rec-rationale.rec-rationale-open { display: block; }
+  .rec-item.rec-hidden { display: none; }
+  .rec-more-toggle { align-self: flex-start; }
   .rec-critical .dot { background: var(--critical); }
   .rec-warning .dot { background: var(--warning); }
   .rec-good .dot { background: var(--good); }
@@ -285,13 +305,15 @@
     body { background: #fff; color: #000; }
     header { position: static; }
     #refresh-help-btn, #print-btn, .refresh-help, .filters,
-    .table-toggle, .csv-export-btn, .pagination, .note-toggle { display: none !important; }
+    .table-toggle, .csv-export-btn, .pagination, .note-toggle, .rec-why-toggle { display: none !important; }
     #print-summary { display: block; }
     .print-hide { display: none !important; }
     main { padding: 8px 0 0; max-width: 100%; }
     .table-scroll { max-height: none !important; overflow: visible !important; }
     .chart-mini-table { display: none !important; }
-    section.block, .chart-card, .kpi, .rec-item, .table-box { break-inside: avoid; page-break-inside: avoid; }
+    .rec-item.rec-hidden { display: flex !important; }
+    .rec-item .text .rec-rationale { display: block !important; }
+    section.block, .chart-card, .kpi, .kpi-group, .rec-item, .table-box { break-inside: avoid; page-break-inside: avoid; }
     section.block { margin-bottom: 14px; }
     .chart-grid.cols-2, .chart-grid.cols-2b { grid-template-columns: 1fr 1fr; }
     .chart-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
@@ -370,16 +392,34 @@
   <section class="block">
     <div class="block-header">
       <h2>Visão geral</h2>
-      <div class="desc">Indicadores-chave para tomada de decisão. Os marcados "no período" respeitam os filtros de período/responsável; os demais são uma fotografia do estado atual do pipeline.</div>
+      <div class="desc">Os dois grupos abaixo respondem perguntas diferentes: o que aconteceu no período selecionado, e como está o pipeline agora.</div>
     </div>
-    <div class="kpis">
-      <div class="kpi"><div class="label">Novos leads</div><div class="value" id="kpi-leads">–</div><div class="caption">no período selecionado</div></div>
-      <div class="kpi"><div class="label">Taxa de conversão</div><div class="value" id="kpi-winrate">–</div><div class="caption" id="kpi-winrate-cap"></div></div>
-      <div class="kpi"><div class="label">Oportunidades abertas</div><div class="value" id="kpi-open">–</div><div class="caption">estado atual do pipeline</div></div>
-      <div class="kpi tone-warning"><div class="label">Pipeline parado (&gt;90 dias sem mudança)</div><div class="value" id="kpi-stale">–</div><div class="caption" id="kpi-stale-cap"></div></div>
-      <div class="kpi tone-critical"><div class="label">Tarefas atrasadas</div><div class="value" id="kpi-overdue">–</div><div class="caption">no período selecionado</div></div>
-      <div class="kpi"><div class="label">Tarefas pendentes (total)</div><div class="value" id="kpi-pending">–</div><div class="caption">no período selecionado</div></div>
-      <div class="kpi"><div class="label">Oportunidades com notas</div><div class="value" id="kpi-notes">–</div><div class="caption" id="kpi-notes-cap">no período selecionado</div></div>
+
+    <div class="kpi-group kpi-group-period">
+      <div class="kpi-group-label">
+        <span class="dot"></span>
+        <span class="kpi-group-title">No período selecionado</span>
+        <span class="kpi-group-hint">Muda conforme os filtros de período/responsável acima</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Novos leads</div><div class="value" id="kpi-leads">–</div></div>
+        <div class="kpi"><div class="label">Taxa de conversão</div><div class="value" id="kpi-winrate">–</div><div class="caption" id="kpi-winrate-cap"></div></div>
+        <div class="kpi tone-critical"><div class="label">Tarefas atrasadas</div><div class="value" id="kpi-overdue">–</div></div>
+        <div class="kpi"><div class="label">Tarefas pendentes (total)</div><div class="value" id="kpi-pending">–</div></div>
+        <div class="kpi"><div class="label">Oportunidades com notas</div><div class="value" id="kpi-notes">–</div><div class="caption" id="kpi-notes-cap">no período selecionado</div></div>
+      </div>
+    </div>
+
+    <div class="kpi-group kpi-group-snapshot">
+      <div class="kpi-group-label">
+        <span class="dot"></span>
+        <span class="kpi-group-title">Retrato do pipeline hoje</span>
+        <span class="kpi-group-hint">Não muda com o período — sempre a foto atual (responsável/etapa/área ainda filtram)</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Oportunidades abertas</div><div class="value" id="kpi-open">–</div></div>
+        <div class="kpi tone-warning"><div class="label">Pipeline parado (&gt;90 dias sem mudança)</div><div class="value" id="kpi-stale">–</div><div class="caption" id="kpi-stale-cap"></div></div>
+      </div>
     </div>
   </section>
 
@@ -497,13 +537,13 @@
     <div class="chart-grid cols-2b">
       <div class="chart-card">
         <div class="chart-card-head">
-          <div><h3>Oportunidades por responsável</h3><div class="desc">Abertas / ganhas / perdidas, no período selecionado</div></div>
+          <div><h3>Oportunidades por responsável</h3><div class="desc">Da leva de oportunidades criada no período selecionado, quantas seguem abertas, foram ganhas ou perdidas (situação atual)</div></div>
           <button class="table-toggle" data-target="reps">Ver tabela</button>
         </div>
         <div class="chart-wrap tall" id="reps-chart-wrap"><canvas id="chart-reps"></canvas></div>
         <div class="chart-mini-table" id="reps-table"></div>
         <div class="legend-row">
-          <span><span class="dot" style="background:var(--neutral)"></span>Aberta</span>
+          <span><span class="dot" style="background:var(--neutral)"></span>Aberta no período</span>
           <span><span class="dot" style="background:var(--good)"></span>Ganha</span>
           <span><span class="dot" style="background:var(--critical)"></span>Perdida</span>
         </div>
@@ -1129,8 +1169,9 @@
       const pct = Math.round(staleOpps.length / openOpps.length * 100);
       recs.push({
         level: 'critical',
-        title: `Fazer uma triagem nas ${fmtInt(staleOpps.length)} oportunidades paradas há mais de 90 dias`,
-        detail: `Isso é ${pct}% do pipeline aberto (${fmtInt(openOpps.length)} no total) — boa parte veio de uma importação em massa e nunca foi trabalhada. Arquive (mova para "Inativa") as que não têm mais potencial e reengaje as prioritárias; sem essa limpeza, a taxa de conversão e o tamanho do pipeline aberto ficam distorcidos.`
+        metric: `${fmtInt(staleOpps.length)} oportunidades paradas há mais de 90 dias (${pct}% do pipeline aberto, de ${fmtInt(openOpps.length)})`,
+        action: 'Arquive como "Inativa" as sem potencial e reengaje as prioritárias.',
+        rationale: 'Boa parte veio de uma importação em massa e nunca foi trabalhada — sem essa limpeza, a taxa de conversão e o tamanho do pipeline aberto ficam distorcidos.'
       });
     }
 
@@ -1145,8 +1186,9 @@
     if (overdueAll.length && pendingAll.length && overdueAll.length / pendingAll.length >= 0.5) {
       recs.push({
         level: 'critical',
-        title: `Reduzir as ${fmtInt(overdueAll.length)} tarefas atrasadas antes de agendar mais`,
-        detail: `${Math.round(overdueAll.length / pendingAll.length * 100)}% das tarefas pendentes no período já estão atrasadas — sinal de sobrecarga ou falta de rotina de follow-up.`
+        metric: `${fmtInt(overdueAll.length)} tarefas atrasadas (${Math.round(overdueAll.length / pendingAll.length * 100)}% das pendentes no período)`,
+        action: 'Reduza as atrasadas antes de agendar tarefas novas.',
+        rationale: 'Um percentual alto de atraso costuma indicar sobrecarga ou falta de rotina de follow-up.'
       });
     }
     if (!f.userId) {
@@ -1162,8 +1204,8 @@
         if (share >= 0.35) {
           recs.push({
             level: 'warning',
-            title: `${topName} concentra ${Math.round(share * 100)}% das tarefas atrasadas da equipe`,
-            detail: `${fmtInt(topCount)} de ${fmtInt(overdueAll.length)} tarefas atrasadas no período são de ${topName} — vale revisar prioridades ou redistribuir parte da carteira.`
+            metric: `${topName} concentra ${Math.round(share * 100)}% das tarefas atrasadas da equipe (${fmtInt(topCount)} de ${fmtInt(overdueAll.length)})`,
+            action: `Revise as prioridades de ${topName} ou redistribua parte da carteira.`
           });
         }
       }
@@ -1184,8 +1226,9 @@
         if (rate < 0.5) {
           recs.push({
             level: 'info',
-            title: `Padronizar o preenchimento de "${label}"`,
-            detail: `Só ${Math.round(rate * 100)}% das oportunidades do filtro atual têm esse campo preenchido — cobrar isso na criação da oportunidade melhora a qualidade das análises de canal, prática e região.`
+            metric: `Só ${Math.round(rate * 100)}% das oportunidades têm "${label}" preenchido`,
+            action: 'Cobre o preenchimento desse campo já na criação da oportunidade.',
+            rationale: 'Sem esse dado, as análises de canal, prática e região ficam incompletas.'
           });
         }
       });
@@ -1212,8 +1255,8 @@
       if (best.rate - worst.rate >= 0.3) {
         recs.push({
           level: 'info',
-          title: `"${best.name}" converte bem mais que "${worst.name}"`,
-          detail: `${Math.round(best.rate * 100)}% (${best.won}/${best.total} fechadas) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) — vale entender o que funciona em ${best.name} e testar em ${worst.name}.`
+          metric: `"${best.name}" converte ${Math.round(best.rate * 100)}% (${best.won}/${best.total}) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) de "${worst.name}"`,
+          action: `Entenda o que funciona em ${best.name} e teste em ${worst.name}.`
         });
       }
     }
@@ -1240,8 +1283,8 @@
         if (best.rate - worst.rate >= 0.3) {
           recs.push({
             level: 'info',
-            title: `Gap de conversão entre ${best.name} e ${worst.name}`,
-            detail: `${best.name} converte ${Math.round(best.rate * 100)}% (${best.won}/${best.total}) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) de ${worst.name} — pode valer compartilhar a abordagem que está funcionando melhor.`
+            metric: `${best.name} converte ${Math.round(best.rate * 100)}% (${best.won}/${best.total}) contra ${Math.round(worst.rate * 100)}% (${worst.won}/${worst.total}) de ${worst.name}`,
+            action: 'Pode valer compartilhar a abordagem que está funcionando melhor.'
           });
         }
       }
@@ -1255,14 +1298,13 @@
       if (drop >= 0.3) {
         recs.push({
           level: 'warning',
-          title: 'Geração de novos leads caiu nas últimas semanas',
-          detail: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores (queda de ${Math.round(drop * 100)}%) — vale reforçar prospecção.`
+          metric: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores (queda de ${Math.round(drop * 100)}%)`,
+          action: 'Reforce a prospecção nas próximas semanas.'
         });
       } else if (last30.length > prev30.length * 1.3) {
         recs.push({
           level: 'good',
-          title: 'Geração de novos leads acelerou',
-          detail: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores.`
+          metric: `${fmtInt(last30.length)} novas oportunidades nos últimos 30 dias, contra ${fmtInt(prev30.length)} nos 30 dias anteriores (alta de ${Math.round((last30.length - prev30.length) / prev30.length * 100)}%)`
         });
       }
     }
@@ -1273,8 +1315,9 @@
     if (oppsForPipelineRec.length >= 20 && meetingCountForRec / oppsForPipelineRec.length < 0.03) {
       recs.push({
         level: 'warning',
-        title: 'Poucas reuniões registradas via tarefa perto do volume de leads',
-        detail: `Só ${fmtInt(meetingCountForRec)} tarefas do tipo "Reunião Com" no período, contra ${fmtInt(oppsForPipelineRec.length)} leads — se reuniões estão acontecendo mas não sendo logadas como tarefa, o funil leads → reuniões → fechamentos fica invisível. Vale padronizar esse registro para medir a eficácia comercial de verdade.`
+        metric: `Só ${fmtInt(meetingCountForRec)} tarefas "Reunião Com" registradas contra ${fmtInt(oppsForPipelineRec.length)} leads no período`,
+        action: 'Padronize o registro de reuniões como tarefa.',
+        rationale: 'Se reuniões acontecem mas não são logadas, o funil leads → reuniões → fechamentos fica invisível para medir a eficácia comercial real.'
       });
     }
 
@@ -1294,17 +1337,47 @@
     }
     const order = { critical: 0, warning: 1, good: 2, info: 3 };
     recs.sort((a, b) => order[a.level] - order[b.level]);
-    recs.forEach(r => {
+    const REC_VISIBLE_CAP = 4;
+    recs.forEach((r, i) => {
       const item = document.createElement('div');
-      item.className = 'rec-item rec-' + r.level;
+      item.className = 'rec-item rec-' + r.level + (i >= REC_VISIBLE_CAP ? ' rec-hidden' : '');
       const dot = document.createElement('div'); dot.className = 'dot';
       const text = document.createElement('div'); text.className = 'text';
-      const b = document.createElement('b'); b.textContent = r.title;
-      const sub = document.createElement('span'); sub.className = 'sub'; sub.textContent = r.detail;
-      text.append(b, sub);
+      const metric = document.createElement('b'); metric.className = 'rec-metric'; metric.textContent = r.metric;
+      text.append(metric);
+      if (r.action) {
+        const action = document.createElement('span'); action.className = 'rec-action'; action.textContent = r.action;
+        text.append(action);
+      }
+      if (r.rationale) {
+        const toggle = document.createElement('button');
+        toggle.type = 'button'; toggle.className = 'rec-why-toggle'; toggle.textContent = 'por quê?';
+        const rationale = document.createElement('span'); rationale.className = 'rec-rationale'; rationale.textContent = r.rationale;
+        toggle.addEventListener('click', () => {
+          const isOpen = rationale.classList.toggle('rec-rationale-open');
+          toggle.textContent = isOpen ? 'ver menos' : 'por quê?';
+        });
+        text.append(toggle, rationale);
+      }
       item.append(dot, text);
       container.appendChild(item);
     });
+    if (recs.length > REC_VISIBLE_CAP) {
+      const hiddenCount = recs.length - REC_VISIBLE_CAP;
+      const moreBtn = document.createElement('button');
+      moreBtn.type = 'button';
+      moreBtn.className = 'table-toggle rec-more-toggle';
+      moreBtn.textContent = `Ver mais ${hiddenCount} recomendaç${hiddenCount === 1 ? 'ão' : 'ões'}`;
+      let expanded = false;
+      moreBtn.addEventListener('click', () => {
+        expanded = !expanded;
+        container.querySelectorAll('.rec-item').forEach((el, i) => {
+          if (i >= REC_VISIBLE_CAP) el.classList.toggle('rec-hidden', !expanded);
+        });
+        moreBtn.textContent = expanded ? 'Ver menos' : `Ver mais ${hiddenCount} recomendaç${hiddenCount === 1 ? 'ão' : 'ões'}`;
+      });
+      container.appendChild(moreBtn);
+    }
   }
 
   // ================= leads -> meetings -> closings pipeline =================
@@ -1756,7 +1829,7 @@
       data: {
         labels: rows.map(r => r.name),
         datasets: [
-          { label: 'Aberta', data: rows.map(r => r.open), backgroundColor: c.neutral, stack: 's', borderRadius: 3, maxBarThickness: 18 },
+          { label: 'Aberta no período', data: rows.map(r => r.open), backgroundColor: c.neutral, stack: 's', borderRadius: 3, maxBarThickness: 18 },
           { label: 'Ganha', data: rows.map(r => r.won), backgroundColor: c.good, stack: 's', borderRadius: 3, maxBarThickness: 18 },
           { label: 'Perdida', data: rows.map(r => r.lost), backgroundColor: c.critical, stack: 's', borderRadius: 3, maxBarThickness: 18 }
         ]
@@ -1773,7 +1846,7 @@
         }
       }
     });
-    buildMiniTable(document.getElementById('reps-table'), ['Responsável', 'Aberta', 'Ganha', 'Perdida', 'Taxa de conversão'],
+    buildMiniTable(document.getElementById('reps-table'), ['Responsável', 'Aberta no período', 'Ganha', 'Perdida', 'Taxa de conversão'],
       rows.map(r => {
         const closed = r.won + r.lost;
         const rate = closed ? Math.round(r.won / closed * 100) + '%' : '—';
