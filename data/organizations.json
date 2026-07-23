@@ -16127,42 +16127,6 @@
     "persons_ids": "413"
   },
   {
-    "id": "442",
-    "user_id": "17759",
-    "created_user_id": "-13",
-    "name": "Algar Telecom",
-    "address": "",
-    "document": "",
-    "phone": "",
-    "avatar": "",
-    "lat": null,
-    "lng": null,
-    "added_in": "2025-02-21 16:28:34",
-    "updated_in": "2026-07-15 09:31:35",
-    "additional_values": {
-      "site": "",
-      "segmento": "",
-      "porte_por_faturamento": "",
-      "uf": "",
-      "qtd_de_funcionarios": "",
-      "observacoes": "",
-      "linkedin_da_organizacao": "",
-      "capital_social": "",
-      "principais_clientes": "",
-      "projetos_estrategicos_em_andamento": ""
-    },
-    "persons": [
-      {
-        "id": "414",
-        "name": "guilhermep",
-        "email": "guilhermep@algartelecom.com.br",
-        "phone": "",
-        "address": ""
-      }
-    ],
-    "persons_ids": "414"
-  },
-  {
     "id": "443",
     "user_id": "17759",
     "created_user_id": "-13",
@@ -17722,7 +17686,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:32:19",
-    "updated_in": "2026-07-20 14:58:25",
+    "updated_in": "2026-07-22 11:30:11",
     "additional_values": {
       "site": "",
       "segmento": "Telefonia",
@@ -17749,95 +17713,16 @@
         "email": "lucianorp@algartelecom.com.br",
         "phone": "",
         "address": ""
-      }
-    ],
-    "persons_ids": "456, 457"
-  },
-  {
-    "id": "487",
-    "user_id": "17759",
-    "created_user_id": "-13",
-    "name": "Algar",
-    "address": "",
-    "document": "",
-    "phone": "",
-    "avatar": "",
-    "lat": null,
-    "lng": null,
-    "added_in": "2025-02-21 16:32:26",
-    "updated_in": "2026-06-18 09:45:28",
-    "additional_values": {
-      "site": "",
-      "segmento": "",
-      "porte_por_faturamento": "",
-      "uf": "",
-      "qtd_de_funcionarios": "",
-      "observacoes": "",
-      "linkedin_da_organizacao": "",
-      "capital_social": "",
-      "principais_clientes": "",
-      "projetos_estrategicos_em_andamento": ""
-    },
-    "persons": [
-      {
-        "id": "457",
-        "name": "Luciano Roberto Pereira",
-        "email": "lucianorp@algartelecom.com.br",
-        "phone": "",
-        "address": ""
       },
       {
-        "id": "458",
-        "name": "daniela.henrique@algar.com.br",
-        "email": "daniela.henrique@algar.com.br",
+        "id": "1085",
+        "name": "Patricia",
+        "email": "patriciacl@algar.com.br",
         "phone": "",
         "address": ""
       }
     ],
-    "persons_ids": "457, 458"
-  },
-  {
-    "id": "488",
-    "user_id": "17759",
-    "created_user_id": "-13",
-    "name": "Algar",
-    "address": "",
-    "document": "",
-    "phone": "",
-    "avatar": "",
-    "lat": null,
-    "lng": null,
-    "added_in": "2025-02-21 16:32:34",
-    "updated_in": "2026-07-15 09:31:03",
-    "additional_values": {
-      "site": "",
-      "segmento": "",
-      "porte_por_faturamento": "",
-      "uf": "",
-      "qtd_de_funcionarios": "",
-      "observacoes": "",
-      "linkedin_da_organizacao": "",
-      "capital_social": "",
-      "principais_clientes": "",
-      "projetos_estrategicos_em_andamento": ""
-    },
-    "persons": [
-      {
-        "id": "458",
-        "name": "daniela.henrique@algar.com.br",
-        "email": "daniela.henrique@algar.com.br",
-        "phone": "",
-        "address": ""
-      },
-      {
-        "id": "535",
-        "name": "Leonardo Oliveira",
-        "email": "leonardoefdo@algartech.com",
-        "phone": "(34)99180-0611",
-        "address": ""
-      }
-    ],
-    "persons_ids": "458, 535"
+    "persons_ids": "456, 457, 1085"
   },
   {
     "id": "489",
@@ -23159,7 +23044,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:47:05",
-    "updated_in": "2026-07-21 12:54:19",
+    "updated_in": "2026-07-22 14:24:43",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -37447,7 +37332,7 @@
       {
         "id": "1048",
         "name": "THIAGO LUIZ MARTINS",
-        "email": "",
+        "email": "thiago.luiz@portobello.com.br",
         "phone": "(48) 99998-9778",
         "address": ""
       }
@@ -37836,7 +37721,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-08 17:09:50",
-    "updated_in": "2026-07-10 14:57:52",
+    "updated_in": "2026-07-22 15:52:15",
     "additional_values": {
       "site": "https://www.belgo.com.br/",
       "segmento": "",
@@ -37856,9 +37741,16 @@
         "email": "nathalia.pagliaminuta@belgobekaert.com.br",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1092",
+        "name": "Raquel de Freitas Garcia Rocha",
+        "email": "",
+        "phone": "",
+        "address": ""
       }
     ],
-    "persons_ids": "595"
+    "persons_ids": "595, 1092"
   },
   {
     "id": "1048",
@@ -37903,12 +37795,12 @@
     "name": "Grupo Bom Jesus",
     "address": "",
     "document": "",
-    "phone": "66 3411 5600",
+    "phone": "(66) 3411-5600",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2026-07-09 17:12:23",
-    "updated_in": "2026-07-21 16:36:31",
+    "updated_in": "2026-07-22 14:24:12",
     "additional_values": {
       "site": "https://www.bomjesus.com/",
       "segmento": "",
@@ -37928,9 +37820,16 @@
         "email": "",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1086",
+        "name": "juridico",
+        "email": "juridico@bomjesus.com",
+        "phone": "",
+        "address": ""
       }
     ],
-    "persons_ids": "1071"
+    "persons_ids": "1071, 1086"
   },
   {
     "id": "1050",
@@ -38215,5 +38114,257 @@
       }
     ],
     "persons_ids": "1084"
+  },
+  {
+    "id": "1059",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "IVECO Group N.V.",
+    "address": "",
+    "document": "36519422000115",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-22 14:28:49",
+    "updated_in": "2026-07-22 14:29:29",
+    "additional_values": {
+      "site": "https://www.ivecogroup.com/",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1087",
+        "name": "Rayene F",
+        "email": "",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1087"
+  },
+  {
+    "id": "1060",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Brasil Dealer Group",
+    "address": "",
+    "document": "06231826000148",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-22 14:32:50",
+    "updated_in": "2026-07-22 14:33:26",
+    "additional_values": {
+      "site": "",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/brasildealergroup/",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1088",
+        "name": "Maria Carolina Varela",
+        "email": "",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1088"
+  },
+  {
+    "id": "1061",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Veículos Monlevade Ltda (Concessionária Vemon - Fiat)",
+    "address": "Av. Alberto Lima, 700 - Nova Aclimação, João Monlevade - MG, Brasil",
+    "document": "",
+    "phone": "",
+    "avatar": "",
+    "lat": "-19.817608",
+    "lng": "-43.191345",
+    "added_in": "2026-07-22 15:38:25",
+    "updated_in": "2026-07-22 15:52:53",
+    "additional_values": {
+      "site": "https://vemon.com.br/",
+      "segmento": "Automotivo",
+      "porte_por_faturamento": "",
+      "uf": "MG",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1089",
+        "name": "Valeria A Couto Fonseca",
+        "email": "valeria@vemon.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1089"
+  },
+  {
+    "id": "1062",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Via Trucks - Unidade Governador Valadares (via Trucks Comercio de Caminhoes Ltda)",
+    "address": "Av. Rio Bahia, 2340 - Jardim Ipe, Governador Valadares - MG, Brasil",
+    "document": "",
+    "phone": "",
+    "avatar": "",
+    "lat": "-18.862740",
+    "lng": "-41.973877",
+    "added_in": "2026-07-22 15:43:02",
+    "updated_in": "2026-07-22 16:06:51",
+    "additional_values": {
+      "site": "https://viatrucks.com.br/",
+      "segmento": "Automotivo",
+      "porte_por_faturamento": "",
+      "uf": "MG",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1090",
+        "name": "Hovani Argeri",
+        "email": "hovani.argeri@viatrucks.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1090"
+  },
+  {
+    "id": "1063",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Mit Car Minas",
+    "address": "Avenida Presidente Carlos Luz, 561 - Caiçaras, Belo Horizonte - MG, 31230-000, Brasil",
+    "document": "",
+    "phone": "",
+    "avatar": "",
+    "lat": "-19.904366",
+    "lng": "-43.965336",
+    "added_in": "2026-07-22 15:49:23",
+    "updated_in": "2026-07-22 16:42:10",
+    "additional_values": {
+      "site": "mitcarminas.com.br",
+      "segmento": "Automotivo",
+      "porte_por_faturamento": "",
+      "uf": "MS",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1091",
+        "name": "Graziela Brandao",
+        "email": "graziela@mitcarminas.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1091"
+  },
+  {
+    "id": "1064",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Deva Veiculos Ltda\t(Iveco)",
+    "address": "Rua Teonílio Niquini, 32 - Jardim Piemont, Betim - MG, Brasil",
+    "document": "23762552000302",
+    "phone": "",
+    "avatar": "",
+    "lat": "-19.958435",
+    "lng": "-44.077862",
+    "added_in": "2026-07-22 16:07:46",
+    "updated_in": "2026-07-22 16:08:28",
+    "additional_values": {
+      "site": "deva.com.br",
+      "segmento": "Automotivo",
+      "porte_por_faturamento": "",
+      "uf": "MS",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1093",
+        "name": "Claudio Morici Crego",
+        "email": "claudio.crego@deva.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1093"
+  },
+  {
+    "id": "1065",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Via Mondo Fiat",
+    "address": "Av. Mário Barbosa Vieira, 320 - Vila Teixeira, Alfenas - MG, Brasil",
+    "document": "00836942000104",
+    "phone": "",
+    "avatar": "",
+    "lat": "-21.447517",
+    "lng": "-45.948383",
+    "added_in": "2026-07-22 16:13:48",
+    "updated_in": "2026-07-22 16:14:06",
+    "additional_values": {
+      "site": "viamondofiat.com.br",
+      "segmento": "Automotivo",
+      "porte_por_faturamento": "",
+      "uf": "MG",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "1094",
+        "name": "Rene Pedrosa Nunes",
+        "email": "rene@viamondofiat.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1094"
   }
 ]

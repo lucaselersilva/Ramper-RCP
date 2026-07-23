@@ -1,10 +1,10 @@
 {
-  "last_sync": "2026-07-22T11:40:34.187004+00:00",
+  "last_sync": "2026-07-23T11:44:19.472669+00:00",
   "counts": {
     "opportunities": 915,
-    "tasks": 951,
-    "organizations": 1026,
-    "persons": 1076,
+    "tasks": 967,
+    "organizations": 1030,
+    "persons": 1086,
     "users": 9,
     "stages": 14,
     "pipes": 1

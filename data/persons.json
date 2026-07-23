@@ -18778,13 +18778,13 @@
     "user_id": "17759",
     "created_user_id": "15157",
     "name": "THIAGO LUIZ MARTINS",
-    "email": "",
+    "email": "thiago.luiz@portobello.com.br",
     "phone": "48999989778",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2026-07-01 12:34:58",
-    "updated_in": "2026-07-01 12:36:08",
+    "updated_in": "2026-07-22 14:58:54",
     "additional_values": {
       "cargo": "Advogado Sênior",
       "linkedin": "https://www.linkedin.com/in/thiago-luiz-martins-/",
@@ -19364,6 +19364,186 @@
     "additional_values": {
       "cargo": "Juridico",
       "linkedin": "",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1085",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Patricia",
+    "email": "patriciacl@algar.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 11:28:32",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Responsavel pelos Escritorio parceiros",
+      "linkedin": "",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1086",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "juridico",
+    "email": "juridico@bomjesus.com",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 14:23:13",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "",
+      "linkedin": "",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1087",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Rayene F",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 14:28:25",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Coordenadora Juridica",
+      "linkedin": "https://www.linkedin.com/in/rayenefranca/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1088",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Maria Carolina Varela",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 14:32:22",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Gerente Juridica",
+      "linkedin": "https://www.linkedin.com/in/maria-carolina-varela/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1089",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Valeria A Couto Fonseca",
+    "email": "valeria@vemon.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 15:39:05",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Diretora",
+      "linkedin": "https://www.linkedin.com/in/val%C3%A9ria-a-couto-fonseca-1827585b/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1090",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Hovani Argeri",
+    "email": "hovani.argeri@viatrucks.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 15:43:38",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Diretor Geral",
+      "linkedin": "",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1091",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Graziela Brandao",
+    "email": "graziela@mitcarminas.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 15:49:52",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "",
+      "linkedin": "https://www.linkedin.com/in/graziela-brand%C3%A3o-9972b91a2/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1092",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Raquel de Freitas Garcia Rocha",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 15:51:03",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "RH",
+      "linkedin": "https://www.linkedin.com/in/raquel-de-freitas-garcia-rocha-166318190/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1093",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Claudio Morici Crego",
+    "email": "claudio.crego@deva.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 16:08:14",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "",
+      "linkedin": "https://www.linkedin.com/in/claudio-morici-crego-92398136/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1094",
+    "user_id": "15173",
+    "created_user_id": "15173",
+    "name": "Rene Pedrosa Nunes",
+    "email": "rene@viamondofiat.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-22 16:13:46",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "",
+      "linkedin": "https://www.linkedin.com/in/ren%C3%AA-pedrosa-nunes-646a311a1/",
       "telefone_completo": ""
     }
   }
