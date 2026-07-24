@@ -29092,9 +29092,9 @@
     },
     "description": "Reuniao Com Daniel . Head Juridico .",
     "concluded": "N",
-    "event_time": "2026-07-23 15:00:00",
+    "event_time": "2026-07-29 15:00:00",
     "added_in": "2026-07-17 13:45:39",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-23 17:21:08",
     "persons": {
       "id": "",
       "name": ""
@@ -29338,11 +29338,11 @@
       "entity_type": "organizations",
       "entity_name": "Martins Comércio e Serviços de Distribuição S.A"
     },
-    "description": "tentar marcar a reunia (apresentação enviada)",
+    "description": "ver se tem oportunidade.",
     "concluded": "N",
-    "event_time": "2026-07-24 07:30:00",
+    "event_time": "2026-11-11 07:30:00",
     "added_in": "2026-07-21 12:52:08",
-    "updated_in": "2026-07-21 15:36:52",
+    "updated_in": "2026-07-23 13:55:08",
     "persons": {
       "id": "",
       "name": ""
@@ -29739,13 +29739,13 @@
     "tasks": {
       "type_name": "WhatsApp",
       "entity_type": "opportunities",
-      "entity_name": "Ballagro"
+      "entity_name": "Margarida Esteves"
     },
     "description": "ligar se nao me responderem pelo wpp.",
-    "concluded": "N",
+    "concluded": "Y",
     "event_time": "2026-07-23 08:00:00",
     "added_in": "2026-07-22 15:41:10",
-    "updated_in": "0000-00-00 00:00:00",
+    "updated_in": "2026-07-23 11:38:52",
     "persons": {
       "id": "",
       "name": ""
@@ -29756,7 +29756,7 @@
     },
     "opportunities": {
       "id": "638",
-      "title": "Ballagro"
+      "title": "Margarida Esteves"
     }
   },
   {
@@ -29974,6 +29974,564 @@
     "opportunities": {
       "id": "",
       "title": ""
+    }
+  },
+  {
+    "id": "974",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "509",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "GIROAgro"
+    },
+    "description": "FUP - ver se tem intersse.",
+    "concluded": "N",
+    "event_time": "2027-03-02 08:00:00",
+    "added_in": "2026-07-23 10:10:22",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "509",
+      "title": "GIROAgro"
+    }
+  },
+  {
+    "id": "975",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "638",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Margarida Esteves"
+    },
+    "description": "cobrar e mail .",
+    "concluded": "N",
+    "event_time": "2026-07-27 08:30:00",
+    "added_in": "2026-07-23 11:39:24",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "638",
+      "title": "Margarida Esteves"
+    }
+  },
+  {
+    "id": "976",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "52",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "IMIC"
+    },
+    "description": "acompanhar conversa.",
+    "concluded": "N",
+    "event_time": "2026-07-28 07:45:00",
+    "added_in": "2026-07-23 13:12:07",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "52",
+      "title": "IMIC"
+    }
+  },
+  {
+    "id": "977",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "224",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "organizations",
+      "entity_name": "ELOPAR"
+    },
+    "description": "acompanhar contato.",
+    "concluded": "N",
+    "event_time": "2026-07-28 07:30:00",
+    "added_in": "2026-07-23 13:13:09",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "224",
+      "name": "ELOPAR"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "978",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "623",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "SOLVAY"
+    },
+    "description": "verificar se o cenario mudou - cristina saiu - localizar gestor.",
+    "concluded": "N",
+    "event_time": "2026-11-12 08:00:00",
+    "added_in": "2026-07-23 13:25:31",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "623",
+      "title": "SOLVAY"
+    }
+  },
+  {
+    "id": "979",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "592",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "BRF S.A."
+    },
+    "description": "acompanhar retorno.",
+    "concluded": "N",
+    "event_time": "2026-07-24 08:30:00",
+    "added_in": "2026-07-23 13:40:09",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "592",
+      "title": "BRF S.A."
+    }
+  },
+  {
+    "id": "980",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "554",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "Novelis"
+    },
+    "description": "acompanhar wpp com thiago",
+    "concluded": "N",
+    "event_time": "2026-07-27 09:15:00",
+    "added_in": "2026-07-23 13:43:25",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "554",
+      "title": "Novelis"
+    }
+  },
+  {
+    "id": "981",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "539",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "ANGLO GOLD"
+    },
+    "description": "ver com o rodrigo se ele quem vai retomar o contato.",
+    "concluded": "N",
+    "event_time": "2026-08-07 08:00:00",
+    "added_in": "2026-07-23 13:45:51",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "539",
+      "title": "ANGLO GOLD"
+    }
+  },
+  {
+    "id": "982",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "516",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Terminal SC"
+    },
+    "description": "verificar e mail e linkedin - tentar achar telefone do gestor Leandro saiu.",
+    "concluded": "N",
+    "event_time": "2026-07-30 08:00:00",
+    "added_in": "2026-07-23 14:03:05",
+    "updated_in": "2026-07-23 14:06:53",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "516",
+      "title": "Terminal SC"
+    }
+  },
+  {
+    "id": "983",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "515",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Biomedical"
+    },
+    "description": "tentar retorno",
+    "concluded": "N",
+    "event_time": "2026-08-06 08:00:00",
+    "added_in": "2026-07-23 14:09:44",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "515",
+      "title": "Biomedical"
+    }
+  },
+  {
+    "id": "984",
+    "type_id": "7",
+    "type_title": "WhatsApp",
+    "user_id": "17759",
+    "opportunity_id": "514",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "WhatsApp",
+      "entity_type": "opportunities",
+      "entity_name": "MRL Engenharia"
+    },
+    "description": "ver se o cenário mudou wpp.",
+    "concluded": "N",
+    "event_time": "2027-07-15 08:30:00",
+    "added_in": "2026-07-23 14:10:46",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "514",
+      "title": "MRL Engenharia"
+    }
+  },
+  {
+    "id": "985",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "507",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "Marilan"
+    },
+    "description": "tentar com a Susan Mergulhao pelo linedin o direcionamento. - Gerente de tributário.",
+    "concluded": "N",
+    "event_time": "2027-07-26 08:00:00",
+    "added_in": "2026-07-23 15:09:07",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "507",
+      "title": "Marilan"
+    }
+  },
+  {
+    "id": "986",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "1066",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "organizations",
+      "entity_name": "Siemens"
+    },
+    "description": "tentar abordar pelo linkedin",
+    "concluded": "N",
+    "event_time": "2026-07-27 08:00:00",
+    "added_in": "2026-07-23 15:28:17",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "1066",
+      "name": "Siemens"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "987",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "505",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "YARA"
+    },
+    "description": "acompanhar e mail e linkedin tambem.",
+    "concluded": "N",
+    "event_time": "2026-07-29 08:00:00",
+    "added_in": "2026-07-23 15:46:29",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "505",
+      "title": "YARA"
+    }
+  },
+  {
+    "id": "988",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "0",
+    "organization_id": "1067",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "organizations",
+      "entity_name": "Beni Group"
+    },
+    "description": "tentar contato via linkedin",
+    "concluded": "N",
+    "event_time": "2026-07-27 07:15:00",
+    "added_in": "2026-07-23 15:57:03",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "1067",
+      "name": "Beni Group"
+    },
+    "opportunities": {
+      "id": "",
+      "title": ""
+    }
+  },
+  {
+    "id": "989",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "504",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Koppert"
+    },
+    "description": "Retorno do e mail e/ou linkedin",
+    "concluded": "N",
+    "event_time": "2026-07-28 08:00:00",
+    "added_in": "2026-07-23 16:07:11",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "504",
+      "title": "Koppert"
+    }
+  },
+  {
+    "id": "990",
+    "type_id": "4",
+    "type_title": "E-mail",
+    "user_id": "17759",
+    "opportunity_id": "503",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "E-mail",
+      "entity_type": "opportunities",
+      "entity_name": "Simbiose"
+    },
+    "description": "- ver linkedin Marcia Nicoldi (Cogny)\n\n- tentar achar telefone da simbiose \n\n- Manuela Berta Melo (RH simbiose - tentar também)",
+    "concluded": "N",
+    "event_time": "2026-07-30 08:00:00",
+    "added_in": "2026-07-23 16:51:59",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "503",
+      "title": "Simbiose"
+    }
+  },
+  {
+    "id": "991",
+    "type_id": "8",
+    "type_title": "Msn LinkedIn",
+    "user_id": "17759",
+    "opportunity_id": "501",
+    "organization_id": "0",
+    "person_id": "0",
+    "tasks": {
+      "type_name": "Msn LinkedIn",
+      "entity_type": "opportunities",
+      "entity_name": "Facily"
+    },
+    "description": "Ver se Fernanda me ajuda com alguem lá.",
+    "concluded": "N",
+    "event_time": "2026-07-30 08:30:00",
+    "added_in": "2026-07-23 17:19:12",
+    "updated_in": "0000-00-00 00:00:00",
+    "persons": {
+      "id": "",
+      "name": ""
+    },
+    "organizations": {
+      "id": "",
+      "name": ""
+    },
+    "opportunities": {
+      "id": "501",
+      "title": "Facily"
     }
   }
 ]

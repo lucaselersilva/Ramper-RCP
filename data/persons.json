@@ -8391,17 +8391,17 @@
     "id": "468",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "Fernanda.souza@web.faci.ly",
+    "name": "Fernanda Teixeira",
     "email": "fernanda.souza@web.faci.ly",
     "phone": "",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:33",
-    "updated_in": "2026-07-15 09:30:55",
+    "updated_in": "2026-07-23 17:18:13",
     "additional_values": {
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/fernandalgsouza/",
       "telefone_completo": ""
     }
   },
@@ -8409,17 +8409,17 @@
     "id": "469",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "Maristela.alves@amend.com.br",
+    "name": "Maristela Vanderley",
     "email": "maristela.alves@amend.com.br",
     "phone": "",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:38",
-    "updated_in": "2026-07-15 09:30:55",
+    "updated_in": "2026-07-23 17:02:17",
     "additional_values": {
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/maristela-vanderley-3907b677/",
       "telefone_completo": ""
     }
   },
@@ -8427,17 +8427,17 @@
     "id": "470",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "marcia.nicolodi@simbiose-agro.com.br",
+    "name": "Marcia Nicolodi",
     "email": "marcia.nicolodi@simbiose-agro.com.br",
     "phone": "",
     "address": "",
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:43",
-    "updated_in": "2026-07-15 09:30:54",
+    "updated_in": "2026-07-23 16:44:01",
     "additional_values": {
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/marcia-nicolodi-b99961169/",
       "telefone_completo": ""
     }
   },
@@ -8452,10 +8452,10 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:47",
-    "updated_in": "2026-07-15 09:30:53",
+    "updated_in": "2026-07-23 15:56:37",
     "additional_values": {
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/francielinascimento/",
       "telefone_completo": ""
     }
   },
@@ -8470,10 +8470,10 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:52",
-    "updated_in": "2026-07-15 09:30:53",
+    "updated_in": "2026-07-23 15:27:34",
     "additional_values": {
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/tianastabile/",
       "telefone_completo": ""
     }
   },
@@ -8488,10 +8488,10 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:33:58",
-    "updated_in": "2026-07-15 09:30:52",
+    "updated_in": "2026-07-23 15:19:29",
     "additional_values": {
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/deborah-salemme-344321239/",
       "telefone_completo": ""
     }
   },
@@ -8506,10 +8506,10 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-02-21 16:34:02",
-    "updated_in": "2026-07-15 09:33:50",
+    "updated_in": "2026-07-23 15:01:59",
     "additional_values": {
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/raul-bressanim-cavalheiro-119795169/",
       "telefone_completo": ""
     }
   },
@@ -17200,7 +17200,7 @@
     "geo_lat": "0.000000",
     "geo_lng": "0.000000",
     "added_in": "2025-08-08 15:32:34",
-    "updated_in": "2025-08-08 15:35:24",
+    "updated_in": "2026-07-23 13:35:47",
     "additional_values": {
       "cargo": "Coordenador Jurídico",
       "linkedin": "https://www.linkedin.com/in/steffano-de-mingo-30b74a31/",
@@ -19544,6 +19544,114 @@
     "additional_values": {
       "cargo": "",
       "linkedin": "https://www.linkedin.com/in/ren%C3%AA-pedrosa-nunes-646a311a1/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1095",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Margarida Esteves",
+    "email": "margarida@ballagro.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 11:38:33",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Coordenadora RH",
+      "linkedin": "https://www.linkedin.com/in/margarida-esteves-rh/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1096",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Jessica Mara Diniz",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 13:11:40",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "RH",
+      "linkedin": "https://www.linkedin.com/in/j%C3%A9ssica-mara-diniz-8b7846ab/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1097",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Leandro Fernandes de Almeida",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 13:49:30",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/leandrofernandesdealmeida/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1098",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Giovana Paul Ramos",
+    "email": "",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 14:09:11",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "RH",
+      "linkedin": "https://www.linkedin.com/in/giovana-paul-ramos-9b99833a5/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1099",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Maria Luisa Waldige M. Cezar",
+    "email": "maria.cezar@yara.com",
+    "phone": "11997039118",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 15:37:09",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Diretorra Juridica",
+      "linkedin": "https://www.linkedin.com/in/maria-luisa-waldige-medina-cezar/",
+      "telefone_completo": ""
+    }
+  },
+  {
+    "id": "1100",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Adriano Moraes",
+    "email": "amoraes@koppert.com.br",
+    "phone": "",
+    "address": "",
+    "geo_lat": "0.000000",
+    "geo_lng": "0.000000",
+    "added_in": "2026-07-23 15:59:39",
+    "updated_in": "0000-00-00 00:00:00",
+    "additional_values": {
+      "cargo": "Gerente de RH",
+      "linkedin": "https://www.linkedin.com/in/adriano-moraes-36421410/",
       "telefone_completo": ""
     }
   }

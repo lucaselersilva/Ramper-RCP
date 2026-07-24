@@ -4072,10 +4072,10 @@
     "stage_last_change": "2025-02-21 12:53:17",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Em Contato com a Jéssica Mara Diniz coordenadora de RH",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 15:53:17",
-    "updated_in": "2026-07-15 09:36:02",
+    "updated_in": "2026-07-23 13:12:07",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -4111,6 +4111,16 @@
       "address": "",
       "cargo": "Gerente Administrativo e Finaceiro",
       "linkedin": "https://www.linkedin.com/in/roquebertuane/",
+      "telefone_completo": ""
+    },
+    "organizations_third_person": {
+      "id": "1096",
+      "name": "Jessica Mara Diniz",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "cargo": "RH",
+      "linkedin": "https://www.linkedin.com/in/j%C3%A9ssica-mara-diniz-8b7846ab/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -19318,7 +19328,7 @@
       "phone": "",
       "address": "",
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/raul-bressanim-cavalheiro-119795169/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -40822,10 +40832,10 @@
     "stage_last_change": "2025-02-21 13:33:35",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Fernanda Teixeira saiu de lá. Não encontei ninguem para abordar.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:33:36",
-    "updated_in": "2026-07-15 09:30:55",
+    "updated_in": "2026-07-23 17:19:12",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -40837,7 +40847,7 @@
     },
     "organizations": {
       "id": "499",
-      "name": "Facily",
+      "name": "FACILY SOLUCOES E TECNOLOGIA LTDA",
       "address": "",
       "document": "",
       "phone": ""
@@ -40845,12 +40855,12 @@
     "persons": [],
     "organizations_first_person": {
       "id": "468",
-      "name": "Fernanda.souza@web.faci.ly",
+      "name": "Fernanda Teixeira",
       "email": "fernanda.souza@web.faci.ly",
       "phone": "",
       "address": "",
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/fernandalgsouza/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -40879,13 +40889,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://loja.facily.com/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/facily/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -40911,10 +40921,10 @@
     "stage_last_change": "2025-02-21 13:33:40",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Email enviado \n\nPrezada Maristela, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nEncaminho nossa apresentação institucional, pois acredito que nossa atuação possa agregar à Amend. Atuamos há 28 anos assessorando empresas em todo o Brasil, com forte atuação nas áreas trabalhista e cível empresarial, além de demandas consultivas.\n\nGostaria de agendar uma breve conversa para apresentar melhor o escritório. Você teria disponibilidade para a próxima semana?\n\nAguardo retorno.\n\nAtenciosamente,",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:33:40",
-    "updated_in": "2026-07-15 09:30:54",
+    "updated_in": "2026-07-23 17:02:26",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -40926,20 +40936,20 @@
     },
     "organizations": {
       "id": "500",
-      "name": "AMEND",
+      "name": "Amend Cosméticos",
       "address": "",
-      "document": "",
+      "document": "37140678000180",
       "phone": ""
     },
     "persons": [],
     "organizations_first_person": {
       "id": "469",
-      "name": "Maristela.alves@amend.com.br",
+      "name": "Maristela Vanderley",
       "email": "maristela.alves@amend.com.br",
       "phone": "",
       "address": "",
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/maristela-vanderley-3907b677/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -40968,13 +40978,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.amend.com.br/home/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/amend-cosmeticos/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -41000,10 +41010,10 @@
     "stage_last_change": "2025-02-21 13:33:45",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Analisando a Empresa não encontrei ninguém responsavel pela Simbiose, mas a Marcia Nicoldi foi para um empresa Congy que é do mesmo grupo.\nEstou tentando contato com ela, mas enviei um email tambem para o setor geral.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:33:45",
-    "updated_in": "2026-07-15 09:30:54",
+    "updated_in": "2026-07-23 16:52:00",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41015,7 +41025,7 @@
     },
     "organizations": {
       "id": "501",
-      "name": "Simbiose",
+      "name": "Simbiose Agro",
       "address": "",
       "document": "",
       "phone": ""
@@ -41023,12 +41033,12 @@
     "persons": [],
     "organizations_first_person": {
       "id": "470",
-      "name": "marcia.nicolodi@simbiose-agro.com.br",
+      "name": "Marcia Nicolodi",
       "email": "marcia.nicolodi@simbiose-agro.com.br",
       "phone": "",
       "address": "",
-      "cargo": "",
-      "linkedin": "",
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/marcia-nicolodi-b99961169/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -41057,13 +41067,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://simbiose-agro.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/simbioseagro/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -41089,10 +41099,10 @@
     "stage_last_change": "2025-02-21 13:33:49",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Prezado Adriano, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nEncaminho nossa apresentação institucional, pois acredito que nossa atuação possa agregar à Koppert. Atuamos há 28 anos assessorando empresas em todo o Brasil, com forte atuação nas áreas trabalhista e cível empresarial, além de demandas consultivas.\n\nGostaria de agendar uma breve conversa para apresentar melhor o escritório. Você teria disponibilidade para a próxima semana?\n\nAguardo retorno.\n\nAtenciosamente,",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:33:49",
-    "updated_in": "2026-07-15 09:30:53",
+    "updated_in": "2026-07-23 16:07:12",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41106,7 +41116,7 @@
       "id": "502",
       "name": "Koppert",
       "address": "",
-      "document": "",
+      "document": "11074190000108",
       "phone": ""
     },
     "persons": [],
@@ -41117,7 +41127,17 @@
       "phone": "",
       "address": "",
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/francielinascimento/",
+      "telefone_completo": ""
+    },
+    "organizations_second_person": {
+      "id": "1100",
+      "name": "Adriano Moraes",
+      "email": "amoraes@koppert.com.br",
+      "phone": "",
+      "address": "",
+      "cargo": "Gerente de RH",
+      "linkedin": "https://www.linkedin.com/in/adriano-moraes-36421410/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -41146,13 +41166,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.koppert.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/koppert-brasil/about/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -41178,10 +41198,10 @@
     "stage_last_change": "2025-02-21 13:33:54",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Maria Luisa, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nGostaria de apresentar brevemente o escritório e verificar a possibilidade de conversarmos. Atuamos há 28 anos assessorando empresas de grande porte em todo o Brasil, apoiando departamentos jurídicos em demandas trabalhistas, cíveis, contratuais, regulatórias e ambientais, sempre com foco em eficiência operacional e gestão de riscos. \n\nEncaminho nossa apresentação institucional em anexo. Acredito que nossa experiência possa agregar à operação da Yara Brasil.\n\nVocê teria disponibilidade para uma breve reunião nas próximas semanas?\n\nFico à disposição.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:33:55",
-    "updated_in": "2026-07-15 09:30:52",
+    "updated_in": "2026-07-23 15:46:29",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41193,9 +41213,9 @@
     },
     "organizations": {
       "id": "503",
-      "name": "YARA",
+      "name": "Yara Brasil Fertilizantes S/A",
       "address": "",
-      "document": "",
+      "document": "92660604000182",
       "phone": ""
     },
     "persons": [],
@@ -41206,7 +41226,17 @@
       "phone": "",
       "address": "",
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/tianastabile/",
+      "telefone_completo": ""
+    },
+    "organizations_second_person": {
+      "id": "1099",
+      "name": "Maria Luisa Waldige M. Cezar",
+      "email": "maria.cezar@yara.com",
+      "phone": "11 99703-9118",
+      "address": "",
+      "cargo": "Diretorra Juridica",
+      "linkedin": "https://www.linkedin.com/in/maria-luisa-waldige-medina-cezar/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -41235,13 +41265,13 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.yarabrasil.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
         "qtd_de_funcionarios": "",
         "observacoes": "",
-        "linkedin_da_organizacao": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/yarabroficial/",
         "capital_social": "",
         "principais_clientes": "",
         "projetos_estrategicos_em_andamento": ""
@@ -41267,10 +41297,10 @@
     "stage_last_change": "2025-02-21 13:34:00",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Prezada Deborah, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nEncaminho nossa apresentação institucional, pois acredito que nossa atuação possa agregar à Festpan. Atualmente assessoramos empresas como Bimbo e Arcor, com forte atuação no contencioso trabalhista e cível empresarial.\n\nCaso faça sentido, gostaria de agendar uma breve conversa para apresentar melhor o RCP. Se esse tema não estiver sob sua responsabilidade, poderia, por gentileza, me indicar a pessoa responsável pela avaliação de novos escritórios parceiros?\n\nFico à disposição e agradeço pela atenção.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:00",
-    "updated_in": "2026-07-15 09:30:51",
+    "updated_in": "2026-07-23 15:21:08",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41282,9 +41312,9 @@
     },
     "organizations": {
       "id": "504",
-      "name": "Festpan",
+      "name": "Festpan Alimentos Importação e Exportação Ltda",
       "address": "",
-      "document": "",
+      "document": "50154061000181",
       "phone": ""
     },
     "persons": [],
@@ -41295,7 +41325,7 @@
       "phone": "",
       "address": "",
       "cargo": "",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/deborah-salemme-344321239/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -41324,7 +41354,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://festpan.com/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -41356,10 +41386,10 @@
     "stage_last_change": "2025-02-21 13:34:04",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Prezado Dr. Raul, boa tarde!\n\nMeu nome é Fernanda e estou à frente da área comercial do RCP Advogados.\n\nEncaminho nossa apresentação institucional, pois acredito que nossa atuação possa agregar ao Grupo Marilan. Atualmente assessoramos empresas como Bimbo e Arcor, entre outras, com forte atuação no contencioso trabalhista e cível empresarial.\n\nGostaria de verificar se teria disponibilidade para uma breve conversa para apresentarmos o RCP e entendermos como está estruturada a atuação jurídica do Grupo Marilan.\n\nFico à disposição e agradeço pela atenção.\n\nAtenciosamente,",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:05",
-    "updated_in": "2026-07-15 09:30:51",
+    "updated_in": "2026-07-23 15:09:08",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41384,7 +41414,7 @@
       "phone": "",
       "address": "",
       "cargo": "Gerente Juridico",
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/raul-bressanim-cavalheiro-119795169/",
       "telefone_completo": ""
     },
     "additional_values": {
@@ -41544,10 +41574,10 @@
     "stage_last_change": "2025-02-21 13:34:14",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "e mail pra fernanda voltou\n\ntentei no  email geral o direcionamento.\nreiterei e mail.",
+    "history": "e mail pra fernanda voltou\n\ntentei no  email geral o direcionamento.\nreiterei e mail.\nPrezada Fernanda, boa tarde!\n\nAgradeço muito o contato, mas no momento não temos interesse.\n\nAtt.;",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:14",
-    "updated_in": "2026-07-21 13:47:13",
+    "updated_in": "2026-07-23 10:10:23",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -41561,8 +41591,8 @@
       "id": "507",
       "name": "GIROAgro",
       "address": "",
-      "document": "",
-      "phone": ""
+      "document": "05570587000198",
+      "phone": "(35) 98808 6975"
     },
     "persons": [],
     "organizations_first_person": {
@@ -41601,7 +41631,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://giroagro.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -42012,7 +42042,7 @@
     "history": "Tentando encontrar o contato do responsavel.\n\nempresa nao tem linkedin e a fabiana já saiu, está na FIEMG.\nInformaram que já possuem patrocínio e que não tem interesse.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:43",
-    "updated_in": "2026-07-15 09:30:47",
+    "updated_in": "2026-07-23 14:10:46",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -42101,7 +42131,7 @@
     "history": "e mail enviado para o RH\n\nMarina, boa tarde! Tudo bem?\n\nMeu nome é Fernanda e faço parte da área comercial do RCP Advogados.\n\nGostaria de verificar se a avaliação de novos escritórios parceiros é conduzida pelo RH ou se existe um setor responsável por essa análise.\n\nCaso seja com vocês, podemos agendar uma breve conversa? Se não, poderia me indicar o contato da área responsável?\n\nAproveito para encaminhar nossa apresentação institucional em anexo.\n\nDesde já, agradeço pela atenção.\nCobrei e mail - sem retorno.\n\nachei o linkedin dela, vou tentar por lá.\nMarina do RH, me direcionou para setor administrativo.\ne mail enviado.\nreiterei e mail.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:48",
-    "updated_in": "2026-07-21 12:58:30",
+    "updated_in": "2026-07-23 14:09:44",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -42197,10 +42227,10 @@
     "stage_last_change": "2025-02-21 13:34:50",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "",
+    "history": "Tentando conexão via linkedin \n\nenviei um email para o RH via site.",
     "loss_reason_id": "2",
     "added_in": "2025-02-21 16:34:50",
-    "updated_in": "2026-07-15 09:30:46",
+    "updated_in": "2026-07-23 14:06:53",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -42215,10 +42245,19 @@
       "name": "Terminal SC",
       "address": "",
       "document": "",
-      "phone": ""
+      "phone": "(47) 3471-2121"
     },
     "persons": [],
-    "organizations_first_person": [],
+    "organizations_first_person": {
+      "id": "1097",
+      "name": "Leandro Fernandes de Almeida",
+      "email": "",
+      "phone": "",
+      "address": "",
+      "cargo": "Gerente Juridico",
+      "linkedin": "https://www.linkedin.com/in/leandrofernandesdealmeida/",
+      "telefone_completo": ""
+    },
     "additional_values": {
       "opportunities": {
         "origem_da_oportunidade": "Site",
@@ -42245,7 +42284,7 @@
         "fbclid": ""
       },
       "organizations": {
-        "site": "",
+        "site": "https://www.terminalsc.com.br/",
         "segmento": "",
         "porte_por_faturamento": "",
         "uf": "",
@@ -43586,7 +43625,7 @@
     "history": "",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:37:22",
-    "updated_in": "2026-07-15 09:30:45",
+    "updated_in": "2026-07-23 13:45:51",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -44711,10 +44750,10 @@
     "stage_last_change": "2025-02-21 13:39:01",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "Reunião realizada proposta enviada em Agosto/2019, não tem espaço para novos contratos no momento. FUP 12/05/21 por Rodrigo c Maria Eugenia, não estão contratando. Maio e Junho/2022: Maria Eugenia não atende celular nem responde whats e emails\nnão consegui o e mail de jeito nenhum, mas localizei o telefone, ele nao me atendeu, mas enviei uma mensagem.\n\npedi conexão no linkedin também.\nTentei novamente ligar para o Thiago e ele nao me atendeu.\ncontinuarei tentando.",
+    "history": "Reunião realizada proposta enviada em Agosto/2019, não tem espaço para novos contratos no momento. FUP 12/05/21 por Rodrigo c Maria Eugenia, não estão contratando. Maio e Junho/2022: Maria Eugenia não atende celular nem responde whats e emails\nnão consegui o e mail de jeito nenhum, mas localizei o telefone, ele nao me atendeu, mas enviei uma mensagem.\n\npedi conexão no linkedin também.\nTentei novamente ligar para o Thiago e ele nao me atendeu.\ncontinuarei tentando.\nRetomado contato pelo Wpp com Thiago.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:39:02",
-    "updated_in": "2026-07-06 10:15:59",
+    "updated_in": "2026-07-23 13:43:25",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -47406,10 +47445,10 @@
     "stage_last_change": "2025-02-21 13:42:48",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "tentando o contato com um conhecido meu que trabalha lá.\nTentando contato com a Laura.\n\nestamos conversando no wpp.",
+    "history": "tentando o contato com um conhecido meu que trabalha lá.\nTentando contato com a Laura.\n\nestamos conversando no wpp.\nContato Retomado com a  Laura.",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:42:49",
-    "updated_in": "2026-07-15 09:30:42",
+    "updated_in": "2026-07-23 13:40:09",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -47683,12 +47722,12 @@
   },
   {
     "id": "597",
-    "entity_type": "persons",
+    "entity_type": "organizations",
     "title": "Steffano de Mingo",
     "created_user_id": "-13",
     "user_id": "17759",
-    "organization_id": "0",
-    "person_id": "560",
+    "organization_id": "961",
+    "person_id": "0",
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:43:12",
     "value": "0.00",
@@ -47696,7 +47735,7 @@
     "history": "",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:43:12",
-    "updated_in": "2026-07-15 09:30:42",
+    "updated_in": "2026-07-23 13:34:07",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -47706,15 +47745,34 @@
       "pipe_name": "Funil padrão",
       "pipe_name_short": "Funil Padrão"
     },
-    "organizations": [],
-    "persons": {
-      "id": "560",
-      "name": "Steffano de Mingo",
-      "email": "",
-      "phone": "(31) 99123-9805",
-      "address": ""
+    "organizations": {
+      "id": "961",
+      "name": "Ecorodovias Infraestrutura e Logística S.A.",
+      "address": "Rua Gomes de Carvalho, 1.629 - Vila Olímpia, São Paulo - SP, Brasil",
+      "document": "04149454000180",
+      "phone": ""
     },
-    "organizations_first_person": [],
+    "persons": [],
+    "organizations_first_person": {
+      "id": "960",
+      "name": "Steffano De Mingo",
+      "email": "steffano.mingo@ecovias.com.br",
+      "phone": "",
+      "address": "",
+      "cargo": "Coordenador Jurídico",
+      "linkedin": "https://www.linkedin.com/in/steffano-de-mingo-30b74a31/",
+      "telefone_completo": ""
+    },
+    "organizations_second_person": {
+      "id": "961",
+      "name": "Carlos Renato Lonel",
+      "email": "carlos.lonel@ecorodovias.com.br",
+      "phone": "",
+      "address": "",
+      "cargo": "Gerente Jurídico",
+      "linkedin": "https://www.linkedin.com/in/carlos-renato-lonel-06b69764/",
+      "telefone_completo": ""
+    },
     "additional_values": {
       "opportunities": {
         "origem_da_oportunidade": "",
@@ -47740,10 +47798,17 @@
         "gclid": "",
         "fbclid": ""
       },
-      "persons": {
-        "cargo": "",
-        "linkedin": "https://www.linkedin.com/in/steffano-de-mingo-30b74a31/",
-        "telefone_completo": ""
+      "organizations": {
+        "site": "http://www.ecorodovias.com.br/",
+        "segmento": "Logistica",
+        "porte_por_faturamento": "",
+        "uf": "SP",
+        "qtd_de_funcionarios": "Entre 2501 a 5000",
+        "observacoes": "",
+        "linkedin_da_organizacao": "https://www.linkedin.com/company/grupoecorodovias/about/",
+        "capital_social": "",
+        "principais_clientes": "",
+        "projetos_estrategicos_em_andamento": ""
       }
     },
     "users": {
@@ -49330,7 +49395,7 @@
     "history": "18/10/23: Renato Pace   11:03\nObrigado. No momento não estamos com permissão para inclusão de outros escritórios",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:45:38",
-    "updated_in": "2026-07-15 09:30:40",
+    "updated_in": "2026-07-23 13:25:31",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -50366,20 +50431,20 @@
   },
   {
     "id": "638",
-    "entity_type": "organizations",
-    "title": "Ballagro",
+    "entity_type": "persons",
+    "title": "Margarida Esteves",
     "created_user_id": "-13",
     "user_id": "17759",
-    "organization_id": "631",
-    "person_id": "0",
+    "organization_id": "0",
+    "person_id": "1095",
     "stage_id": "3",
     "stage_last_change": "2025-02-21 13:47:01",
     "value": "0.00",
     "close_in": "2025-12-31",
-    "history": "Tentando localizar o contato, o Ricardo saiu da empresa.",
+    "history": "Tentando localizar o contato, o Ricardo saiu da empresa.\nE mail enviado para coordenadora do RH",
     "loss_reason_id": "8",
     "added_in": "2025-02-21 16:47:02",
-    "updated_in": "2026-07-22 15:41:10",
+    "updated_in": "2026-07-23 11:39:24",
     "stages": {
       "id": "3",
       "name_short": "Prospecção/Qualifi",
@@ -50389,24 +50454,15 @@
       "pipe_name": "Funil padrão",
       "pipe_name_short": "Funil Padrão"
     },
-    "organizations": {
-      "id": "631",
-      "name": "Ballagro",
-      "address": "",
-      "document": "",
-      "phone": ""
-    },
-    "persons": [],
-    "organizations_first_person": {
-      "id": "601",
-      "name": "Ricardo.barbosa@ballagro.com.br",
-      "email": "ricardo.barbosa@ballagro.com.br",
+    "organizations": [],
+    "persons": {
+      "id": "1095",
+      "name": "Margarida Esteves",
+      "email": "margarida@ballagro.com.br",
       "phone": "",
-      "address": "",
-      "cargo": "",
-      "linkedin": "",
-      "telefone_completo": ""
+      "address": ""
     },
+    "organizations_first_person": [],
     "additional_values": {
       "opportunities": {
         "origem_da_oportunidade": "",
@@ -50432,17 +50488,10 @@
         "gclid": "",
         "fbclid": ""
       },
-      "organizations": {
-        "site": "",
-        "segmento": "",
-        "porte_por_faturamento": "",
-        "uf": "",
-        "qtd_de_funcionarios": "",
-        "observacoes": "",
-        "linkedin_da_organizacao": "",
-        "capital_social": "",
-        "principais_clientes": "",
-        "projetos_estrategicos_em_andamento": ""
+      "persons": {
+        "cargo": "Coordenadora RH",
+        "linkedin": "https://www.linkedin.com/in/margarida-esteves-rh/",
+        "telefone_completo": ""
       }
     },
     "users": {

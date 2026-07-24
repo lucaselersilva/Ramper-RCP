@@ -1834,7 +1834,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 15:53:15",
-    "updated_in": "2026-07-15 17:48:25",
+    "updated_in": "2026-07-23 13:11:43",
     "additional_values": {
       "site": "https://imic.com.br/en/",
       "segmento": "",
@@ -1861,9 +1861,16 @@
         "email": "roque.bertuane@imic.com.br",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1096",
+        "name": "Jessica Mara Diniz",
+        "email": "",
+        "phone": "",
+        "address": ""
       }
     ],
-    "persons_ids": "51, 76"
+    "persons_ids": "51, 76, 1096"
   },
   {
     "id": "52",
@@ -8182,7 +8189,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:08:53",
-    "updated_in": "2026-07-15 09:34:00",
+    "updated_in": "2026-07-23 13:13:09",
     "additional_values": {
       "site": "",
       "segmento": "",
@@ -18088,7 +18095,7 @@
     "id": "499",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "Facily",
+    "name": "FACILY SOLUCOES E TECNOLOGIA LTDA",
     "address": "",
     "document": "",
     "phone": "",
@@ -18096,15 +18103,15 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:34",
-    "updated_in": "2026-07-15 09:30:55",
+    "updated_in": "2026-07-23 17:11:27",
     "additional_values": {
-      "site": "",
+      "site": "https://loja.facily.com/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/facily/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -18112,7 +18119,7 @@
     "persons": [
       {
         "id": "468",
-        "name": "Fernanda.souza@web.faci.ly",
+        "name": "Fernanda Teixeira",
         "email": "fernanda.souza@web.faci.ly",
         "phone": "",
         "address": ""
@@ -18124,23 +18131,23 @@
     "id": "500",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "AMEND",
+    "name": "Amend Cosméticos",
     "address": "",
-    "document": "",
+    "document": "37140678000180",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:38",
-    "updated_in": "2026-07-15 09:30:55",
+    "updated_in": "2026-07-23 16:56:47",
     "additional_values": {
-      "site": "",
+      "site": "https://www.amend.com.br/home/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/amend-cosmeticos/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -18148,7 +18155,7 @@
     "persons": [
       {
         "id": "469",
-        "name": "Maristela.alves@amend.com.br",
+        "name": "Maristela Vanderley",
         "email": "maristela.alves@amend.com.br",
         "phone": "",
         "address": ""
@@ -18160,7 +18167,7 @@
     "id": "501",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "Simbiose",
+    "name": "Simbiose Agro",
     "address": "",
     "document": "",
     "phone": "",
@@ -18168,15 +18175,15 @@
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:43",
-    "updated_in": "2026-07-15 09:30:54",
+    "updated_in": "2026-07-23 16:30:03",
     "additional_values": {
-      "site": "",
+      "site": "https://simbiose-agro.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/simbioseagro/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -18184,7 +18191,7 @@
     "persons": [
       {
         "id": "470",
-        "name": "marcia.nicolodi@simbiose-agro.com.br",
+        "name": "Marcia Nicolodi",
         "email": "marcia.nicolodi@simbiose-agro.com.br",
         "phone": "",
         "address": ""
@@ -18198,21 +18205,21 @@
     "created_user_id": "-13",
     "name": "Koppert",
     "address": "",
-    "document": "",
+    "document": "11074190000108",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:47",
-    "updated_in": "2026-07-15 09:30:53",
+    "updated_in": "2026-07-23 16:00:44",
     "additional_values": {
-      "site": "",
+      "site": "https://www.koppert.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/koppert-brasil/about/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -18224,31 +18231,38 @@
         "email": "francieli.nascimento@koppert.com.br",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1100",
+        "name": "Adriano Moraes",
+        "email": "amoraes@koppert.com.br",
+        "phone": "",
+        "address": ""
       }
     ],
-    "persons_ids": "471"
+    "persons_ids": "471, 1100"
   },
   {
     "id": "503",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "YARA",
+    "name": "Yara Brasil Fertilizantes S/A",
     "address": "",
-    "document": "",
+    "document": "92660604000182",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:53",
-    "updated_in": "2026-07-15 09:30:52",
+    "updated_in": "2026-07-23 15:37:15",
     "additional_values": {
-      "site": "",
+      "site": "https://www.yarabrasil.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
       "qtd_de_funcionarios": "",
       "observacoes": "",
-      "linkedin_da_organizacao": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/yarabroficial/",
       "capital_social": "",
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
@@ -18260,25 +18274,32 @@
         "email": "tiana.stabile@yara.com",
         "phone": "",
         "address": ""
+      },
+      {
+        "id": "1099",
+        "name": "Maria Luisa Waldige M. Cezar",
+        "email": "maria.cezar@yara.com",
+        "phone": "11 99703-9118",
+        "address": ""
       }
     ],
-    "persons_ids": "472"
+    "persons_ids": "472, 1099"
   },
   {
     "id": "504",
     "user_id": "17759",
     "created_user_id": "-13",
-    "name": "Festpan",
+    "name": "Festpan Alimentos Importação e Exportação Ltda",
     "address": "",
-    "document": "",
+    "document": "50154061000181",
     "phone": "",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:33:58",
-    "updated_in": "2026-07-15 09:30:52",
+    "updated_in": "2026-07-23 15:15:21",
     "additional_values": {
-      "site": "",
+      "site": "https://festpan.com/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -18385,15 +18406,15 @@
     "created_user_id": "-13",
     "name": "GIROAgro",
     "address": "",
-    "document": "",
-    "phone": "",
+    "document": "05570587000198",
+    "phone": "(35) 98808 6975",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:34:12",
-    "updated_in": "2026-07-15 09:30:50",
+    "updated_in": "2026-07-23 10:11:40",
     "additional_values": {
-      "site": "",
+      "site": "https://giroagro.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -18659,14 +18680,14 @@
     "name": "Terminal SC",
     "address": "",
     "document": "",
-    "phone": "",
+    "phone": "(47) 3471-2121",
     "avatar": "",
     "lat": null,
     "lng": null,
     "added_in": "2025-02-21 16:34:50",
-    "updated_in": "2026-07-15 09:30:46",
+    "updated_in": "2026-07-23 13:54:07",
     "additional_values": {
-      "site": "",
+      "site": "https://www.terminalsc.com.br/",
       "segmento": "",
       "porte_por_faturamento": "",
       "uf": "",
@@ -18677,8 +18698,16 @@
       "principais_clientes": "",
       "projetos_estrategicos_em_andamento": ""
     },
-    "persons": [],
-    "persons_ids": ""
+    "persons": [
+      {
+        "id": "1097",
+        "name": "Leandro Fernandes de Almeida",
+        "email": "",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "1097"
   },
   {
     "id": "515",
@@ -37721,7 +37750,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-08 17:09:50",
-    "updated_in": "2026-07-22 15:52:15",
+    "updated_in": "2026-07-23 11:39:51",
     "additional_values": {
       "site": "https://www.belgo.com.br/",
       "segmento": "",
@@ -37764,7 +37793,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-09 15:06:00",
-    "updated_in": "2026-07-21 15:36:52",
+    "updated_in": "2026-07-23 13:55:09",
     "additional_values": {
       "site": "https://www.martinsatacado.com.br/",
       "segmento": "",
@@ -38055,7 +38084,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-17 11:56:53",
-    "updated_in": "2026-07-17 13:45:42",
+    "updated_in": "2026-07-23 17:21:08",
     "additional_values": {
       "site": "https://www.livup.com.br/",
       "segmento": "",
@@ -38127,7 +38156,7 @@
     "lat": null,
     "lng": null,
     "added_in": "2026-07-22 14:28:49",
-    "updated_in": "2026-07-22 14:29:29",
+    "updated_in": "2026-07-23 13:13:50",
     "additional_values": {
       "site": "https://www.ivecogroup.com/",
       "segmento": "",
@@ -38366,5 +38395,77 @@
       }
     ],
     "persons_ids": "1094"
+  },
+  {
+    "id": "1066",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Siemens",
+    "address": "",
+    "document": "34776007000111",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-23 15:26:46",
+    "updated_in": "2026-07-23 15:28:18",
+    "additional_values": {
+      "site": "",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "https://www.linkedin.com/company/siemens/",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "472",
+        "name": "tiana.stabile@yara.com",
+        "email": "tiana.stabile@yara.com",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "472"
+  },
+  {
+    "id": "1067",
+    "user_id": "17759",
+    "created_user_id": "17759",
+    "name": "Beni Group",
+    "address": "",
+    "document": "71869663000438",
+    "phone": "",
+    "avatar": "",
+    "lat": null,
+    "lng": null,
+    "added_in": "2026-07-23 15:56:13",
+    "updated_in": "2026-07-23 15:57:04",
+    "additional_values": {
+      "site": "https://www.benicar.com.br/",
+      "segmento": "",
+      "porte_por_faturamento": "",
+      "uf": "",
+      "qtd_de_funcionarios": "",
+      "observacoes": "",
+      "linkedin_da_organizacao": "",
+      "capital_social": "",
+      "principais_clientes": "",
+      "projetos_estrategicos_em_andamento": ""
+    },
+    "persons": [
+      {
+        "id": "471",
+        "name": "francieli.nascimento@koppert.com.br",
+        "email": "francieli.nascimento@koppert.com.br",
+        "phone": "",
+        "address": ""
+      }
+    ],
+    "persons_ids": "471"
   }
 ]
